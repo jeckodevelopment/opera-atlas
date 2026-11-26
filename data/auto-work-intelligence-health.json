@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "checked_at": "2026-11-26T10:58:55+00:00",
+  "checked_at": "2026-11-26T13:15:33+00:00",
   "outcomes": [
     {
       "candidate_id": "oa-index-4e733e128f3edf180b83",
@@ -673,6 +673,13 @@
       "work_id": "oa-w-000071",
       "source_key": "sassari-de-carolis-opera-2026",
       "official_url": "https://www.marialisadecarolis.it/opera-lirica.aspx?id=373"
+    },
+    {
+      "candidate_id": "oa-index-73348de657104a8b911f",
+      "status": "already_catalogued",
+      "work_id": "oa-w-000038",
+      "source_key": "opera-roma-season-2026-27",
+      "official_url": "https://www.operaroma.it/spettacoli/il-barbiere-di-siviglia-operacamion/"
     },
     {
       "candidate_id": "oa-index-743dd5f2381d26feece2",

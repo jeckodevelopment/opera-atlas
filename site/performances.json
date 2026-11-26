@@ -4430,6 +4430,31 @@
       ]
     },
     {
+      "project_name": "OperaCamion",
+      "actual_location": {
+        "venue": "Cortile parrocchiale del Corpus Domini, Massimina",
+        "municipality": "Roma",
+        "region": "Lazio",
+        "source_url": "https://www.operaroma.it/spettacoli/il-barbiere-di-siviglia-operacamion/"
+      },
+      "id": "curated:roma-operacamion-barbiere-2026:2026-06-03",
+      "starts_at": "2026-06-03T21:15:00+02:00",
+      "local_date": "2026-06-03",
+      "time_known": true,
+      "time_label": "21:15",
+      "status": "announced",
+      "title": "Il barbiere di Siviglia",
+      "composer": "Gioachino Rossini",
+      "venue": "Teatro dell'Opera di Roma",
+      "municipality": "Roma",
+      "region": "Lazio",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.operaroma.it/spettacoli/il-barbiere-di-siviglia-operacamion/"
+      ]
+    },
+    {
       "id": "curated:historical-2026h1-milano-teatro-alla-scala-nabucco:2026-06-04",
       "starts_at": "2026-06-04T20:00:00+02:00",
       "local_date": "2026-06-04",
@@ -4445,6 +4470,31 @@
       "longitude": null,
       "sources": [
         "https://www.teatroallascala.org/it/stagione/2025-2026/opera/nabucodonosor.html"
+      ]
+    },
+    {
+      "project_name": "OperaCamion",
+      "actual_location": {
+        "venue": "Parcheggio di via Leonida Repaci, Cinquina/Bufalotta",
+        "municipality": "Roma",
+        "region": "Lazio",
+        "source_url": "https://www.operaroma.it/spettacoli/il-barbiere-di-siviglia-operacamion/"
+      },
+      "id": "curated:roma-operacamion-barbiere-2026:2026-06-05",
+      "starts_at": "2026-06-05T21:15:00+02:00",
+      "local_date": "2026-06-05",
+      "time_known": true,
+      "time_label": "21:15",
+      "status": "announced",
+      "title": "Il barbiere di Siviglia",
+      "composer": "Gioachino Rossini",
+      "venue": "Teatro dell'Opera di Roma",
+      "municipality": "Roma",
+      "region": "Lazio",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.operaroma.it/spettacoli/il-barbiere-di-siviglia-operacamion/"
       ]
     },
     {
@@ -4484,6 +4534,31 @@
       ]
     },
     {
+      "project_name": "OperaCamion",
+      "actual_location": {
+        "venue": "Parcheggio municipale, via Benedetto Croce 50, Montagnola",
+        "municipality": "Roma",
+        "region": "Lazio",
+        "source_url": "https://www.operaroma.it/spettacoli/il-barbiere-di-siviglia-operacamion/"
+      },
+      "id": "curated:roma-operacamion-barbiere-2026:2026-06-06",
+      "starts_at": "2026-06-06T21:15:00+02:00",
+      "local_date": "2026-06-06",
+      "time_known": true,
+      "time_label": "21:15",
+      "status": "announced",
+      "title": "Il barbiere di Siviglia",
+      "composer": "Gioachino Rossini",
+      "venue": "Teatro dell'Opera di Roma",
+      "municipality": "Roma",
+      "region": "Lazio",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.operaroma.it/spettacoli/il-barbiere-di-siviglia-operacamion/"
+      ]
+    },
+    {
       "id": "curated:historical-2026h1-milano-teatro-alla-scala-carmen:2026-06-08",
       "starts_at": "2026-06-08T20:00:00+02:00",
       "local_date": "2026-06-08",
@@ -4520,6 +4595,31 @@
       ]
     },
     {
+      "project_name": "OperaCamion",
+      "actual_location": {
+        "venue": "Piazza Mazzini",
+        "municipality": "Bracciano",
+        "region": "Lazio",
+        "source_url": "https://www.operaroma.it/spettacoli/il-barbiere-di-siviglia-operacamion/"
+      },
+      "id": "curated:roma-operacamion-barbiere-2026:2026-06-09",
+      "starts_at": "2026-06-09T21:15:00+02:00",
+      "local_date": "2026-06-09",
+      "time_known": true,
+      "time_label": "21:15",
+      "status": "announced",
+      "title": "Il barbiere di Siviglia",
+      "composer": "Gioachino Rossini",
+      "venue": "Teatro dell'Opera di Roma",
+      "municipality": "Roma",
+      "region": "Lazio",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.operaroma.it/spettacoli/il-barbiere-di-siviglia-operacamion/"
+      ]
+    },
+    {
       "id": "curated:historical-2026h1-milano-teatro-alla-scala-carmen:2026-06-10",
       "starts_at": "2026-06-10T20:00:00+02:00",
       "local_date": "2026-06-10",
@@ -4535,6 +4635,31 @@
       "longitude": null,
       "sources": [
         "https://www.teatroallascala.org/it/stagione/2025-2026/opera/carmen.html"
+      ]
+    },
+    {
+      "project_name": "OperaCamion",
+      "actual_location": {
+        "venue": "Parcheggio di via Fosso dell’Osa, civico 338, Villaggio Prenestino",
+        "municipality": "Roma",
+        "region": "Lazio",
+        "source_url": "https://www.operaroma.it/spettacoli/il-barbiere-di-siviglia-operacamion/"
+      },
+      "id": "curated:roma-operacamion-barbiere-2026:2026-06-10",
+      "starts_at": "2026-06-10T21:15:00+02:00",
+      "local_date": "2026-06-10",
+      "time_known": true,
+      "time_label": "21:15",
+      "status": "announced",
+      "title": "Il barbiere di Siviglia",
+      "composer": "Gioachino Rossini",
+      "venue": "Teatro dell'Opera di Roma",
+      "municipality": "Roma",
+      "region": "Lazio",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.operaroma.it/spettacoli/il-barbiere-di-siviglia-operacamion/"
       ]
     },
     {
@@ -4574,6 +4699,31 @@
       ]
     },
     {
+      "project_name": "OperaCamion",
+      "actual_location": {
+        "venue": "Rotonda di viale Antonio Gandin, Palmarola/Selva Candida",
+        "municipality": "Roma",
+        "region": "Lazio",
+        "source_url": "https://www.operaroma.it/spettacoli/il-barbiere-di-siviglia-operacamion/"
+      },
+      "id": "curated:roma-operacamion-barbiere-2026:2026-06-13",
+      "starts_at": "2026-06-13T21:15:00+02:00",
+      "local_date": "2026-06-13",
+      "time_known": true,
+      "time_label": "21:15",
+      "status": "announced",
+      "title": "Il barbiere di Siviglia",
+      "composer": "Gioachino Rossini",
+      "venue": "Teatro dell'Opera di Roma",
+      "municipality": "Roma",
+      "region": "Lazio",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.operaroma.it/spettacoli/il-barbiere-di-siviglia-operacamion/"
+      ]
+    },
+    {
       "id": "curated:historical-2026h1-venezia-teatro-malibran-stagione-25-26-enrico-di-borgogna:2026-06-14",
       "starts_at": "2026-06-14T17:00:00+02:00",
       "local_date": "2026-06-14",
@@ -4589,6 +4739,31 @@
       "longitude": null,
       "sources": [
         "https://www.teatrolafenice.it/event/stagione-25-26-enrico-di-borgogna/"
+      ]
+    },
+    {
+      "project_name": "OperaCamion",
+      "actual_location": {
+        "venue": "Piazza Sirio, Lido di Ostia",
+        "municipality": "Roma",
+        "region": "Lazio",
+        "source_url": "https://www.operaroma.it/spettacoli/il-barbiere-di-siviglia-operacamion/"
+      },
+      "id": "curated:roma-operacamion-barbiere-2026:2026-06-14",
+      "starts_at": "2026-06-14T21:15:00+02:00",
+      "local_date": "2026-06-14",
+      "time_known": true,
+      "time_label": "21:15",
+      "status": "announced",
+      "title": "Il barbiere di Siviglia",
+      "composer": "Gioachino Rossini",
+      "venue": "Teatro dell'Opera di Roma",
+      "municipality": "Roma",
+      "region": "Lazio",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.operaroma.it/spettacoli/il-barbiere-di-siviglia-operacamion/"
       ]
     },
     {
@@ -4625,6 +4800,56 @@
       "longitude": null,
       "sources": [
         "https://www.teatroallascala.org/it/stagione/2025-2026/opera/carmen.html"
+      ]
+    },
+    {
+      "project_name": "OperaCamion",
+      "actual_location": {
+        "venue": "Parcheggio del mercato rionale, via Comte, Casal de’ Pazzi",
+        "municipality": "Roma",
+        "region": "Lazio",
+        "source_url": "https://www.operaroma.it/spettacoli/il-barbiere-di-siviglia-operacamion/"
+      },
+      "id": "curated:roma-operacamion-barbiere-2026:2026-06-16",
+      "starts_at": "2026-06-16T21:15:00+02:00",
+      "local_date": "2026-06-16",
+      "time_known": true,
+      "time_label": "21:15",
+      "status": "announced",
+      "title": "Il barbiere di Siviglia",
+      "composer": "Gioachino Rossini",
+      "venue": "Teatro dell'Opera di Roma",
+      "municipality": "Roma",
+      "region": "Lazio",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.operaroma.it/spettacoli/il-barbiere-di-siviglia-operacamion/"
+      ]
+    },
+    {
+      "project_name": "OperaCamion",
+      "actual_location": {
+        "venue": "Largo Brodolini",
+        "municipality": "Valmontone",
+        "region": "Lazio",
+        "source_url": "https://www.operaroma.it/spettacoli/il-barbiere-di-siviglia-operacamion/"
+      },
+      "id": "curated:roma-operacamion-barbiere-2026:2026-06-17",
+      "starts_at": "2026-06-17T21:15:00+02:00",
+      "local_date": "2026-06-17",
+      "time_known": true,
+      "time_label": "21:15",
+      "status": "announced",
+      "title": "Il barbiere di Siviglia",
+      "composer": "Gioachino Rossini",
+      "venue": "Teatro dell'Opera di Roma",
+      "municipality": "Roma",
+      "region": "Lazio",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.operaroma.it/spettacoli/il-barbiere-di-siviglia-operacamion/"
       ]
     },
     {
@@ -6536,6 +6761,32 @@
       ]
     },
     {
+      "project_name": "OperaCamion",
+      "actual_location": {
+        "venue": "Parcheggio del mercato di via Borgo Ticino, Casalotti",
+        "municipality": "Roma",
+        "region": "Lazio",
+        "source_url": "https://www.operaroma.it/spettacoli/il-barbiere-di-siviglia-operacamion-2/"
+      },
+      "id": "curated:roma-operacamion-barbiere-2026:2026-09-12",
+      "starts_at": "2026-09-12T20:00:00+02:00",
+      "local_date": "2026-09-12",
+      "time_known": true,
+      "time_label": "20:00",
+      "status": "announced",
+      "title": "Il barbiere di Siviglia",
+      "composer": "Gioachino Rossini",
+      "venue": "Teatro dell'Opera di Roma",
+      "municipality": "Roma",
+      "region": "Lazio",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.operaroma.it/spettacoli/il-barbiere-di-siviglia-operacamion-2/",
+        "https://www.operaroma.it/spettacoli/il-barbiere-di-siviglia-operacamion/"
+      ]
+    },
+    {
       "id": "curated:auto-aed31bfdfcf807ee:2026-09-12",
       "starts_at": "2026-09-12T20:30:00+02:00",
       "local_date": "2026-09-12",
@@ -6569,6 +6820,32 @@
       "longitude": null,
       "sources": [
         "https://www.vicenzainlirica.it/il-barbiere-di-siviglia-rossini/"
+      ]
+    },
+    {
+      "project_name": "OperaCamion",
+      "actual_location": {
+        "venue": "Piazza Gaetano Mosca, Monte Cucco",
+        "municipality": "Roma",
+        "region": "Lazio",
+        "source_url": "https://www.operaroma.it/spettacoli/il-barbiere-di-siviglia-operacamion-2/"
+      },
+      "id": "curated:roma-operacamion-barbiere-2026:2026-09-13",
+      "starts_at": "2026-09-13T20:00:00+02:00",
+      "local_date": "2026-09-13",
+      "time_known": true,
+      "time_label": "20:00",
+      "status": "announced",
+      "title": "Il barbiere di Siviglia",
+      "composer": "Gioachino Rossini",
+      "venue": "Teatro dell'Opera di Roma",
+      "municipality": "Roma",
+      "region": "Lazio",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.operaroma.it/spettacoli/il-barbiere-di-siviglia-operacamion-2/",
+        "https://www.operaroma.it/spettacoli/il-barbiere-di-siviglia-operacamion/"
       ]
     },
     {
@@ -6626,6 +6903,32 @@
       ]
     },
     {
+      "project_name": "OperaCamion",
+      "actual_location": {
+        "venue": "Parcheggio di via della Stazione, Cesano",
+        "municipality": "Roma",
+        "region": "Lazio",
+        "source_url": "https://www.operaroma.it/spettacoli/il-barbiere-di-siviglia-operacamion-2/"
+      },
+      "id": "curated:roma-operacamion-barbiere-2026:2026-09-15",
+      "starts_at": "2026-09-15T20:00:00+02:00",
+      "local_date": "2026-09-15",
+      "time_known": true,
+      "time_label": "20:00",
+      "status": "announced",
+      "title": "Il barbiere di Siviglia",
+      "composer": "Gioachino Rossini",
+      "venue": "Teatro dell'Opera di Roma",
+      "municipality": "Roma",
+      "region": "Lazio",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.operaroma.it/spettacoli/il-barbiere-di-siviglia-operacamion-2/",
+        "https://www.operaroma.it/spettacoli/il-barbiere-di-siviglia-operacamion/"
+      ]
+    },
+    {
       "id": "curated:auto-e0585c924c7d06c0:2026-09-16",
       "starts_at": "2026-09-16T19:00:00+02:00",
       "local_date": "2026-09-16",
@@ -6677,6 +6980,32 @@
       "longitude": null,
       "sources": [
         "https://www.operaroma.it/spettacoli/le-nozze-di-figaro-2/"
+      ]
+    },
+    {
+      "project_name": "OperaCamion",
+      "actual_location": {
+        "venue": "Piazza Tarantelli, Torrino/Decima",
+        "municipality": "Roma",
+        "region": "Lazio",
+        "source_url": "https://www.operaroma.it/spettacoli/il-barbiere-di-siviglia-operacamion-2/"
+      },
+      "id": "curated:roma-operacamion-barbiere-2026:2026-09-17",
+      "starts_at": "2026-09-17T20:00:00+02:00",
+      "local_date": "2026-09-17",
+      "time_known": true,
+      "time_label": "20:00",
+      "status": "announced",
+      "title": "Il barbiere di Siviglia",
+      "composer": "Gioachino Rossini",
+      "venue": "Teatro dell'Opera di Roma",
+      "municipality": "Roma",
+      "region": "Lazio",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.operaroma.it/spettacoli/il-barbiere-di-siviglia-operacamion-2/",
+        "https://www.operaroma.it/spettacoli/il-barbiere-di-siviglia-operacamion/"
       ]
     },
     {
@@ -6770,6 +7099,32 @@
       ]
     },
     {
+      "project_name": "OperaCamion",
+      "actual_location": {
+        "venue": "Largo Paolo Emilio Taviani, Cinecittà Est",
+        "municipality": "Roma",
+        "region": "Lazio",
+        "source_url": "https://www.operaroma.it/spettacoli/il-barbiere-di-siviglia-operacamion-2/"
+      },
+      "id": "curated:roma-operacamion-barbiere-2026:2026-09-19",
+      "starts_at": "2026-09-19T20:00:00+02:00",
+      "local_date": "2026-09-19",
+      "time_known": true,
+      "time_label": "20:00",
+      "status": "announced",
+      "title": "Il barbiere di Siviglia",
+      "composer": "Gioachino Rossini",
+      "venue": "Teatro dell'Opera di Roma",
+      "municipality": "Roma",
+      "region": "Lazio",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.operaroma.it/spettacoli/il-barbiere-di-siviglia-operacamion-2/",
+        "https://www.operaroma.it/spettacoli/il-barbiere-di-siviglia-operacamion/"
+      ]
+    },
+    {
       "id": "curated:historical-2026-sabbioneta-orfeo:2026-09-19",
       "starts_at": "2026-09-19T20:30:00+02:00",
       "local_date": "2026-09-19",
@@ -6857,6 +7212,32 @@
       "longitude": null,
       "sources": [
         "https://www.fondazionepetruzzelli.it/eventi/bona-sforza-krautze-14-20-settembre/"
+      ]
+    },
+    {
+      "project_name": "OperaCamion",
+      "actual_location": {
+        "venue": "Piazza Jan Palach, Villaggio Olimpico",
+        "municipality": "Roma",
+        "region": "Lazio",
+        "source_url": "https://www.operaroma.it/spettacoli/il-barbiere-di-siviglia-operacamion-2/"
+      },
+      "id": "curated:roma-operacamion-barbiere-2026:2026-09-20",
+      "starts_at": "2026-09-20T20:00:00+02:00",
+      "local_date": "2026-09-20",
+      "time_known": true,
+      "time_label": "20:00",
+      "status": "announced",
+      "title": "Il barbiere di Siviglia",
+      "composer": "Gioachino Rossini",
+      "venue": "Teatro dell'Opera di Roma",
+      "municipality": "Roma",
+      "region": "Lazio",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.operaroma.it/spettacoli/il-barbiere-di-siviglia-operacamion-2/",
+        "https://www.operaroma.it/spettacoli/il-barbiere-di-siviglia-operacamion/"
       ]
     },
     {

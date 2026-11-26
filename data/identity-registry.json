@@ -4451,6 +4451,19 @@
       "slug": "il-trionfo-del-tempo-e-del-disinganno",
       "source_url": "https://www.operaroma.it/spettacoli/il-trionfo-del-tempo-e-del-disinganno/",
       "season": "2025-2026"
+    },
+    "roma-operacamion-barbiere-2026": {
+      "id": "oa-s-000370",
+      "work_id": "oa-w-000038",
+      "venue_id": "oa-v-000017",
+      "slug": "il-barbiere-di-siviglia",
+      "route_slug": "il-barbiere-di-siviglia-operacamion-2026",
+      "season": "2025-2026",
+      "source_url": "https://www.operaroma.it/spettacoli/il-barbiere-di-siviglia-operacamion/",
+      "supporting_source_urls": [
+        "https://www.operaroma.it/spettacoli/il-barbiere-di-siviglia-operacamion-2/",
+        "https://www.operaroma.it/spettacoli/il-barbiere-di-siviglia-operacamion/"
+      ]
     }
   },
   "performances": {
@@ -12969,6 +12982,96 @@
       "staging_id": "oa-s-000369",
       "original_date": "2026-04-14",
       "source_url": "https://www.operaroma.it/spettacoli/il-trionfo-del-tempo-e-del-disinganno/"
+    },
+    "roma-operacamion-barbiere-2026|2026-06-03": {
+      "id": "oa-r-001447",
+      "staging_id": "oa-s-000370",
+      "original_date": "2026-06-03",
+      "source_url": "https://www.operaroma.it/spettacoli/il-barbiere-di-siviglia-operacamion/"
+    },
+    "roma-operacamion-barbiere-2026|2026-06-05": {
+      "id": "oa-r-001448",
+      "staging_id": "oa-s-000370",
+      "original_date": "2026-06-05",
+      "source_url": "https://www.operaroma.it/spettacoli/il-barbiere-di-siviglia-operacamion/"
+    },
+    "roma-operacamion-barbiere-2026|2026-06-06": {
+      "id": "oa-r-001449",
+      "staging_id": "oa-s-000370",
+      "original_date": "2026-06-06",
+      "source_url": "https://www.operaroma.it/spettacoli/il-barbiere-di-siviglia-operacamion/"
+    },
+    "roma-operacamion-barbiere-2026|2026-06-09": {
+      "id": "oa-r-001450",
+      "staging_id": "oa-s-000370",
+      "original_date": "2026-06-09",
+      "source_url": "https://www.operaroma.it/spettacoli/il-barbiere-di-siviglia-operacamion/"
+    },
+    "roma-operacamion-barbiere-2026|2026-06-10": {
+      "id": "oa-r-001451",
+      "staging_id": "oa-s-000370",
+      "original_date": "2026-06-10",
+      "source_url": "https://www.operaroma.it/spettacoli/il-barbiere-di-siviglia-operacamion/"
+    },
+    "roma-operacamion-barbiere-2026|2026-06-13": {
+      "id": "oa-r-001452",
+      "staging_id": "oa-s-000370",
+      "original_date": "2026-06-13",
+      "source_url": "https://www.operaroma.it/spettacoli/il-barbiere-di-siviglia-operacamion/"
+    },
+    "roma-operacamion-barbiere-2026|2026-06-14": {
+      "id": "oa-r-001453",
+      "staging_id": "oa-s-000370",
+      "original_date": "2026-06-14",
+      "source_url": "https://www.operaroma.it/spettacoli/il-barbiere-di-siviglia-operacamion/"
+    },
+    "roma-operacamion-barbiere-2026|2026-06-16": {
+      "id": "oa-r-001454",
+      "staging_id": "oa-s-000370",
+      "original_date": "2026-06-16",
+      "source_url": "https://www.operaroma.it/spettacoli/il-barbiere-di-siviglia-operacamion/"
+    },
+    "roma-operacamion-barbiere-2026|2026-06-17": {
+      "id": "oa-r-001455",
+      "staging_id": "oa-s-000370",
+      "original_date": "2026-06-17",
+      "source_url": "https://www.operaroma.it/spettacoli/il-barbiere-di-siviglia-operacamion/"
+    },
+    "roma-operacamion-barbiere-2026|2026-09-12": {
+      "id": "oa-r-001456",
+      "staging_id": "oa-s-000370",
+      "original_date": "2026-09-12",
+      "source_url": "https://www.operaroma.it/spettacoli/il-barbiere-di-siviglia-operacamion/"
+    },
+    "roma-operacamion-barbiere-2026|2026-09-13": {
+      "id": "oa-r-001457",
+      "staging_id": "oa-s-000370",
+      "original_date": "2026-09-13",
+      "source_url": "https://www.operaroma.it/spettacoli/il-barbiere-di-siviglia-operacamion/"
+    },
+    "roma-operacamion-barbiere-2026|2026-09-15": {
+      "id": "oa-r-001458",
+      "staging_id": "oa-s-000370",
+      "original_date": "2026-09-15",
+      "source_url": "https://www.operaroma.it/spettacoli/il-barbiere-di-siviglia-operacamion/"
+    },
+    "roma-operacamion-barbiere-2026|2026-09-17": {
+      "id": "oa-r-001459",
+      "staging_id": "oa-s-000370",
+      "original_date": "2026-09-17",
+      "source_url": "https://www.operaroma.it/spettacoli/il-barbiere-di-siviglia-operacamion/"
+    },
+    "roma-operacamion-barbiere-2026|2026-09-19": {
+      "id": "oa-r-001460",
+      "staging_id": "oa-s-000370",
+      "original_date": "2026-09-19",
+      "source_url": "https://www.operaroma.it/spettacoli/il-barbiere-di-siviglia-operacamion/"
+    },
+    "roma-operacamion-barbiere-2026|2026-09-20": {
+      "id": "oa-r-001461",
+      "staging_id": "oa-s-000370",
+      "original_date": "2026-09-20",
+      "source_url": "https://www.operaroma.it/spettacoli/il-barbiere-di-siviglia-operacamion/"
     }
   },
   "reserved_works": {
