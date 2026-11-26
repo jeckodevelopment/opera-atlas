@@ -14,10 +14,15 @@ class ObservatoryExploreTests(unittest.TestCase):
 
     @unittest.skipUnless(shutil.which("node"), "Node.js not installed")
     def test_ui_helpers_and_catalog(self):
-        for script in ("engine.js", "data.js", "explore.js"):
+        for script in ("engine.js", "data.js", "analysis.js", "explore.js"):
             subprocess.run(["node", "--check", "observatory-explore/" + script],
                            cwd=ROOT, check=True, timeout=30)
         subprocess.run(["node", "tests/observatory_explore_ui.cjs"],
+                       cwd=ROOT, check=True, timeout=30)
+
+    @unittest.skipUnless(shutil.which("node"), "Node.js not installed")
+    def test_analysis(self):
+        subprocess.run(["node", "tests/observatory_explore_analysis.cjs"],
                        cwd=ROOT, check=True, timeout=30)
 
     def test_isolated_page(self):
@@ -25,6 +30,9 @@ class ObservatoryExploreTests(unittest.TestCase):
         for marker in ('href="../styles.css"', 'src="../opera-plus-logo.svg"',
                        'src="/atlas/catalog-client.js"', 'id="query"', 'id="metrics"',
                        'id="detail-table"', 'id="view"', 'id="explore-content" hidden',
+                       'id="preset"', 'id="group-by"', 'id="group-metric"',
+                       'id="monthly-chart"', 'id="region-chart"', 'id="comparison-chart"',
+                       'id="group-body"', 'src="./analysis.js"',
                        'rel="canonical" href="https://opera.plus/osservatorio/esplora/"'):
             self.assertIn(marker, html)
         self.assertNotIn("observatory-explore", (ROOT / "observatory/index.html").read_text(encoding="utf-8"))
