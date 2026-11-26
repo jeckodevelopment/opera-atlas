@@ -1,4 +1,4 @@
-"""Run the isolated Observatory Explore engine smoke test in standard CI."""
+"""Run Explore smoke tests in standard CI and guard the isolated page."""
 import shutil
 import subprocess
 import unittest
@@ -11,3 +11,20 @@ class ObservatoryExploreTests(unittest.TestCase):
     def test_engine(self):
         subprocess.run(["node", "tests/observatory_explore_engine.cjs"],
                        cwd=ROOT, check=True, timeout=30)
+
+    @unittest.skipUnless(shutil.which("node"), "Node.js not installed")
+    def test_ui_helpers_and_catalog(self):
+        for script in ("engine.js", "data.js", "explore.js"):
+            subprocess.run(["node", "--check", "observatory-explore/" + script],
+                           cwd=ROOT, check=True, timeout=30)
+        subprocess.run(["node", "tests/observatory_explore_ui.cjs"],
+                       cwd=ROOT, check=True, timeout=30)
+
+    def test_isolated_page(self):
+        html = (ROOT / "observatory-explore/index.html").read_text(encoding="utf-8")
+        for marker in ('href="../styles.css"', 'src="../opera-plus-logo.svg"',
+                       'src="/atlas/catalog-client.js"', 'id="query"', 'id="metrics"',
+                       'id="detail-table"', 'id="view"', 'id="explore-content" hidden',
+                       'rel="canonical" href="https://opera.plus/osservatorio/esplora/"'):
+            self.assertIn(marker, html)
+        self.assertNotIn("observatory-explore", (ROOT / "observatory/index.html").read_text(encoding="utf-8"))

@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="it"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Esplora i dati | Osservatorio Opera+</title>
+<meta name="description" content="Interroga la programmazione lirica italiana rilevata da Opera+ Atlas per opera, compositore, periodo, teatro e territorio.">
+<link rel="canonical" href="https://opera.plus/osservatorio/esplora/">
+<meta property="og:type" content="website"><meta property="og:locale" content="it_IT"><meta property="og:site_name" content="Opera+"><meta property="og:title" content="Esplora i dati | Osservatorio Opera+"><meta property="og:description" content="Costruisci il tuo report sulla programmazione lirica italiana rilevata da Opera+ Atlas."><meta property="og:url" content="https://opera.plus/osservatorio/esplora/">
+<link rel="stylesheet" href="../styles.css"><link rel="stylesheet" href="./explore.css">
+<script src="/atlas/catalog-client.js" defer></script><script src="./engine.js" defer></script><script src="./data.js" defer></script><script src="./explore.js" defer></script>
+</head><body class="explore-page">
+<a class="skip" href="#main">Vai ai dati</a>
+<header class="top"><div class="top-inner"><a class="wordmark" href="https://opera.plus/" aria-label="Opera+ — sito principale"><img src="../opera-plus-logo.svg" alt="Opera+" width="94" height="44"></a><nav aria-label="Navigazione"><a href="https://opera.plus/">Opera+</a><a href="https://opera.plus/atlas/">Atlas</a><a href="../">Osservatorio</a><a class="current" aria-current="page" href="./">Esplora i dati</a></nav></div></header>
+<section class="hero"><div class="hero-inner"><h1>Esplora i dati</h1><p>Costruisci la tua analisi della programmazione lirica italiana</p></div></section>
+<main id="main" class="explore-main"><nav class="explore-crumb" aria-label="Sezioni dell'Osservatorio"><a href="../">Panoramica</a><a href="./" aria-current="page">Esplora i dati</a></nav>
+<p id="status" role="status" aria-live="polite">Caricamento dei dati verificati da Opera+ Atlas…</p>
+<noscript><p>Per interrogare il catalogo è necessario attivare JavaScript.</p></noscript>
+<div id="explore-content" hidden>
+<section class="panel" aria-labelledby="filters-title"><div class="explore-heading"><div><p class="explore-eyebrow">RICERCA PERSONALIZZATA</p><h2 id="filters-title">Imposta i filtri</h2><p>Seleziona uno o più valori. I filtri di categorie diverse si combinano tra loro.</p></div><button type="button" id="reset" class="explore-secondary">Azzera filtri</button></div>
+<form id="query"><div id="dimensions" class="explore-filter-grid"></div>
+<div class="explore-filter-grid explore-extra">
+<label>Dal giorno <input type="date" name="from"></label><label>Al giorno <input type="date" name="to"></label>
+<label>Tipologia <select name="type"><option value="all">Tutte</option><option value="festival">Festival</option><option value="nonfestival">Non associate a festival</option></select></label>
+<label>Periodo delle recite <select name="temporal"><option value="all">Tutte le date</option><option value="past">Date trascorse</option><option value="future">Da oggi in poi</option></select></label>
+</div><div class="explore-actions"><button type="submit" class="explore-primary">Elabora report</button><span id="filter-error" role="alert"></span></div></form></section>
+<section aria-labelledby="result-title" id="results"><div class="explore-heading"><div><p class="explore-eyebrow">RISULTATI DELLA RICERCA</p><h2 id="result-title">La programmazione rilevata</h2><p id="query-context" aria-live="polite"></p></div></div><div id="metrics" class="kpis explore-kpis"></div></section>
+<section class="panel" aria-labelledby="detail-title"><div class="explore-heading"><div><h2 id="detail-title">Dettaglio della ricerca</h2><p>Apri una scheda su Atlas o consulta le fonti delle singole recite.</p></div><label class="explore-view">Visualizza <select id="view"><option value="productions">Produzioni</option><option value="performances">Recite</option></select></label></div>
+<div id="table-wrap" class="explore-table-wrap" role="region" aria-label="Risultati di dettaglio" tabindex="0"><table id="detail-table"><thead id="table-head"></thead><tbody id="table-body"></tbody></table></div>
+<div class="explore-pagination"><span id="table-count" aria-live="polite"></span><button type="button" class="explore-secondary" id="previous">Precedente</button><button type="button" class="explore-secondary" id="next">Successiva</button></div></section>
+<section class="method" aria-labelledby="method-title"><div><strong id="method-title">Copertura dei dati e metodologia</strong><p>Fonte: Opera+ Atlas. Le produzioni sono allestimenti distinti per sede (o programmi composti); una recita di un dittico conta una sola volta, anche se comprende più opere. Le date annullate e rinviate sono escluse. Le date trascorse non costituiscono prova di effettivo svolgimento. Anno solare dalla data locale della recita; stagione come registrata alla fonte, se nota. I dati riguardano il campione rilevato, non tutte le rappresentazioni italiane.</p><p id="updated"></p></div><a href="https://opera.plus/atlas/">Esplora Atlas →</a></section>
+</div></main><footer><strong>Associazione Opera+</strong> · C.F. 97925160018</footer></body></html>
