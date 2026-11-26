@@ -9889,6 +9889,20 @@
     },
     {
       "aliases": [],
+      "composer_ids": [
+        "oa-c-000036"
+      ],
+      "fallback_image": null,
+      "id": "oa-s-000370",
+      "image": null,
+      "production_kind": "staging",
+      "subtitle": "Teatro dell'Opera di Roma",
+      "title": "Il barbiere di Siviglia",
+      "type": "production",
+      "url": "https://opera.plus/atlas/roma/teatro-dell-opera-di-roma/il-barbiere-di-siviglia-operacamion-2026/"
+    },
+    {
+      "aliases": [],
       "composer_ids": [],
       "fallback_image": null,
       "id": "oa-v-000001",
@@ -10714,5 +10728,5 @@
     }
   ],
   "schema_version": 1,
-  "source_revision": "5e1ecae99f5275f40d6dabecc5b1c9c5cd223dd1"
+  "source_revision": "883059bf79730a6a5cba085403699bd652bc3544"
 }
