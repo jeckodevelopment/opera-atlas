@@ -1,8 +1,8 @@
 {
   "schema_version": 1,
-  "checked_at": "2026-11-26T10:57:34+00:00",
+  "checked_at": "2026-11-26T13:13:53+00:00",
   "scope": "national",
-  "attempted": 4,
+  "attempted": 2,
   "outcomes": [
     {
       "candidate_id": "oa-index-cc2f627c0c7e4bcfab15",
@@ -17,11 +17,6 @@
       "rows": 0
     },
     {
-      "candidate_id": "oa-index-a50d4128ef4b9605dc15",
-      "outcome": "facts_found",
-      "rows": 5
-    },
-    {
       "candidate_id": "oa-index-4e733e128f3edf180b83",
       "outcome": "unavailable_or_unstructured",
       "reason": "no_verified_showtimes",
@@ -32,11 +27,6 @@
         "schema_event:no_evidence"
       ],
       "rows": 0
-    },
-    {
-      "candidate_id": "oa-index-202b74c6398e8db7c0b5",
-      "outcome": "facts_found",
-      "rows": 5
     }
   ]
 }
