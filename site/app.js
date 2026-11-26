@@ -75,14 +75,14 @@ function haversine(a,b) {
 }
 function distanceFor(event) {
   const start=CITY_CENTERS[normalized(controls.location.value)];
-  const end=CITY_CENTERS[normalized(event.municipality)];
+  const end=CITY_CENTERS[normalized(event.actual_location?.municipality||event.municipality)];
   return start && end ? Math.round(haversine(start,end)) : null;
 }
 function matches(event) {
   const phrase=normalized(controls.query.value);
-  if (phrase && !normalized([event.title,event.composer,event.venue,event.municipality,event.region].join(" ")).includes(phrase)) return false;
-  if (controls.city.value && event.municipality !== controls.city.value) return false;
-  if (controls.region.value && (event.region||"") !== controls.region.value) return false;
+  if (phrase && !normalized([event.title,event.composer,event.venue,event.municipality,event.region,event.project_name,event.actual_location?.venue,event.actual_location?.municipality,event.actual_location?.region].join(" ")).includes(phrase)) return false;
+  if (controls.city.value && (event.actual_location?.municipality||event.municipality) !== controls.city.value) return false;
+  if (controls.region.value && (event.actual_location?.region||event.region||"") !== controls.region.value) return false;
   if (controls.from.value && event.local_date < controls.from.value) return false;
   if (controls.to.value && event.local_date > controls.to.value) return false;
   if (controls.time.value==="known" && !event.time_known) return false;
@@ -122,7 +122,7 @@ function createCard(event) {
   const article = node("article","event");
   article.append(editorialImage(event.program_id?"program":"work",event,"event-image"));
   const main = node("div","event-main");
-  main.append(node("div","event-meta",(event.program_id?"Programma composto":"Opera lirica")+" · "+event.municipality));
+  main.append(node("div","event-meta",(event.project_name|| (event.program_id?"Programma composto":"Opera lirica"))+" · "+(event.actual_location?.municipality||event.municipality)));
   const heading = node("h3");
   const title = node("a",null,event.title);
   title.href = event.program_id?window.OperaAtlasCatalog.urls(event).staging:window.OperaAtlasCatalog.urls(event).work;
@@ -135,7 +135,8 @@ function createCard(event) {
   venueLink.href = window.OperaAtlasCatalog.urls(event).venue;
   venue.append(venueLink);
   details.append(venue);
-  details.append(node("div","city",[event.municipality,event.region].filter(Boolean).join(" · ")));
+  if(event.actual_location)details.append(node("div","venue",event.actual_location.venue));
+  details.append(node("div","city",[event.actual_location?.municipality||event.municipality,event.actual_location?.region||event.region].filter(Boolean).join(" · ")));
   details.append(node("div","time"+(event.time_known?"":" unknown"),
     event.time_known ? "Ore "+event.starts_at.slice(11,16) : "Orario da confermare"));
   main.append(details);
@@ -477,13 +478,13 @@ async function initialize() {
       message.textContent = "Alcuni spettacoli non sono disponibili.";
     }
 
-    fillOptions(controls.city,catalog.map(x=>x.municipality));
+    fillOptions(controls.city,catalog.map(x=>x.actual_location?.municipality||x.municipality));
     populateLocations();
     renderDiscoveries();
     loadHomeVenueProfiles().catch(error=>console.warn("Home theatre photos unavailable",error));
     loadWorkDescriptions().then(renderDiscoveries).catch(error=>console.warn("Opera descriptions unavailable",error));
     renderFestivals();
-    fillOptions(controls.region,catalog.map(x=>x.region));
+    fillOptions(controls.region,catalog.map(x=>x.actual_location?.region||x.region));
     render();
   } catch (error) {
     console.error("Opera Atlas catalog initialization failed",error);

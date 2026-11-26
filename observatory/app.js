@@ -39,7 +39,7 @@ function mapRows(cat){
    const s=staging.get(p.staging_id);if(!s)continue;
    const w=work.get(s.work_id),v=venue.get(s.venue_id);
    if(!w||!v||!/^\d{4}-\d{2}-\d{2}$/.test(p.local_date||""))continue;
-   out.push({id:p.id,date:p.local_date,year:p.local_date.slice(0,4),season:s.season||"Non indicata",region:v.region||"Non indicata",city:v.city||"Non indicata",workId:w.id,work:w.title,composer:w.composer||"Non indicato",venueId:v.id,venue:v.display_name||v.name||"Sede non indicata",stagingId:s.id});
+   out.push({id:p.id,date:p.local_date,year:p.local_date.slice(0,4),season:s.season||"Non indicata",region:p.actual_location?.region||v.region||"Non indicata",city:p.actual_location?.municipality||v.city||"Non indicata",workId:w.id,work:w.title,composer:w.composer||"Non indicato",venueId:v.id,venue:v.display_name||v.name||"Sede non indicata",stagingId:s.id});
  }
  return out;
 }

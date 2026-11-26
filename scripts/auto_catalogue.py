@@ -1677,6 +1677,11 @@ def main():
     report["new_works"]=newworks["new_works"]
     report["new_stagings"]+=newworks["new_stagings"]
     report["new_recite"]+=newworks["new_recite"]
+    from opera_atlas.itinerant import promote as promote_itinerant
+    next_facts,next_registry,touring_stagings,touring_recite=promote_itinerant(
+        next_facts,next_registry,today=date.today(),allocate=next_id)
+    report["new_stagings"]+=touring_stagings
+    report["new_recite"]+=touring_recite
     # Only write after the full canonical graph validates against the expanded
     # source allowlist; rollback-like behavior by pre-validating in memory.
     from scripts.build_verified_catalog import validate_auto_sources,TIME_EVIDENCE,validate_time_evidence
