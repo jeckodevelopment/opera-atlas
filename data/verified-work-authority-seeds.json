@@ -1254,6 +1254,25 @@
           "https://www.operaroma.it/spettacoli/romeo-et-juliette/"
         ]
       }
+    },
+    {
+      "source_key": "opera-roma-season-2026-27",
+      "source_url": "https://www.operaroma.it/spettacoli/il-castello-del-principe-barbablunetrebko-nanasi/",
+      "title": "Il castello del Principe Barbablù",
+      "composer": "Béla Bartók",
+      "synopsis": "Giuditta entra nel castello di Barbablù e chiede di aprirne le sette porte. Dietro ciascuna scopre un aspetto del passato e dell'animo del marito, finché l'ultima rivela il destino delle sue precedenti spose e il proprio.",
+      "history": {
+        "librettist": "Béla Balázs",
+        "premiere_year": 1918,
+        "premiere_date": "1918-05-24",
+        "premiere_venue": "Teatro dell'Opera di Budapest",
+        "premiere_city": "Budapest",
+        "sources": [
+          "https://www.boosey.com/opera/moreDetails?musicID=4462",
+          "https://www.opera.hu/en/programme/2026-2027/bluebeards-castle/",
+          "https://www.operaroma.it/spettacoli/il-castello-del-principe-barbablunetrebko-nanasi/"
+        ]
+      }
     }
   ]
 }

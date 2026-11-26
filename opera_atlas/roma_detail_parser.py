@@ -28,6 +28,14 @@ HISTORICAL_SLUGS=frozenset({
 HISTORICAL_URLS=frozenset(
     f"https://www.operaroma.it/spettacoli/{slug}/" for slug in HISTORICAL_SLUGS)
 
+# The official 2026/27 season announcement explicitly credits these two
+# complete operas, whose concert detail pages use atypical credit layouts.
+# https://www.operaroma.it/news/il-dolce-suono-mi-colpi-la-stagione-2026-2027-del-teatro-dellopera-di-roma/
+CONCERT_WORKS={
+    "https://www.operaroma.it/spettacoli/il-castello-del-principe-barbablunetrebko-nanasi/":("Il castello del Principe Barbablù","Béla Bartók","Béla Bartók: Il castello di Barbablù"),
+    "https://www.operaroma.it/spettacoli/il-barbiere-di-sivigliabartoli-capuano/":("Il barbiere di Siviglia","Gioachino Rossini","Bartoli / Capuano"),
+}
+
 def expected_season(url:str)->tuple[int,int]:
     return (2025,2026) if url in HISTORICAL_URLS else (2026,2027)
 
@@ -70,8 +78,14 @@ def parse_roma_detail(html:str,*,url:str,title:str,composer:str)->tuple[str,list
     if not re.search(season_pattern(url),context,re.I):
         raise ValueError("Rome event not in verified source season")
     credit=r"\bMusica\s+(?:di\s+)?" if url.endswith("/aida-6/") else r"\bMusica\s+di\s+"
-    if not re.search(credit+re.escape(composer)+r"\b",
-                     context.replace("’","'"),re.I):
+    reviewed=CONCERT_WORKS.get(url)
+    if reviewed:
+        if (normalized(title)!=normalized(reviewed[0])
+            or normalized(composer)!=normalized(reviewed[1])
+            or normalized(reviewed[2]) not in normalized(context)):
+            raise ValueError("reviewed Rome concert identity not confirmed")
+    elif not re.search(credit+re.escape(composer)+r"\b",
+                       context.replace("’","'"),re.I):
         raise ValueError("composer absent from official Rome production")
     # Read the actual auditorium declared under first-party "Dove"; never
     # substitute the Teatro Costanzi for another approved Rome venue.
@@ -217,6 +231,10 @@ def parse_roma_credited_detail(html:str,*,url:str)->tuple[str,str,str,list[tuple
     title=heading.title
     if not title or not 3<=len(title)<=160:
         raise ValueError("official Rome opera title absent")
+    if url in CONCERT_WORKS:
+        canonical,composer,_=CONCERT_WORKS[url]
+        venue,dates=parse_roma_detail(html,url=url,title=canonical,composer=composer)
+        return canonical,composer,venue,dates
     reader=OfficialCredits()
     reader.feed(html)
     reader.close()
