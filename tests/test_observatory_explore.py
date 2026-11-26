@@ -30,6 +30,11 @@ class ObservatoryExploreTests(unittest.TestCase):
         subprocess.run(["node", "tests/observatory_explore_export.cjs"],
                        cwd=ROOT, check=True, timeout=30)
 
+    @unittest.skipUnless(shutil.which("node"), "Node.js not installed")
+    def test_observatory_pdf_parity(self):
+        subprocess.run(["node", "tests/observatory_pdf_smoke.cjs"],
+                       cwd=ROOT, check=True, timeout=30)
+
     def test_isolated_page(self):
         html = (ROOT / "observatory-explore/index.html").read_text(encoding="utf-8")
         for marker in ('href="../styles.css"', 'src="../opera-plus-logo.svg"',
@@ -41,4 +46,7 @@ class ObservatoryExploreTests(unittest.TestCase):
                        'id="export-pdf"', 'id="export-summary"', 'id="export-detail"', 'id="share-query"',
                        'rel="canonical" href="https://opera.plus/osservatorio/esplora/"'):
             self.assertIn(marker, html)
-        self.assertNotIn("observatory-explore", (ROOT / "observatory/index.html").read_text(encoding="utf-8"))
+        overview = (ROOT / "observatory/index.html").read_text(encoding="utf-8")
+        for script in ("engine.js", "data.js", "export.js"):
+            self.assertIn('src="./esplora/' + script + '"', overview)
+        self.assertIn('src="/atlas/catalog-client.js"', overview)

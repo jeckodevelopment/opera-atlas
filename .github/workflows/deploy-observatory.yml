@@ -14,18 +14,27 @@ concurrency:
   cancel-in-progress: false
 jobs:
   publish:
+    if: github.ref == 'refs/heads/main'
     runs-on: ubuntu-24.04
     timeout-minutes: 15
     environment:
       name: opera-plus-atlas
       url: https://opera.plus/osservatorio
     steps:
-      - uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09 # v5
+      - uses: actions/checkout@v4
         with:
           persist-credentials: false
-      - uses: actions/setup-python@ece7cb06caefa5fff74198d8649806c4678c61a1 # v6
+      - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
+      - name: Build canonical feed locally for preflight
+        run: |
+          python -m scripts.build_verified_catalog
+          python -m scripts.publish_catalog_v2
+          python -m scripts.publish_work_editorial
+          python -m scripts.publish_venue_directory
+          python -m scripts.publish_programs
+          python -m scripts.publish_work_posters
       - name: Syntax and publication boundary checks
         run: |
           node --check observatory/app.js

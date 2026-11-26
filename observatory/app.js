@@ -5,46 +5,16 @@ const FALLBACK="https://cdn.jsdelivr.net/gh/jeckodevelopment/opera-atlas@main/pu
 const $=id=>document.getElementById(id);
 const fmt=new Intl.NumberFormat("it-IT");
 let catalogue, rows=[], editorials=null;
+const E=globalThis.OperaPlusExplore,D=globalThis.OperaPlusExploreData;
+const workRows=records=>records.flatMap(r=>r.works.map(w=>({...r,workId:w.id,work:w.title,composer:w.composer||"Non indicato"})));
+const composerRows=records=>records.flatMap(r=>[...new Set(r.works.map(w=>w.composer).filter(Boolean))].map(composer=>({...r,composer})));
+const workPairs=records=>E.group(records,"work").map(g=>[g.label,g.performances]);
+const selection=(year,season,region)=>E.select(rows,{year:year==="all"?[]:[year],season:season==="all"?[]:[season],region:region==="all"?[]:[region]});
 const count=arr=>new Set(arr).size;
 const key=(obj,id)=>obj.get(id);
 const text=(node,value)=>{node.textContent=String(value)};
-async function load(base){
- const manifest=await fetch(base+"manifest.json",{cache:"no-store"}).then(r=>{if(!r.ok)throw Error("Manifest: "+r.status);return r.json()});
- if(manifest.schema_version!==2)throw Error("Versione catalogo non riconosciuta");
- const result={manifest};
- await Promise.all(["works","venues","stagings","performances"].map(async type=>{
-   const meta=manifest.files[type];
-   if(!meta || !/^data\/[a-z-]+\.[a-f0-9]{16}\.json$/.test(meta.path))throw Error("Manifest non valido: "+type);
-   const response=await fetch(base+meta.path,{cache:"no-store"});
-   if(!response.ok)throw Error("Dati "+type+": "+response.status);
-   const bytes=await response.arrayBuffer();
-   if(!globalThis.crypto?.subtle)throw Error("Verifica di integrità non disponibile");
-   const digest=Array.from(new Uint8Array(await crypto.subtle.digest("SHA-256",bytes))).map(b=>b.toString(16).padStart(2,"0")).join("");
-   if(digest!==meta.sha256)throw Error("Integrità catalogo: "+type);
-   const data=JSON.parse(new TextDecoder().decode(bytes));
-   if(data.schema_version!==2||!Array.isArray(data[type])||data[type].length!==meta.count)throw Error("Catalogo incompleto: "+type);
-   result[type]=data[type];
- }));
- return result;
-}
-function mapRows(cat){
- const work=new Map(cat.works.map(x=>[x.id,x]));
- const venue=new Map(cat.venues.map(x=>[x.id,x]));
- const staging=new Map(cat.stagings.map(x=>[x.id,x]));
- const out=[],seen=new Set();
- for(const p of cat.performances){
-   if(!p || seen.has(p.id))continue;
-   seen.add(p.id);
-   if(["cancelled","canceled","postponed"].includes(p.status))continue;
-   const s=staging.get(p.staging_id);if(!s)continue;
-   const w=work.get(s.work_id),v=venue.get(s.venue_id);
-   if(!w||!v||!/^\d{4}-\d{2}-\d{2}$/.test(p.local_date||""))continue;
-   out.push({id:p.id,date:p.local_date,year:p.local_date.slice(0,4),season:s.season||"Non indicata",region:p.actual_location?.region||v.region||"Non indicata",city:p.actual_location?.municipality||v.city||"Non indicata",workId:w.id,work:w.title,composer:w.composer||"Non indicato",venueId:v.id,venue:v.display_name||v.name||"Sede non indicata",stagingId:s.id});
- }
- return out;
-}
 function populate(){
- const years=[...new Set(rows.map(x=>x.year))].sort().reverse(), seasons=[...new Set(rows.map(x=>x.season))].sort().reverse(), regions=[...new Set(rows.map(x=>x.region))].sort((a,b)=>a.localeCompare(b,"it"));
+ const years=[...new Set(rows.map(x=>x.year))].sort().reverse(), seasons=[...new Set(rows.map(x=>x.season).filter(Boolean))].sort().reverse(), regions=[...new Set(rows.map(x=>x.region).filter(Boolean))].sort((a,b)=>a.localeCompare(b,"it"));
  for(const [id,values] of [["year",years],["season",seasons],["region",regions]]){
   for(const v of values){let o=document.createElement("option");o.value=v;o.textContent=v;$(id).append(o)}
  }
@@ -114,22 +84,22 @@ function renderInsights(selected){
  bars("weekday-chart",weekCounts,7);
  ranked("venue-ranking",groupedCounts(selected,r=>[r.venueId,r.venue]));
  const diversity=new Map();
- for(const row of selected){
+ for(const row of workRows(selected)){
   if(!diversity.has(row.region))diversity.set(row.region,new Set());
   diversity.get(row.region).add(row.workId);
  }
  const diverse=[...diversity].map(([region,ids])=>[region,ids.size])
   .sort((a,b)=>b[1]-a[1]||a[0].localeCompare(b[0],"it"));
  bars("diversity-chart",diverse,20);
- ranked("regional-works",groupedCounts(selected,r=>[JSON.stringify([r.region,r.workId]),r.work+" · "+r.region]));
- ranked("regional-composers",groupedCounts(selected,r=>r.composer==="Non indicato"?[null,null]:[JSON.stringify([r.region,r.composer]),r.composer+" · "+r.region]));
- ranked("staging-ranking",groupedCounts(selected,r=>[r.stagingId,r.work+" · "+r.venue+" · "+r.season]));
+ ranked("regional-works",groupedCounts(workRows(selected),r=>[JSON.stringify([r.region,r.workId]),r.work+" · "+r.region]));
+ ranked("regional-composers",groupedCounts(composerRows(selected),r=>r.composer==="Non indicato"?[null,null]:[JSON.stringify([r.region,r.composer]),r.composer+" · "+r.region]));
+ ranked("staging-ranking",groupedCounts(selected,r=>[r.stagingId,r.title+" · "+r.venue+" · "+r.season]));
 }
 
 
 function circulation(selected){
  const groups=new Map();
- for(const r of selected){
+ for(const r of workRows(selected)){
   if(!groups.has(r.workId))groups.set(r.workId,{
    work:r.work,composer:r.composer,venues:new Set(),cities:new Set(),regions:new Set()
   });
@@ -195,7 +165,7 @@ function premieres(selected,year){
   text($("premiere-context"),"Il conteggio riguarda l’anno storico della prima assoluta delle opere censite, non quello di una replica.");
   return;
  }
- const workIds=new Set(selected.map(r=>r.workId));
+ const workIds=new Set(workRows(selected).map(r=>r.workId));
  const applicable=[...editorials.entries()].filter(([id,e])=>workIds.has(id)&&(year==="all"||String(e.history.premiere_year)===year))
  .map(([,e])=>e).sort((a,b)=>b.history.premiere_year-a.history.premiere_year||a.work.title.localeCompare(b.work.title,"it"));
  text($("premiere-total"),fmt.format(applicable.length));
@@ -228,39 +198,40 @@ function premieres(selected,year){
 
 function render(){
  const year=$("year").value, season=$("season").value, region=$("region").value;
- const selected=rows.filter(r=>(year==="all"||r.year===year)&&(season==="all"||r.season===season)&&(region==="all"||r.region===region));
- const countUnique=f=>count(selected.map(f));
- for(const [id,n] of [["k-perfs",selected.length],["k-venues",countUnique(x=>x.venueId)],["k-works",countUnique(x=>x.workId)],["k-stagings",countUnique(x=>x.stagingId)]])text($(id),fmt.format(n));
+ const selected=selection(year,season,region);
+ const totals=E.summary(selected);
+ for(const [id,n] of [["k-perfs",totals.performances],["k-venues",totals.venues],["k-works",totals.works],["k-stagings",totals.productions]])text($(id),fmt.format(n));
  drawMonths(selected,year);
  renderInsights(selected);
  circulation(selected);
- premieres(rows.filter(r=>(season==="all"||r.season===season)&&(region==="all"||r.region===region)),year);
- const works=frequencies(selected.map(r=>r.work));
+ premieres(selection("all",season,region),year);
+ const works=workPairs(selected);
  bars("regions",frequencies(selected.map(r=>r.region)),20);
- bars("seasons",frequencies(selected.map(r=>r.season)).sort((a,b)=>a[0].localeCompare(b[0])),20);
+ bars("seasons",frequencies(selected.map(r=>r.season||"Non indicata")).sort((a,b)=>a[0].localeCompare(b[0])),20);
  // Bars normalize to the largest chronological row to preserve meaningful proportions.
- bars("composers",frequencies(selected.map(r=>r.composer)).filter(x=>x[0]!=="Non indicato"),8);
+ bars("composers",E.group(selected,"composer").map(g=>[g.label,g.performances]),8);
  list("works",works);
  const rare=works.filter(x=>x[1]<=3).sort((a,b)=>a[1]-b[1]||a[0].localeCompare(b[0],"it"));
  const rareEl=$("rare-list");rareEl.replaceChildren();
  for(const [name,n] of rare.slice(0,30)){const span=document.createElement("span");span.className="pill";span.textContent=name+" · "+n;rareEl.append(span)}
  if(!rare.length)rareEl.textContent="Nessuna opera nel campione selezionato.";
  const hi=$("highlights");hi.replaceChildren();
- for(const [title,value,detail] of [["Recite osservate",fmt.format(selected.length),"Solo recite pubblicate nel catalogo"],["Repertorio",fmt.format(countUnique(x=>x.workId))+" opere","Titoli canonici distinti"],["Titoli rari",fmt.format(rare.length),"Da una a tre recite nel campione"]]){
+ for(const [title,value,detail] of [["Recite osservate",fmt.format(selected.length),"Solo recite pubblicate nel catalogo"],["Repertorio",fmt.format(totals.works)+" opere","Titoli canonici distinti"],["Titoli rari",fmt.format(rare.length),"Da una a tre recite nel campione"]]){
   const div=document.createElement("div");div.className="highlight";const s=document.createElement("strong");s.textContent=title+" · "+value;const p=document.createElement("span");p.textContent=detail;div.append(s,p);hi.append(div);
  }
- const an=$("analysis");an.replaceChildren();const p=document.createElement("p");p.textContent="Compositori distinti nel campione: "+fmt.format(countUnique(x=>x.composer))+". La distribuzione per secolo sarà disponibile quando Atlas pubblicherà date di composizione affidabili.";an.append(p);
+ const an=$("analysis");an.replaceChildren();const p=document.createElement("p");p.textContent="Compositori distinti nel campione: "+fmt.format(totals.composers)+". La distribuzione per secolo sarà disponibile quando Atlas pubblicherà date di composizione affidabili.";an.append(p);
  $("download").onclick=()=>{
   const columns=["id","date","year","season","region","work","composer","venueId","stagingId"];
-  const csv=[columns.join(";"),...selected.map(r=>columns.map(k=>'"'+String(r[k]??"").replace(/"/g,'""')+'"').join(";"))].join("\r\n");
-  const blob=new Blob(["\ufeff",csv],{type:"text/csv;charset=utf-8"});const url=URL.createObjectURL(blob);
+  const csv=globalThis.OperaPlusExploreExport.csv(columns.map(k=>[k,k]),selected.map(r=>({...r,work:r.works.map(w=>w.title).join(" | "),composer:[...new Set(r.works.map(w=>w.composer).filter(Boolean))].join(" | ")})));
+  const blob=new Blob([csv],{type:"text/csv;charset=utf-8"});const url=URL.createObjectURL(blob);
   const a=document.createElement("a");a.href=url;a.download="osservatorio-opera-plus.csv";a.click();setTimeout(()=>URL.revokeObjectURL(url),1000);
  };
 }
 async function main(){
  try{
-  try{catalogue=await load(ROOT)}catch(err){catalogue=await load(FALLBACK)}
-  rows=mapRows(catalogue);
+  const loaded=await D.load(globalThis.OperaAtlasCatalog);
+  catalogue={works:loaded.data.works,manifest:{reviewed_on:loaded.data.reviewed_on}};
+  rows=E.normalize(loaded.data.performances,loaded.festivals);
   try{editorials=await loadEditorial(ROOT)}catch(_err){try{editorials=await loadEditorial(FALLBACK)}catch(_fallback){editorials=null}}
   populate();$("year").addEventListener("change",render);$("season").addEventListener("change",render);$("region").addEventListener("change",render);
   render();$("content").hidden=false;
@@ -269,7 +240,7 @@ async function main(){
   pdfButton.addEventListener("click",async()=>{
    if(!window.OperaPlusPdfReport || !catalogue || pdfButton.disabled)return;
    const year=$("year").value,season=$("season").value,region=$("region").value;
-   const selected=rows.filter(r=>(year==="all"||r.year===year)&&(season==="all"||r.season===season)&&(region==="all"||r.region===region));
+   const selected=selection(year,season,region);
    pdfButton.disabled=true;pdfButton.setAttribute("aria-busy","true");
    try{
     const blob=await window.OperaPlusPdfReport.create({
@@ -284,7 +255,7 @@ async function main(){
     text($("status"),"Impossibile generare il rapporto PDF: "+error.message);
    }finally{pdfButton.disabled=false;pdfButton.removeAttribute("aria-busy")}
   });
-  text($("status"),"");text($("updated"),"Versione dati: "+(catalogue.manifest.reviewed_on||"data non indicata")+". Recite annullate e rinviate escluse.");
+  text($("status"),"");text($("updated"),"Versione dati: "+(catalogue.manifest.reviewed_on||"data non indicata")+". Programmi composti inclusi; recite annullate e rinviate escluse.");
  }catch(error){text($("status"),"Dati temporaneamente non disponibili. Nessuna statistica mostrata: "+error.message)}
 }
 main();

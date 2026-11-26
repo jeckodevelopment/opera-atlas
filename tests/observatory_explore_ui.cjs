@@ -61,6 +61,51 @@ async function realCatalog(){
  assert.ok(rigoletto);
  const result=E.select(rows,{work:[rigoletto.id]});
  assert.ok(result.length>0&&result.every(r=>r.works.every(w=>w.id===rigoletto.id)));
+
+ // Exercise the actual Observatory script against exactly the same feed.
+ const pdf=require("../observatory/report-pdf.js");
+ const X=require("../observatory-explore/export.js");
+ const elements=new Map();
+ class Element{
+  constructor(){this.children=[];this.style={};this.value="all";this.textContent="";this.events={}}
+  append(...children){this.children.push(...children)}
+  replaceChildren(...children){this.children=children;this.textContent=""}
+  setAttribute(){}
+  addEventListener(name,fn){this.events[name]=fn}
+  click(){}
+ }
+ const get=id=>{if(!elements.has(id))elements.set(id,new Element());return elements.get(id)};
+ let exported;
+ const browser={document:{getElementById:get,createElement:()=>new Element()},
+  window:{},OperaPlusExplore:E,OperaPlusExploreData:{...D,load:()=>D.load(sandbox.window.OperaAtlasCatalog,localFetch)},
+  OperaPlusExploreExport:X,fetch:localFetch,console,Blob,URL:{createObjectURL:b=>{exported=b;return "blob:test"},revokeObjectURL(){}},setTimeout:()=>0};
+ const app=fs.readFileSync(path.join(root,"observatory/app.js"),"utf8").replace("main();\n})();","globalThis.done=main();\n})();");
+ vm.runInNewContext(app,browser);
+ await browser.done;
+ assert.equal(get("status").textContent,"");
+ assert.equal(get("content").hidden,false);
+ const years=["all",...D.options(rows,"year").map(x=>x.id)];
+ const seasons=["all",...D.options(rows,"season").map(x=>x.id)];
+ const regions=["all",...D.options(rows,"region").map(x=>x.id)];
+ const check=(year,season,region)=>{
+  get("year").value=year;get("season").value=season;get("region").value=region;get("year").events.change();
+  const filtered=E.select(rows,{year:year==="all"?[]:[year],season:season==="all"?[]:[season],region:region==="all"?[]:[region]});
+  const totals=E.summary(filtered),nf=new Intl.NumberFormat("it-IT");
+  for(const [id,key] of [["k-perfs","performances"],["k-venues","venues"],["k-works","works"],["k-stagings","productions"]])assert.equal(get(id).textContent,nf.format(totals[key]),[year,season,region,id].join("/"));
+  const report=pdf.summarize({rows:filtered,allRows:rows,year,season,region});
+  assert.deepEqual(report.counts,{recite:totals.performances,venues:totals.venues,works:totals.works,stagings:totals.productions});
+  assert.equal(report.months.reduce((a,b)=>a+b,0),totals.performances);
+  return filtered;
+ };
+ for(const year of years)for(const region of regions)check(year,"all",region);
+ for(const season of seasons)for(const year of years)check(year,season,"all");
+ const filtered=check("2026","all","all");
+ get("download").onclick();
+ const csv=await exported.text();
+ assert.equal(csv.trimEnd().split("\r\n").length,filtered.length+1);
+ assert.ok(filtered.some(r=>r.works.length>1));
+ console.log("Actual Observatory KPI, filters, CSV and PDF parity passed");
+
  console.log("Explore actual published catalog integration passed");
 }
 
