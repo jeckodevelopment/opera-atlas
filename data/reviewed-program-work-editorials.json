@@ -145,6 +145,38 @@
           "https://artbonus.gov.it/fondazione-teatro-coccia-onlus.html"
         ]
       }
+    },
+    {
+      "title": "La chatte métamorphosée en femme",
+      "composer": "Jacques Offenbach",
+      "synopsis": "Guido ama la propria gatta Minette. Un astuto servitore e una giovane innamorata organizzano un inganno, fingendo che l'animale si sia trasformato in donna per mettere alla prova le convinzioni di Guido.",
+      "history": {
+        "librettist": "Eugène Scribe e Mélesville",
+        "premiere_year": 1858,
+        "premiere_date": "1858-04-19",
+        "premiere_venue": "Théâtre des Bouffes-Parisiens",
+        "premiere_city": "Parigi",
+        "sources": [
+          "https://fr.wikisource.org/wiki/La_Chatte_m%C3%A9tamorphos%C3%A9e_en_femme_%28op%C3%A9ra-comique%29",
+          "https://lesarchivesduspectacle.net/s/112622-La-Chatte-metamorphosee-en-femme"
+        ]
+      }
+    },
+    {
+      "title": "Un mari à la porte",
+      "composer": "Jacques Offenbach",
+      "synopsis": "Il compositore Florestan, in fuga, entra per errore nella camera di Suzanne la sera delle sue nozze. L'arrivo del marito alla porta e l'intervento dell'amica Rosita danno origine a equivoci e a una soluzione matrimoniale inattesa.",
+      "history": {
+        "librettist": "Alfred Delacour e Léon Morand",
+        "premiere_year": 1859,
+        "premiere_date": "1859-06-22",
+        "premiere_venue": "Théâtre des Bouffes-Parisiens",
+        "premiere_city": "Parigi",
+        "sources": [
+          "https://fr.wikisource.org/wiki/Un_mari_%C3%A0_la_porte",
+          "https://www.boosey.com/pages/opera/moredetails?musicid=26444"
+        ]
+      }
     }
   ]
 }

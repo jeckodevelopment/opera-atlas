@@ -3,7 +3,7 @@ import hashlib
 import json
 from datetime import datetime, timezone
 from pathlib import Path
-from opera_atlas.roma_detail_parser import HISTORICAL_URLS
+from opera_atlas.roma_detail_parser import HISTORICAL_URLS, CONCERT_WORKS
 
 ROOT=Path(__file__).resolve().parents[1]
 SOURCE="opera-roma-season-2026-27"
@@ -11,7 +11,7 @@ SOURCE="opera-roma-season-2026-27"
 def seed(candidates,evidence,known_urls,*,timestamp):
     rows={row["id"]:row.copy() for row in candidates["candidates"]}
     details={row["candidate_id"]:row.copy() for row in evidence["evidence"]}
-    for url in sorted(HISTORICAL_URLS):
+    for url in sorted(HISTORICAL_URLS | CONCERT_WORKS.keys()):
         cid="oa-index-"+hashlib.sha256((SOURCE+"|"+url).encode()).hexdigest()[:20]
         if url in known_urls:
             continue
