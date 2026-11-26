@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "year": 2026,
-  "generated_at": "2026-11-26T10:58:27+00:00",
+  "generated_at": "2026-11-26T11:26:15+00:00",
   "read_only": true,
   "catalog_updated": false,
   "venue_count": 73,
@@ -10,8 +10,8 @@
   "complete_venue_months": 0,
   "complete_annual_venues": 0,
   "status_counts": {
-    "coverage_not_established": 714,
-    "published_dates_not_exhaustively_verified": 162
+    "coverage_not_established": 713,
+    "published_dates_not_exhaustively_verified": 163
   },
   "zero_published_venue_count": 4,
   "zero_published_by_calendar_status": {
@@ -1008,8 +1008,8 @@
       "region": "Lazio",
       "calendar_status": "not_acquired",
       "monitoring_status": "anagrafica_censita",
-      "published_2026_showtimes": 55,
-      "published_months": 9,
+      "published_2026_showtimes": 65,
+      "published_months": 10,
       "official_verified_opera_lead_count": 0,
       "official_unpublished_opera_lead_count": 0,
       "official_opera_lead_review_required": false,
@@ -2593,7 +2593,7 @@
     }
   ],
   "official_lead_venues_with_zero_published": 0,
-  "published_2026_showtimes": 620,
+  "published_2026_showtimes": 630,
   "observed_2026_opera_showtimes": 134,
   "unmatched_source_showtimes": 0,
   "h1_scope_review": [
@@ -11328,7 +11328,7 @@
       "city": "Roma",
       "region": "Lazio",
       "month": "2026-02",
-      "published_showtimes": 0,
+      "published_showtimes": 3,
       "source_observed_opera_showtimes": 0,
       "observed_already_published": 0,
       "observed_not_in_publication": 0,
@@ -11338,7 +11338,7 @@
       "historical_sources_checked": [],
       "source_exhaustiveness_verified": false,
       "complete_month_verified": false,
-      "status": "coverage_not_established"
+      "status": "published_dates_not_exhaustively_verified"
     },
     {
       "venue_id": "oa-vd-000040",
@@ -11346,7 +11346,7 @@
       "city": "Roma",
       "region": "Lazio",
       "month": "2026-03",
-      "published_showtimes": 5,
+      "published_showtimes": 7,
       "source_observed_opera_showtimes": 0,
       "observed_already_published": 0,
       "observed_not_in_publication": 0,
@@ -11364,7 +11364,7 @@
       "city": "Roma",
       "region": "Lazio",
       "month": "2026-04",
-      "published_showtimes": 2,
+      "published_showtimes": 7,
       "source_observed_opera_showtimes": 0,
       "observed_already_published": 0,
       "observed_not_in_publication": 0,
