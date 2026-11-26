@@ -91,7 +91,6 @@
   class Page{
     constructor(label,index){
       this.ops=[];
-      if(index===1)return;
       this.rect(0,0,W,9,NAVY);
       this.text("OPERA+",L,27,12,"display",BURGUNDY);
       this.text("OSSERVATORIO  /  "+serializeText(label).toUpperCase(),L,45,8,"bold",MUTED);
@@ -145,7 +144,7 @@
 
  function create(input){
   const doc=new PdfDocument();let p,index=0,y=0;
-  const start=(label)=>{if(p)doc.addPage(p.ops);p=new Page(label,++index+1);y=82};
+  const start=(label)=>{if(p)doc.addPage(p.ops);p=new Page(label,++index);y=82};
   const title=(value)=>{p.text(value,L,y,24,"display",NAVY);y+=39};
   const para=(value)=>{for(const line of splitLines(value,CW,10,10000)){if(y>765)start("Filtri e metodologia");p.text(line,L,y,10,"sans",MUTED);y+=15}y+=7};
   const table=(label,headers,widths,records)=>{
@@ -172,13 +171,28 @@
   para("Recite e produzioni contate per identità distinta. I programmi composti possono comparire in più gruppi. Zero indica assenza di dati rilevati, non assenza di attività. Le date trascorse non provano l'effettivo svolgimento. Annullamenti e rinvii esclusi.");
   start("Confronti");title("Confronto per "+input.groupLabel.toLocaleLowerCase("it"));
   const bars=input.groups.slice(0,12);
-  p.bars(bars.map(g=>[g.label,g[input.metric]]),L,y+12,CW,{limit:12,step:35,labelWidth:205});
-  y+=Math.max(55,bars.length*35+22);
+  if(input.secondary&&input.metric!=="productions"){
+   const maximum=Math.max(1,...bars.flatMap(g=>[g[input.metric],g.productions]));
+   p.text(input.metricLabel+" / Produzioni",L,y,10,"bold",MUTED);y+=20;
+   bars.forEach((g,i)=>{
+    const top=y+i*34;
+    p.text(splitLines(g.label,190,9,1)[0]||"",L,top+5,9);
+    for(const [j,key] of [input.metric,"productions"].entries()){
+     const yy=top+j*13,xx=L+195,ww=CW-245;
+     p.rect(xx,yy,ww,10,PALE);p.rect(xx,yy,ww*g[key]/maximum,10,j?NAVY:BURGUNDY);
+     p.text(num(g[key]),xx+ww+7,yy,8,"bold");
+    }
+   });y+=Math.max(55,bars.length*34+10);
+  }else{
+   p.bars(bars.map(g=>[g.label,g[input.metric]]),L,y+12,CW,{limit:12,step:35,labelWidth:205});
+   y+=Math.max(55,bars.length*35+22);
+  }
   para("Grafico: "+bars.length+" di "+input.groups.length+" gruppi. Tabella completa nelle pagine successive.");
   table("Distribuzione mensile",["Mese","Recite","Produzioni"],[CW-150,75,75],input.months.map(g=>[g.label,num(g.performances),num(g.productions)]));
   table("Distribuzione territoriale",["Regione","Recite","Produzioni"],[CW-150,75,75],input.regions.map(g=>[g.label,num(g.performances),num(g.productions)]));
   table("Risultati aggregati",["Gruppo","Recite","Prod.","Sedi","Opere","Autori","Città","Reg.","Fest."],[CW-8*36,36,36,36,36,36,36,36,36],input.groups.map(g=>[g.label,...["performances","productions","venues","works","composers","cities","regions","festivals"].map(k=>num(g[k]))]));
-  table("Dettaglio produzioni",["Opera / programma","Teatro e sede","Prima / ultima","Recite"],[CW-265,130,100,35],input.productions.map(r=>[r.title,r.venue+" · "+r.city,r.first+" / "+r.last,num(r.performances)]));
+  if(input.view==="performances")table("Dettaglio recite",["Data","Opera / programma","Teatro e sede"],[72,225,CW-297],input.performances.map(r=>[r.date+(r.startsAt?" "+r.startsAt.slice(11,16):""),r.title,r.venue+" · "+r.city]));
+  else table("Dettaglio produzioni",["Opera / programma","Teatro e sede","Prima / ultima","Recite"],[CW-265,130,100,35],input.productions.map(r=>[r.title,r.venue+" · "+r.city,r.first+" / "+r.last,num(r.performances)]));
   if(p)doc.addPage(p.ops);return new Blob([doc.binary()],{type:"application/pdf"});
  }
  return Object.freeze({create});
