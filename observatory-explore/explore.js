@@ -1,10 +1,10 @@
 "use strict";
 (()=>{
- const $=id=>document.getElementById(id),E=globalThis.OperaPlusExplore,D=globalThis.OperaPlusExploreData;
+ const $=id=>document.getElementById(id),E=globalThis.OperaPlusExplore,D=globalThis.OperaPlusExploreData,A=globalThis.OperaPlusExploreAnalysis;
  const fmt=new Intl.NumberFormat("it-IT");
  const metrics={productions:"Produzioni",performances:"Recite rilevate",works:"Opere",composers:"Compositori",venues:"Teatri e sedi",cities:"Città",regions:"Regioni",festivals:"Festival"};
  const pageSize=30;
- let rows=[],selected=[],rawById=new Map(),workById=new Map(),page=0,sortKey="first",descending=false;
+ let rows=[],selected=[],rawById=new Map(),workById=new Map(),page=0,sortKey="first",descending=false,appliedQuery={};
  const chosen=Object.fromEntries(D.dimensions.map(key=>[key,new Set()]));
  const controls=new Map();
  const node=(tag,value,cls)=>{const e=document.createElement(tag);if(value!=null)e.textContent=value;if(cls)e.className=cls;return e};
@@ -70,16 +70,18 @@
  function query(){
   const q=readQuery();
   try{
-   const next=E.select(rows,q,D.today());
+   const filtered=E.select(rows,q,D.today());
+   const preset=$("preset").value;
+   const next=A.scope(filtered,preset);
    $("filter-error").textContent="";
-   selected=next;page=0;sortKey=$("view").value==="productions"?"first":"date";descending=false;
+   selected=next;appliedQuery=q;page=0;sortKey=$("view").value==="productions"?"first":"date";descending=false;
    for(const c of controls.values())c.details.open=false;
-   $("query-context").textContent=context(q);
+   $("query-context").textContent=context(q)+(preset==="rare"?" · Opere con 1–3 recite nel campione filtrato":"");
    const counts=E.summary(selected);
    $("metrics").replaceChildren(...Object.entries(metrics).map(([key,label])=>{
     const item=node("article");item.append(node("strong",fmt.format(counts[key])),node("p",label));return item;
    }));
-   drawTable();
+   drawTable();drawAnalysis();
   }catch(err){$("filter-error").textContent=err.message}
  }
  function link(label,url){
@@ -146,17 +148,101 @@
   $("table-count").textContent=ordered.length?fmt.format(page*pageSize+1)+"–"+fmt.format(Math.min((page+1)*pageSize,ordered.length))+" di "+fmt.format(ordered.length):"0 risultati";
   $("previous").disabled=page===0;$("next").disabled=page>=pages-1;
  }
+ function setOptions(id,items,initial){
+  const el=$(id);el.replaceChildren();
+  for(const [key,label] of items){const o=node("option",label);o.value=key;el.append(o)}
+  el.value=initial;
+ }
+ function configurePreset(){
+  const key=$("preset").value,preset=A.presets[key];
+  $("preset-description").textContent=preset.description;
+  if(preset.group){
+   $("group-by").value=preset.group;
+   $("group-metric").value=key==="theatres"?"works":"performances";
+   $("group-order").value=key==="rare"?"asc":"auto";
+   $("compare-productions").checked=key!=="theatres";
+  }
+ }
+ function initAnalysis(){
+  setOptions("preset",Object.entries(A.presets).map(([id,p])=>[id,p.label]),"custom");
+  setOptions("group-by",Object.entries(E.fields),"work");
+  setOptions("group-metric",Object.entries(A.metrics),"performances");
+  configurePreset();
+  $("preset").addEventListener("change",()=>{configurePreset();query()});
+  for(const id of ["group-by","group-metric","group-order","compare-productions"]){
+   $(id).addEventListener("change",drawAnalysis);
+  }
+ }
+ function chart(id,groups,keys,emptyMessage){
+  const root=$(id);root.replaceChildren();
+  if(!groups.length){root.append(node("p",emptyMessage||"Nessun dato nel campione selezionato."));return}
+  for(const item of A.barScale(groups,keys)){
+   const row=node("div",null,"explore-chart-row"),series=node("div",null,"explore-chart-series");
+   row.setAttribute("role","listitem");
+   row.append(node("span",item.label,"explore-chart-label"));
+   for(const [i,bar] of item.bars.entries()){
+    const line=node("div",null,"explore-bar-line"),track=node("div",null,"explore-bar-track");
+    const fill=node("div",null,"explore-bar-fill"+(i?" secondary":""));
+    track.setAttribute("aria-hidden","true");fill.style.width=bar.percent+"%";track.append(fill);
+    const count=node("strong",fmt.format(bar.value),"explore-bar-number");
+    count.setAttribute("aria-label",A.metrics[bar.key]+": "+fmt.format(bar.value));
+    line.append(track,count);series.append(line);
+   }
+   row.append(series);root.append(row);
+  }
+ }
+ function limitNote(subset,base){
+  return base+(subset.total>subset.items.length?" Grafico: primi "+subset.items.length+" di "+subset.total+" gruppi; tabella completa disponibile.":"");
+ }
+ function drawAnalysis(){
+  const group=$("group-by").value,metric=$("group-metric").value,order=$("group-order").value;
+  const secondary=$("compare-productions");secondary.disabled=metric==="productions";
+  const keys=secondary.checked&&!secondary.disabled?[metric,"productions"]:[metric];
+  const monthly=A.monthly(selected,appliedQuery);
+  const months=A.chartSubset(monthly,"month","auto",24);
+  chart("monthly-chart",months.items,["performances"]);
+  $("monthly-note").textContent="Zero indica nessuna recita rilevata con questi filtri, non assenza di attività."+
+   (months.total>months.items.length?" Mostrati i primi 24 di "+months.total+" mesi; usa il raggruppamento Mese per il dettaglio.":"");
+  const region=A.chartSubset(A.compare(selected,"region"),"region","auto",20);
+  chart("region-chart",region.items,["performances"]);
+  $("region-note").textContent="Solo regioni con recite rilevate nel campione filtrato."+
+   (region.total>region.items.length?" Mostrate "+region.items.length+" di "+region.total+".":"");
+  const groups=group==="month"&&order==="auto"?monthly:A.compare(selected,group,metric,order);
+  // For month, use the same explicit zero buckets regardless of ordering.
+  const monthGroups=group==="month"&&order!=="auto"?[...monthly].sort((a,b)=>
+   order==="label"?a.label.localeCompare(b.label,"it")||a.id.localeCompare(b.id):
+    (order==="asc"?a[metric]-b[metric]:b[metric]-a[metric])||a.id.localeCompare(b.id)):groups;
+  const subset=A.chartSubset(monthGroups,group,order,12);
+  const legend=$("comparison-legend");legend.replaceChildren();
+  for(const [i,key] of keys.entries()){
+   const label=node("span"),swatch=node("i",null,i?"secondary":"");swatch.setAttribute("aria-hidden","true");
+   label.append(swatch,node("span",A.metrics[key]));legend.append(label);
+  }
+  chart("comparison-chart",subset.items,keys);
+  $("comparison-note").textContent=limitNote(subset,"Conteggi distinti per gruppo. Le barre condividono la stessa scala.");
+  const columns=[["label",E.fields[group]],...Object.entries(A.metrics)];
+  const head=node("tr");for(const [,label] of columns){const th=node("th",label);th.scope="col";head.append(th)}
+  $("group-head").replaceChildren(head);
+  const body=$("group-body");body.replaceChildren();
+  for(const item of monthGroups){
+   const tr=node("tr");
+   for(const [key] of columns)tr.append(node("td",key==="label"?item.label:fmt.format(item[key])));
+   body.append(tr);
+  }
+  if(!monthGroups.length){const tr=node("tr"),td=node("td","Nessun gruppo nel campione selezionato.");td.colSpan=columns.length;tr.append(td);body.append(tr)}
+ }
  async function main(){
   try{
    const result=await D.load(globalThis.OperaAtlasCatalog);
    rows=E.normalize(result.data.performances,result.festivals);
    rawById=new Map(result.data.performances.map(r=>[r.id,r]));
    workById=new Map(result.data.works.map(w=>[w.id,w]));
-   initFilters();
+   initFilters();initAnalysis();
    $("query").addEventListener("submit",e=>{e.preventDefault();query()});
    $("reset").addEventListener("click",()=>{
     for(const key of D.dimensions){chosen[key].clear();controls.get(key).search.value=""}
-    $("query").reset();for(const key of D.dimensions)refreshOptions(key);query();
+    $("query").reset();for(const key of D.dimensions)refreshOptions(key);
+    $("preset").value="custom";$("group-by").value="work";$("group-metric").value="performances";$("group-order").value="auto";$("compare-productions").checked=true;configurePreset();query();
    });
    $("view").addEventListener("change",()=>{page=0;sortKey=$("view").value==="productions"?"first":"date";descending=false;drawTable()});
    $("previous").addEventListener("click",()=>{page--;drawTable()});$("next").addEventListener("click",()=>{page++;drawTable()});

@@ -5,7 +5,7 @@
 <link rel="canonical" href="https://opera.plus/osservatorio/esplora/">
 <meta property="og:type" content="website"><meta property="og:locale" content="it_IT"><meta property="og:site_name" content="Opera+"><meta property="og:title" content="Esplora i dati | Osservatorio Opera+"><meta property="og:description" content="Costruisci il tuo report sulla programmazione lirica italiana rilevata da Opera+ Atlas."><meta property="og:url" content="https://opera.plus/osservatorio/esplora/">
 <link rel="stylesheet" href="../styles.css"><link rel="stylesheet" href="./explore.css">
-<script src="/atlas/catalog-client.js" defer></script><script src="./engine.js" defer></script><script src="./data.js" defer></script><script src="./explore.js" defer></script>
+<script src="/atlas/catalog-client.js" defer></script><script src="./engine.js" defer></script><script src="./data.js" defer></script><script src="./analysis.js" defer></script><script src="./explore.js" defer></script>
 </head><body class="explore-page">
 <a class="skip" href="#main">Vai ai dati</a>
 <header class="top"><div class="top-inner"><a class="wordmark" href="https://opera.plus/" aria-label="Opera+ — sito principale"><img src="../opera-plus-logo.svg" alt="Opera+" width="94" height="44"></a><nav aria-label="Navigazione"><a href="https://opera.plus/">Opera+</a><a href="https://opera.plus/atlas/">Atlas</a><a href="../">Osservatorio</a><a class="current" aria-current="page" href="./">Esplora i dati</a></nav></div></header>
@@ -15,6 +15,7 @@
 <noscript><p>Per interrogare il catalogo è necessario attivare JavaScript.</p></noscript>
 <div id="explore-content" hidden>
 <section class="panel" aria-labelledby="filters-title"><div class="explore-heading"><div><p class="explore-eyebrow">RICERCA PERSONALIZZATA</p><h2 id="filters-title">Imposta i filtri</h2><p>Seleziona uno o più valori. I filtri di categorie diverse si combinano tra loro.</p></div><button type="button" id="reset" class="explore-secondary">Azzera filtri</button></div>
+<div class="explore-presets"><label for="preset">Ricerche predefinite</label><select id="preset"></select><p id="preset-description" aria-live="polite"></p></div>
 <form id="query"><div id="dimensions" class="explore-filter-grid"></div>
 <div class="explore-filter-grid explore-extra">
 <label>Dal giorno <input type="date" name="from"></label><label>Al giorno <input type="date" name="to"></label>
@@ -22,6 +23,14 @@
 <label>Periodo delle recite <select name="temporal"><option value="all">Tutte le date</option><option value="past">Date trascorse</option><option value="future">Da oggi in poi</option></select></label>
 </div><div class="explore-actions"><button type="submit" class="explore-primary">Elabora report</button><span id="filter-error" role="alert"></span></div></form></section>
 <section aria-labelledby="result-title" id="results"><div class="explore-heading"><div><p class="explore-eyebrow">RISULTATI DELLA RICERCA</p><h2 id="result-title">La programmazione rilevata</h2><p id="query-context" aria-live="polite"></p></div></div><div id="metrics" class="kpis explore-kpis"></div></section>
+<section class="explore-analysis-grid" aria-label="Distribuzione delle recite">
+<article class="panel"><div class="explore-heading"><div><h2>Distribuzione mensile</h2><p>Recite rilevate per mese e anno, senza sommare anni differenti.</p></div></div><div id="monthly-chart" class="explore-chart" role="list" aria-label="Recite per mese"></div><p id="monthly-note" class="explore-chart-note"></p></article>
+<article class="panel"><div class="explore-heading"><div><h2>Distribuzione territoriale</h2><p>Recite rilevate per regione.</p></div></div><div id="region-chart" class="explore-chart" role="list" aria-label="Recite per regione"></div><p id="region-note" class="explore-chart-note"></p></article>
+</section>
+<section class="panel" aria-labelledby="comparison-title"><div class="explore-heading"><div><p class="explore-eyebrow">ANALISI COMPARATIVA</p><h2 id="comparison-title">Confronta e raggruppa</h2><p>Confronta i risultati della ricerca per opera, territorio, periodo o altri criteri.</p></div></div>
+<div class="explore-analysis-controls"><label>Raggruppa per <select id="group-by"></select></label><label>Indicatore <select id="group-metric"></select></label><label>Ordina per <select id="group-order"><option value="auto">Automatico</option><option value="desc">Indicatore decrescente</option><option value="asc">Indicatore crescente</option><option value="label">Nome (A–Z)</option></select></label><label class="explore-checkbox"><input type="checkbox" id="compare-productions" checked> Confronta con le produzioni</label></div>
+<div id="comparison-legend" class="explore-legend"></div><div id="comparison-chart" class="explore-chart" role="list" aria-label="Confronto dei gruppi"></div><p id="comparison-note" class="explore-chart-note"></p>
+<details class="explore-group-details" open><summary>Tabella aggregata completa</summary><p>Le righe di uno stesso programma composto o festival possono sovrapporsi: il totale generale conta le identità distinte, non la somma dei gruppi.</p><div class="explore-table-wrap" role="region" tabindex="0" aria-label="Tabella aggregata"><table><thead id="group-head"></thead><tbody id="group-body"></tbody></table></div></details></section>
 <section class="panel" aria-labelledby="detail-title"><div class="explore-heading"><div><h2 id="detail-title">Dettaglio della ricerca</h2><p>Apri una scheda su Atlas o consulta le fonti delle singole recite.</p></div><label class="explore-view">Visualizza <select id="view"><option value="productions">Produzioni</option><option value="performances">Recite</option></select></label></div>
 <div id="table-wrap" class="explore-table-wrap" role="region" aria-label="Risultati di dettaglio" tabindex="0"><table id="detail-table"><thead id="table-head"></thead><tbody id="table-body"></tbody></table></div>
 <div class="explore-pagination"><span id="table-count" aria-live="polite"></span><button type="button" class="explore-secondary" id="previous">Precedente</button><button type="button" class="explore-secondary" id="next">Successiva</button></div></section>
