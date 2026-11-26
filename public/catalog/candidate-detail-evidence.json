@@ -1213,8 +1213,8 @@
       "candidate_id": "oa-index-202b74c6398e8db7c0b5",
       "source_key": "opera-roma-season-2026-27",
       "source_url": "https://www.operaroma.it/spettacoli/inferno/",
-      "content_sha256": "c9d5edc2951e8597148844f0d92b17ec7908cdd23877b60d92e8fce15524334b",
-      "checked_at": "2026-11-26T09:10:37+00:00",
+      "content_sha256": "5e7fa1ac9dc33b957af128cf3c9332f4ea6e7493fcf7a01ff43147ff3ac64dc1",
+      "checked_at": "2026-11-26T10:57:34+00:00",
       "status": "needs_editorial_review",
       "event_facts": [
         {
@@ -6183,8 +6183,8 @@
       "candidate_id": "oa-index-a50d4128ef4b9605dc15",
       "source_key": "opera-roma-season-2026-27",
       "source_url": "https://www.operaroma.it/spettacoli/il-trionfo-del-tempo-e-del-disinganno/",
-      "content_sha256": "38a6fae67d73fe84ddb080ea4d889566fe76f5229a2ca09d37c5a20ca8f977a2",
-      "checked_at": "2026-11-26T09:10:52+00:00",
+      "content_sha256": "26f176f4468f7948d87e39bba355122512c7c367d41ce5704151ae228028adee",
+      "checked_at": "2026-11-26T10:57:28+00:00",
       "status": "needs_editorial_review",
       "event_facts": [
         {
