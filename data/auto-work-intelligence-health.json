@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "checked_at": "2026-11-27T22:28:46+00:00",
+  "checked_at": "2026-11-27T22:30:09+00:00",
   "outcomes": [
     {
       "candidate_id": "oa-index-c54cdb529f9480bba2d4",
@@ -231,6 +231,13 @@
       "work_id": "oa-w-000103",
       "source_key": "coccia-novara-rolling-opera",
       "official_url": "https://www.fondazioneteatrococcia.it/stagione-27-dove-nasce-il-melograno.html"
+    },
+    {
+      "candidate_id": "oa-index-1ce3b2499d33a394d369",
+      "status": "already_catalogued",
+      "work_id": "oa-w-000025",
+      "source_key": "bellini-catania-opera-2026-27",
+      "official_url": "https://www.teatromassimobellini.it/eventi/nabucco/"
     },
     {
       "candidate_id": "oa-index-1e15e89ae5b2a2ec45f9",
@@ -611,6 +618,13 @@
       "work_id": "oa-w-000104",
       "source_key": "haydn-rolling-opera",
       "official_url": "https://www.haydn.it/eventi/cronaca-di-un-amore-callas-e-pasolini"
+    },
+    {
+      "candidate_id": "oa-index-6270274da7ef189d5bec",
+      "status": "already_catalogued",
+      "work_id": "oa-w-000125",
+      "source_key": "bellini-catania-opera-2026-27",
+      "official_url": "https://www.teatromassimobellini.it/eventi/das-rheingold-loro-del-reno-2/"
     },
     {
       "candidate_id": "oa-index-62da655021bdc4f62ba7",

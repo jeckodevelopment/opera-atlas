@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "reviewed_on": "2026-11-26",
+  "reviewed_on": "2026-11-27",
   "editorial_policy": "Only individual recite explicitly shown by official source; unknown hours remain null; no third-party copy.",
   "productions": [
     {
@@ -9754,6 +9754,84 @@
           "source_url": "https://www.operaroma.it/spettacoli/il-barbiere-di-siviglia-operacamion-2/"
         }
       }
+    },
+    {
+      "key": "auto-1ce3b2499d33a394",
+      "title": "Nabucco",
+      "composer": "Giuseppe Verdi",
+      "venue": "Teatro Massimo Bellini",
+      "municipality": "Catania",
+      "region": "Sicilia",
+      "source_url": "https://www.teatromassimobellini.it/eventi/nabucco/",
+      "dates": [
+        [
+          "2027-03-06",
+          "20:30"
+        ],
+        [
+          "2027-03-07",
+          "17:30"
+        ],
+        [
+          "2027-03-09",
+          "20:30"
+        ],
+        [
+          "2027-03-10",
+          "17:30"
+        ],
+        [
+          "2027-03-12",
+          "17:30"
+        ],
+        [
+          "2027-03-13",
+          "17:30"
+        ],
+        [
+          "2027-03-14",
+          "17:30"
+        ]
+      ]
+    },
+    {
+      "key": "auto-6270274da7ef189d",
+      "title": "Das Rheingold",
+      "composer": "Richard Wagner",
+      "venue": "Teatro Massimo Bellini",
+      "municipality": "Catania",
+      "region": "Sicilia",
+      "source_url": "https://www.teatromassimobellini.it/eventi/das-rheingold-loro-del-reno-2/",
+      "dates": [
+        [
+          "2027-04-09",
+          "20:30"
+        ],
+        [
+          "2027-04-10",
+          "17:30"
+        ],
+        [
+          "2027-04-11",
+          "17:30"
+        ],
+        [
+          "2027-04-13",
+          "17:30"
+        ],
+        [
+          "2027-04-14",
+          "20:30"
+        ],
+        [
+          "2027-04-15",
+          "17:30"
+        ],
+        [
+          "2027-04-16",
+          "17:30"
+        ]
+      ]
     }
   ]
 }

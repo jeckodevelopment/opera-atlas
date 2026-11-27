@@ -16128,6 +16128,24 @@
       ]
     },
     {
+      "id": "curated:auto-1ce3b2499d33a394:2027-03-06",
+      "starts_at": "2027-03-06T20:30:00+01:00",
+      "local_date": "2027-03-06",
+      "time_known": true,
+      "time_label": "20:30",
+      "status": "announced",
+      "title": "Nabucco",
+      "composer": "Giuseppe Verdi",
+      "venue": "Teatro Massimo Bellini",
+      "municipality": "Catania",
+      "region": "Sicilia",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.teatromassimobellini.it/eventi/nabucco/"
+      ]
+    },
+    {
       "id": "curated:scala-boheme-puccini-2027:2027-03-07",
       "starts_at": "2027-03-07T14:30:00+01:00",
       "local_date": "2027-03-07",
@@ -16200,6 +16218,24 @@
       ]
     },
     {
+      "id": "curated:auto-1ce3b2499d33a394:2027-03-07",
+      "starts_at": "2027-03-07T17:30:00+01:00",
+      "local_date": "2027-03-07",
+      "time_known": true,
+      "time_label": "17:30",
+      "status": "announced",
+      "title": "Nabucco",
+      "composer": "Giuseppe Verdi",
+      "venue": "Teatro Massimo Bellini",
+      "municipality": "Catania",
+      "region": "Sicilia",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.teatromassimobellini.it/eventi/nabucco/"
+      ]
+    },
+    {
       "id": "curated:massimo-lucia-lammermoor-2027:2027-03-07",
       "starts_at": "2027-03-07T17:30:00+01:00",
       "local_date": "2027-03-07",
@@ -16254,6 +16290,24 @@
       ]
     },
     {
+      "id": "curated:auto-1ce3b2499d33a394:2027-03-09",
+      "starts_at": "2027-03-09T20:30:00+01:00",
+      "local_date": "2027-03-09",
+      "time_known": true,
+      "time_label": "20:30",
+      "status": "announced",
+      "title": "Nabucco",
+      "composer": "Giuseppe Verdi",
+      "venue": "Teatro Massimo Bellini",
+      "municipality": "Catania",
+      "region": "Sicilia",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.teatromassimobellini.it/eventi/nabucco/"
+      ]
+    },
+    {
       "id": "curated:regio-traviata-2027:2027-03-10",
       "starts_at": "2027-03-10T15:00:00+01:00",
       "local_date": "2027-03-10",
@@ -16269,6 +16323,24 @@
       "longitude": null,
       "sources": [
         "https://www.teatroregio.torino.it/opera-e-balletto-2026-2027/la-traviata"
+      ]
+    },
+    {
+      "id": "curated:auto-1ce3b2499d33a394:2027-03-10",
+      "starts_at": "2027-03-10T17:30:00+01:00",
+      "local_date": "2027-03-10",
+      "time_known": true,
+      "time_label": "17:30",
+      "status": "announced",
+      "title": "Nabucco",
+      "composer": "Giuseppe Verdi",
+      "venue": "Teatro Massimo Bellini",
+      "municipality": "Catania",
+      "region": "Sicilia",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.teatromassimobellini.it/eventi/nabucco/"
       ]
     },
     {
@@ -16377,6 +16449,24 @@
       "longitude": null,
       "sources": [
         "https://www.teatrosancarlo.it/spettacoli/pagliacci/"
+      ]
+    },
+    {
+      "id": "curated:auto-1ce3b2499d33a394:2027-03-12",
+      "starts_at": "2027-03-12T17:30:00+01:00",
+      "local_date": "2027-03-12",
+      "time_known": true,
+      "time_label": "17:30",
+      "status": "announced",
+      "title": "Nabucco",
+      "composer": "Giuseppe Verdi",
+      "venue": "Teatro Massimo Bellini",
+      "municipality": "Catania",
+      "region": "Sicilia",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.teatromassimobellini.it/eventi/nabucco/"
       ]
     },
     {
@@ -16539,6 +16629,24 @@
       "longitude": null,
       "sources": [
         "https://www.fondazionepetruzzelli.it/eventi/nabucco-di-giuseppe-verdi-12-19-marzo/"
+      ]
+    },
+    {
+      "id": "curated:auto-1ce3b2499d33a394:2027-03-13",
+      "starts_at": "2027-03-13T17:30:00+01:00",
+      "local_date": "2027-03-13",
+      "time_known": true,
+      "time_label": "17:30",
+      "status": "announced",
+      "title": "Nabucco",
+      "composer": "Giuseppe Verdi",
+      "venue": "Teatro Massimo Bellini",
+      "municipality": "Catania",
+      "region": "Sicilia",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.teatromassimobellini.it/eventi/nabucco/"
       ]
     },
     {
@@ -16809,6 +16917,24 @@
       "longitude": null,
       "sources": [
         "https://www.teatrosancarlo.it/spettacoli/pagliacci/"
+      ]
+    },
+    {
+      "id": "curated:auto-1ce3b2499d33a394:2027-03-14",
+      "starts_at": "2027-03-14T17:30:00+01:00",
+      "local_date": "2027-03-14",
+      "time_known": true,
+      "time_label": "17:30",
+      "status": "announced",
+      "title": "Nabucco",
+      "composer": "Giuseppe Verdi",
+      "venue": "Teatro Massimo Bellini",
+      "municipality": "Catania",
+      "region": "Sicilia",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.teatromassimobellini.it/eventi/nabucco/"
       ]
     },
     {
@@ -17802,6 +17928,42 @@
       ]
     },
     {
+      "id": "curated:auto-6270274da7ef189d:2027-04-09",
+      "starts_at": "2027-04-09T20:30:00+02:00",
+      "local_date": "2027-04-09",
+      "time_known": true,
+      "time_label": "20:30",
+      "status": "announced",
+      "title": "Das Rheingold",
+      "composer": "Richard Wagner",
+      "venue": "Teatro Massimo Bellini",
+      "municipality": "Catania",
+      "region": "Sicilia",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.teatromassimobellini.it/eventi/das-rheingold-loro-del-reno-2/"
+      ]
+    },
+    {
+      "id": "curated:auto-6270274da7ef189d:2027-04-10",
+      "starts_at": "2027-04-10T17:30:00+02:00",
+      "local_date": "2027-04-10",
+      "time_known": true,
+      "time_label": "17:30",
+      "status": "announced",
+      "title": "Das Rheingold",
+      "composer": "Richard Wagner",
+      "venue": "Teatro Massimo Bellini",
+      "municipality": "Catania",
+      "region": "Sicilia",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.teatromassimobellini.it/eventi/das-rheingold-loro-del-reno-2/"
+      ]
+    },
+    {
       "id": "curated:auto-dc6e8ff3bddba01d:2027-04-10",
       "starts_at": "2027-04-10T19:00:00+02:00",
       "local_date": "2027-04-10",
@@ -17928,6 +18090,42 @@
       ]
     },
     {
+      "id": "curated:auto-6270274da7ef189d:2027-04-11",
+      "starts_at": "2027-04-11T17:30:00+02:00",
+      "local_date": "2027-04-11",
+      "time_known": true,
+      "time_label": "17:30",
+      "status": "announced",
+      "title": "Das Rheingold",
+      "composer": "Richard Wagner",
+      "venue": "Teatro Massimo Bellini",
+      "municipality": "Catania",
+      "region": "Sicilia",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.teatromassimobellini.it/eventi/das-rheingold-loro-del-reno-2/"
+      ]
+    },
+    {
+      "id": "curated:auto-6270274da7ef189d:2027-04-13",
+      "starts_at": "2027-04-13T17:30:00+02:00",
+      "local_date": "2027-04-13",
+      "time_known": true,
+      "time_label": "17:30",
+      "status": "announced",
+      "title": "Das Rheingold",
+      "composer": "Richard Wagner",
+      "venue": "Teatro Massimo Bellini",
+      "municipality": "Catania",
+      "region": "Sicilia",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.teatromassimobellini.it/eventi/das-rheingold-loro-del-reno-2/"
+      ]
+    },
+    {
       "id": "curated:auto-11def56ae568ccce:2027-04-13",
       "starts_at": "2027-04-13T20:00:00+02:00",
       "local_date": "2027-04-13",
@@ -18018,6 +18216,42 @@
       ]
     },
     {
+      "id": "curated:auto-6270274da7ef189d:2027-04-14",
+      "starts_at": "2027-04-14T20:30:00+02:00",
+      "local_date": "2027-04-14",
+      "time_known": true,
+      "time_label": "20:30",
+      "status": "announced",
+      "title": "Das Rheingold",
+      "composer": "Richard Wagner",
+      "venue": "Teatro Massimo Bellini",
+      "municipality": "Catania",
+      "region": "Sicilia",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.teatromassimobellini.it/eventi/das-rheingold-loro-del-reno-2/"
+      ]
+    },
+    {
+      "id": "curated:auto-6270274da7ef189d:2027-04-15",
+      "starts_at": "2027-04-15T17:30:00+02:00",
+      "local_date": "2027-04-15",
+      "time_known": true,
+      "time_label": "17:30",
+      "status": "announced",
+      "title": "Das Rheingold",
+      "composer": "Richard Wagner",
+      "venue": "Teatro Massimo Bellini",
+      "municipality": "Catania",
+      "region": "Sicilia",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.teatromassimobellini.it/eventi/das-rheingold-loro-del-reno-2/"
+      ]
+    },
+    {
       "id": "curated:auto-dc6e8ff3bddba01d:2027-04-15",
       "starts_at": "2027-04-15T19:00:00+02:00",
       "local_date": "2027-04-15",
@@ -18033,6 +18267,24 @@
       "longitude": null,
       "sources": [
         "https://www.liricocagliari.it/evento/die-zauberflote/"
+      ]
+    },
+    {
+      "id": "curated:auto-6270274da7ef189d:2027-04-16",
+      "starts_at": "2027-04-16T17:30:00+02:00",
+      "local_date": "2027-04-16",
+      "time_known": true,
+      "time_label": "17:30",
+      "status": "announced",
+      "title": "Das Rheingold",
+      "composer": "Richard Wagner",
+      "venue": "Teatro Massimo Bellini",
+      "municipality": "Catania",
+      "region": "Sicilia",
+      "latitude": null,
+      "longitude": null,
+      "sources": [
+        "https://www.teatromassimobellini.it/eventi/das-rheingold-loro-del-reno-2/"
       ]
     },
     {

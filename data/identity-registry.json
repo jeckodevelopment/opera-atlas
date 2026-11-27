@@ -4464,6 +4464,22 @@
         "https://www.operaroma.it/spettacoli/il-barbiere-di-siviglia-operacamion-2/",
         "https://www.operaroma.it/spettacoli/il-barbiere-di-siviglia-operacamion/"
       ]
+    },
+    "auto-1ce3b2499d33a394": {
+      "id": "oa-s-000371",
+      "work_id": "oa-w-000025",
+      "venue_id": "oa-v-000028",
+      "slug": "nabucco",
+      "source_url": "https://www.teatromassimobellini.it/eventi/nabucco/",
+      "season": "2027"
+    },
+    "auto-6270274da7ef189d": {
+      "id": "oa-s-000372",
+      "work_id": "oa-w-000125",
+      "venue_id": "oa-v-000028",
+      "slug": "das-rheingold",
+      "source_url": "https://www.teatromassimobellini.it/eventi/das-rheingold-loro-del-reno-2/",
+      "season": "2027"
     }
   },
   "performances": {
@@ -13072,6 +13088,90 @@
       "staging_id": "oa-s-000370",
       "original_date": "2026-09-20",
       "source_url": "https://www.operaroma.it/spettacoli/il-barbiere-di-siviglia-operacamion/"
+    },
+    "auto-1ce3b2499d33a394|2027-03-06": {
+      "id": "oa-r-001462",
+      "staging_id": "oa-s-000371",
+      "original_date": "2027-03-06",
+      "source_url": "https://www.teatromassimobellini.it/eventi/nabucco/"
+    },
+    "auto-1ce3b2499d33a394|2027-03-07": {
+      "id": "oa-r-001463",
+      "staging_id": "oa-s-000371",
+      "original_date": "2027-03-07",
+      "source_url": "https://www.teatromassimobellini.it/eventi/nabucco/"
+    },
+    "auto-1ce3b2499d33a394|2027-03-09": {
+      "id": "oa-r-001464",
+      "staging_id": "oa-s-000371",
+      "original_date": "2027-03-09",
+      "source_url": "https://www.teatromassimobellini.it/eventi/nabucco/"
+    },
+    "auto-1ce3b2499d33a394|2027-03-10": {
+      "id": "oa-r-001465",
+      "staging_id": "oa-s-000371",
+      "original_date": "2027-03-10",
+      "source_url": "https://www.teatromassimobellini.it/eventi/nabucco/"
+    },
+    "auto-1ce3b2499d33a394|2027-03-12": {
+      "id": "oa-r-001466",
+      "staging_id": "oa-s-000371",
+      "original_date": "2027-03-12",
+      "source_url": "https://www.teatromassimobellini.it/eventi/nabucco/"
+    },
+    "auto-1ce3b2499d33a394|2027-03-13": {
+      "id": "oa-r-001467",
+      "staging_id": "oa-s-000371",
+      "original_date": "2027-03-13",
+      "source_url": "https://www.teatromassimobellini.it/eventi/nabucco/"
+    },
+    "auto-1ce3b2499d33a394|2027-03-14": {
+      "id": "oa-r-001468",
+      "staging_id": "oa-s-000371",
+      "original_date": "2027-03-14",
+      "source_url": "https://www.teatromassimobellini.it/eventi/nabucco/"
+    },
+    "auto-6270274da7ef189d|2027-04-09": {
+      "id": "oa-r-001469",
+      "staging_id": "oa-s-000372",
+      "original_date": "2027-04-09",
+      "source_url": "https://www.teatromassimobellini.it/eventi/das-rheingold-loro-del-reno-2/"
+    },
+    "auto-6270274da7ef189d|2027-04-10": {
+      "id": "oa-r-001470",
+      "staging_id": "oa-s-000372",
+      "original_date": "2027-04-10",
+      "source_url": "https://www.teatromassimobellini.it/eventi/das-rheingold-loro-del-reno-2/"
+    },
+    "auto-6270274da7ef189d|2027-04-11": {
+      "id": "oa-r-001471",
+      "staging_id": "oa-s-000372",
+      "original_date": "2027-04-11",
+      "source_url": "https://www.teatromassimobellini.it/eventi/das-rheingold-loro-del-reno-2/"
+    },
+    "auto-6270274da7ef189d|2027-04-13": {
+      "id": "oa-r-001472",
+      "staging_id": "oa-s-000372",
+      "original_date": "2027-04-13",
+      "source_url": "https://www.teatromassimobellini.it/eventi/das-rheingold-loro-del-reno-2/"
+    },
+    "auto-6270274da7ef189d|2027-04-14": {
+      "id": "oa-r-001473",
+      "staging_id": "oa-s-000372",
+      "original_date": "2027-04-14",
+      "source_url": "https://www.teatromassimobellini.it/eventi/das-rheingold-loro-del-reno-2/"
+    },
+    "auto-6270274da7ef189d|2027-04-15": {
+      "id": "oa-r-001474",
+      "staging_id": "oa-s-000372",
+      "original_date": "2027-04-15",
+      "source_url": "https://www.teatromassimobellini.it/eventi/das-rheingold-loro-del-reno-2/"
+    },
+    "auto-6270274da7ef189d|2027-04-16": {
+      "id": "oa-r-001475",
+      "staging_id": "oa-s-000372",
+      "original_date": "2027-04-16",
+      "source_url": "https://www.teatromassimobellini.it/eventi/das-rheingold-loro-del-reno-2/"
     }
   },
   "reserved_works": {
