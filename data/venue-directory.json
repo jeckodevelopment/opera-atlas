@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "reviewed_on": "2026-11-21",
+  "reviewed_on": "2026-11-27",
   "notes": "Anagrafica di sedi fisiche indipendente dagli spettacoli. Lo stato di acquisizione del calendario è distinto dalla presenza di prossime date. Le fonti ufficiali e le foto sono tracciate separatamente.",
   "venues": [
     {
@@ -1409,6 +1409,27 @@
       "photo_source_url": "https://www.comune.trento.it/Vivere-il-Comune/Luoghi/Teatro-Sanbapolis",
       "photo_credit": "Archivio Comune di Trento",
       "photo_license": "CC BY 4.0"
+    },
+    {
+      "city": "Roma",
+      "name": "Circo Massimo",
+      "address": "Via del Circo Massimo",
+      "description": "La grande area archeologica tra Palatino e Aventino ospita spettacoli all’aperto, comprese produzioni del Teatro dell’Opera di Roma.",
+      "website": "https://www.operaroma.it/",
+      "history": "La valle tra Palatino e Aventino ospitava corse di carri già in epoca regia. Giulio Cesare fece realizzare il circo in muratura; dopo vari incendi, Traiano ne promosse la ricostruzione. Dismesso nell’alto Medioevo, il sito è oggi un’area archeologica e uno spazio per eventi all’aperto. Il Teatro dell’Opera di Roma vi allestisce anche rappresentazioni liriche.",
+      "photo_file": "Circus Maximus - panorama view.jpg",
+      "photo_source_url": "https://commons.wikimedia.org/wiki/File:Circus_Maximus_-_panorama_view.jpg",
+      "photo_credit": "Peter Clarke, Wikimedia Commons — CC BY-SA 3.0",
+      "photo_license": "CC BY-SA 3.0",
+      "id": "oa-v-000074",
+      "region": "Lazio",
+      "city_slug": "roma",
+      "slug": "circo-massimo",
+      "source_url": "https://www.turismoroma.it/it/luoghi/circo-massimo",
+      "canonical_venue_id": "oa-v-000074",
+      "profile_key": "Roma|Circo Massimo",
+      "monitoring_status": "programma_censito",
+      "calendar_status": "acquired"
     }
   ],
   "related_organizations": [
