@@ -1,6 +1,6 @@
 {
-  "api_errors": 0,
-  "attempted": 14,
+  "api_errors": 4,
+  "attempted": 5,
   "identities": {
     "oa-c-000001": {
       "name": "Alberto Franchetti",
@@ -263,18 +263,18 @@
     "oa-c-000005": "2026-11-24T23:10:17.893512+00:00",
     "oa-c-000006": "2026-11-25T07:05:04.132535+00:00",
     "oa-c-000007": "2026-11-24T23:16:57.618551+00:00",
-    "oa-c-000008": "2026-11-26T17:01:13.058284+00:00",
+    "oa-c-000008": "2026-11-27T16:47:11.417950+00:00",
     "oa-c-000009": "2026-11-24T23:17:14.234058+00:00",
     "oa-c-000010": "2026-11-24T23:17:22.289168+00:00",
     "oa-c-000011": "2026-11-25T07:05:07.624177+00:00",
-    "oa-c-000012": "2026-11-26T17:01:14.852487+00:00",
+    "oa-c-000012": "2026-11-27T16:47:19.396092+00:00",
     "oa-c-000013": "2026-11-24T23:17:45.564893+00:00",
     "oa-c-000014": "2026-11-24T23:17:53.488883+00:00",
     "oa-c-000015": "2026-11-24T23:18:01.559880+00:00",
-    "oa-c-000016": "2026-11-26T17:01:15.628467+00:00",
+    "oa-c-000016": "2026-11-27T16:47:27.267056+00:00",
     "oa-c-000017": "2026-11-25T07:05:12.025427+00:00",
-    "oa-c-000018": "2026-11-26T17:01:17.119863+00:00",
-    "oa-c-000019": "2026-11-26T17:01:18.655305+00:00",
+    "oa-c-000018": "2026-11-27T16:47:35.133128+00:00",
+    "oa-c-000019": "2026-11-27T16:47:42.961291+00:00",
     "oa-c-000020": "2026-11-24T23:18:40.827376+00:00",
     "oa-c-000021": "2026-11-24T23:18:48.758150+00:00",
     "oa-c-000022": "2026-11-24T23:18:56.725818+00:00",
@@ -329,18 +329,18 @@
     "oa-c-000071": "2026-11-26T17:01:29.896278+00:00"
   },
   "schema_version": 1,
-  "status": "completed",
+  "status": "partial",
   "total": 71,
   "unresolved": {
     "oa-c-000002": {
-      "candidates": [],
       "name": "Alessandro Solbiati",
-      "reason": "no_image"
+      "reason": "not_attempted"
     },
     "oa-c-000008": {
       "candidates": [],
+      "detail": "identity_search_unavailable",
       "name": "Arturo Dal Bianco",
-      "reason": "not_found"
+      "reason": "api_error"
     },
     "oa-c-000012": {
       "candidates": [],
@@ -349,60 +349,55 @@
     },
     "oa-c-000016": {
       "candidates": [],
+      "detail": "identity_search_unavailable",
       "name": "Daniele Furlati",
-      "reason": "not_found"
+      "reason": "api_error"
     },
     "oa-c-000018": {
       "candidates": [],
+      "detail": "identity_search_unavailable",
       "name": "Davide Tramontano",
-      "reason": "not_found"
+      "reason": "api_error"
     },
     "oa-c-000019": {
       "candidates": [],
+      "detail": "identity_search_unavailable",
       "name": "Diana Buscemi",
-      "reason": "not_found"
+      "reason": "api_error"
     },
     "oa-c-000026": {
-      "candidates": [],
       "name": "Francesco Filidei",
-      "reason": "no_image"
+      "reason": "not_attempted"
     },
     "oa-c-000032": {
-      "candidates": [],
       "name": "Gaia Aloisi",
-      "reason": "not_found"
+      "reason": "not_attempted"
     },
     "oa-c-000038": {
-      "candidates": [],
       "name": "Giovanni Sollima",
-      "reason": "no_image"
+      "reason": "not_attempted"
     },
     "oa-c-000040": {
-      "candidates": [],
       "name": "Giuseppe Guerrera",
-      "reason": "identity_unconfirmed"
+      "reason": "not_attempted"
     },
     "oa-c-000053": {
-      "candidates": [],
       "name": "Massimiliano Piscitello",
-      "reason": "not_found"
+      "reason": "not_attempted"
     },
     "oa-c-000057": {
-      "candidates": [],
       "name": "Nicola Sani",
-      "reason": "no_image"
+      "reason": "not_attempted"
     },
     "oa-c-000065": {
-      "candidates": [],
       "name": "Salvatore Passantino",
-      "reason": "not_found"
+      "reason": "not_attempted"
     },
     "oa-c-000071": {
-      "candidates": [],
       "name": "Zygmunt Krauze",
-      "reason": "no_image"
+      "reason": "not_attempted"
     }
   },
-  "updated_at": "2026-11-26T17:01:31.464830+00:00",
+  "updated_at": "2026-11-27T16:47:50.674272+00:00",
   "verified": 57
 }
