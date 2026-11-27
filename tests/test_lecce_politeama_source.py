@@ -4,7 +4,7 @@ from opera_atlas.lecce_politeama_parser import parse_detail
 from scripts.discover_season_indexes import eligible,extract
 
 ROOT="https://www.politeamagreco.it"
-INDEX=ROOT+"/programmazione.asp"
+INDEX=ROOT+"/programmazione.asp?categoria=1"
 DETAIL=lambda number:ROOT+f"/scheda.asp?id={number}"
 
 def html(number):
@@ -36,27 +36,55 @@ class LeccePoliteamaTests(unittest.TestCase):
                     "http://www.politeamagreco.it/scheda.asp?id=1147"):
             self.assertFalse(eligible("lecce-politeama-opera-2026",url))
         self.assertTrue(eligible("lecce-politeama-opera-2026",DETAIL(1148)))
-    def test_category_calendar_fallback_respects_access_denial(self):
+    def test_category_calendar_respects_access_denial(self):
         import json
         from opera_atlas.controlled_fetch import FetchResult, FetchUnavailable, AccessDenied
         from scripts.discover_season_indexes import CONFIG, scan
         config=json.loads(CONFIG.read_text())
         key="lecce-politeama-opera-2026"
-        alternate=INDEX+"?categoria=1"
-        links=''.join(f'<a href="{DETAIL(i)}">Opera</a>' for i in (1147,1148,1149))
-        for failure,expected in ((FetchUnavailable("page unavailable"),"partial_pagination"),
-                                 (AccessDenied("robots denied"),"unavailable_or_invalid")):
+        links=''.join(f'<a href="{DETAIL(i)}">Opera</a>' for i in (1148, 2050))
+        for failure in (None, FetchUnavailable("page unavailable"), AccessDenied("robots denied")):
             requested=[]
             def fetch(db, *, source_id, url, network_enabled):
                 requested.append(url)
-                if url==INDEX: raise failure
-                if url==alternate: return FetchResult(url,links,"a"*64,len(links))
-                raise AssertionError(url)
+                self.assertEqual(url, INDEX)
+                if failure is not None: raise failure
+                return FetchResult(url,links,"a"*64,len(links))
             candidates,health=scan(config,{"schema_version":1,"candidates":[]},
                                    fetcher=fetch,network_enabled=True,source_keys={key})
-            self.assertEqual(health[0]["status"],expected)
-            self.assertEqual(requested,[INDEX,alternate] if expected=="partial_pagination" else [INDEX])
-            self.assertEqual(len(candidates["candidates"]),3 if expected=="partial_pagination" else 0)
+            self.assertEqual(health[0]["status"],"success" if failure is None else "unavailable_or_invalid")
+            self.assertEqual(requested,[INDEX])
+            self.assertEqual(len(candidates["candidates"]),2 if failure is None else 0)
+
+    def test_future_unknown_id_individual_ticket_evidence(self):
+        from scripts.collect_candidate_details import parse_source_credited_opera_detail
+        future=("<p>Orario Spettacoli » 12/11/2027 - 20:45 » 14/11/2027 - 18:00</p>"
+                "<p>CARMEN di Georges Bizet dal 12/11/2027 al 14/11/2027 - Stagione Lirica</p>"
+                "<p>TEATRO POLITEAMA GRECO DI LECCE Stagione Lirica di tradizione 2027 "
+                "CARMEN di Georges Bizet</p>"
+                "<p>12 novembre ore 20.45 (Turno A) 14 novembre ore 18.00 (Turno B)</p>"
+                "<h2>PREZZI</h2>")
+        url=DETAIL(2050)
+        self.assertTrue(eligible("lecce-politeama-opera-2026",url))
+        self.assertEqual(extract("lecce-politeama-opera-2026",INDEX,
+                                 f'<a href="{url}">Carmen</a>',1),[url])
+        self.assertEqual(parse_detail(future,url=url),
+                         ("Carmen","Georges Bizet","Teatro Politeama Greco",
+                          [("2027-11-12","20:45"),("2027-11-14","18:00")]))
+        facts=parse_source_credited_opera_detail("lecce-politeama-opera-2026",url,future)
+        self.assertEqual(len(facts),2)
+        self.assertEqual({r["composer"] for r in facts},{"Georges Bizet"})
+        for invalid in (
+            future.replace("14 novembre ore 18.00","14 novembre ore 19.00"),
+            future.replace("Stagione Lirica di tradizione 2027","Stagione Lirica di tradizione 2028"),
+            future.replace("CARMEN","CONCERTO"),
+            future.replace("TEATRO POLITEAMA GRECO","TEATRO APOLLO"),
+            future.replace("Turno A","recite scuole"),
+            future.replace("14/11/2027 - 18:00",""),
+            future.replace("PREZZI","Altro"),
+        ):
+            with self.subTest(invalid=invalid),self.assertRaises(ValueError):
+                parse_detail(invalid,url=url)
 
     def test_six_performances_and_attribution(self):
         self.assertEqual(parse_detail(html(1147),url=DETAIL(1147)),

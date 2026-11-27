@@ -601,10 +601,8 @@ def eligible(key:str,url:str)->bool:
                 and not parsed.fragment and not parsed.username and not parsed.password
                 and parsed.port is None)
     if key=="lecce-politeama-opera-2026":
-        return (parsed.scheme=="https" and parsed.hostname=="www.politeamagreco.it"
-                and parsed.path=="/scheda.asp" and parsed.query in {"id=1147","id=1148","id=1149"}
-                and not parsed.fragment and not parsed.username and not parsed.password
-                and parsed.port is None)
+        from opera_atlas.lecce_politeama_parser import eligible_detail
+        return eligible_detail(url)
     if parsed.query or parsed.fragment or parsed.username or parsed.password or parsed.port is not None:
         return False
     path=parsed.path.lower().rstrip("/")
@@ -1178,7 +1176,7 @@ def validate_config(config:dict)->list[dict]:
         elif key=="lecce-apollo-pinocchio-2026":
             valid_season=index.path=="/al-via-la-51-stagione-lirica-della-provincia-di-lecce-teatro-di-tradizione-si-inaugura-con-turandot-di-puccini/" and not index.query
         elif key=="lecce-politeama-opera-2026":
-            valid_season=index.path=="/programmazione.asp" and not index.query
+            valid_season=index.path=="/programmazione.asp" and index.query=="categoria=1"
         elif key=="lecce-provincia-politeama-2026":
             valid_season=index.path=="/https-www-provincia-le-it-al-via-la-51-stagione-lirica-della-provincia-di-lecce-lunedi-9-novembre-la-conferenza-stampa-di-presentazione-del-cartellone-2026/" and not index.query
         elif key=="puccini-torre-del-lago-2027":
@@ -1305,7 +1303,7 @@ def validate_config(config:dict)->list[dict]:
         else:
             valid_season=index.path==path
         if (index.scheme!="https" or index.hostname!=host or not valid_season
-            or (index.query and key not in ("mantova-sociale-rolling-opera","bologna-comunale-opera-2026","bologna-comunale-opera-2027","verdi-trieste-season-2026-27","chieti-marrucino-season-2027","lecce-provincia-season-2027")) or index.fragment or index.port is not None
+            or (index.query and key not in ("lecce-politeama-opera-2026","mantova-sociale-rolling-opera","bologna-comunale-opera-2026","bologna-comunale-opera-2027","verdi-trieste-season-2026-27","chieti-marrucino-season-2027","lecce-provincia-season-2027")) or index.fragment or index.port is not None
             or item["official_url"]!="https://"+host+"/"):
             raise ValueError("index URL outside exact official allowlist")
         if item["access_status"] not in {"approved","pending","blocked"}:
@@ -1471,12 +1469,6 @@ def scan(config:dict,existing:dict,*,fetcher=fetch_official_html,
                             db,row["id"],fetcher)
                         min_links=1
                         municipal_fallback=True
-                    elif (item["key"]=="lecce-politeama-opera-2026"
-                          and str(original) in ("page unavailable","unexpected HTTP status","not an HTML page","HTML response too large")):
-                        # Same official host, explicit opera-category calendar; independent robots gate.
-                        index_url="https://www.politeamagreco.it/programmazione.asp?categoria=1"
-                        page=fetcher(db,source_id=row["id"],url=index_url,network_enabled=True)
-                        primary_unavailable=True
                     elif item["key"]=="spoleto-tls-lirica-2026" and (
                         item["url"]=="https://www.tls-belli.it/stagione-lirica-2026/"):
                         # The primary theatre calendar may reject the CI runner.
