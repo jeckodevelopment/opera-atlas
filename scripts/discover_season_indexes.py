@@ -26,6 +26,12 @@ EXCLUDED_HAYDN_ANCILLARY=re.compile(
     r"dai-libri-allopera(?:-[0-9]+)?)$"
 )
 EXCLUDED_PATHS={
+    # Reviewed 2026 official festival programme: pop, science performance,
+    # dance, prose, a music/theatre tribute and a masterclass.
+    "taormina-arte-rolling-opera": frozenset({
+        "blu-planetaria", "interference", "madame-tour-estate-2026",
+        "la-cena", "bellini-alla-norma", "roberta-torre-masterclass",
+    }),
     # Explicit observed navigation from Taormina Opera Festival and InPrimaFila;
     # classify old cached records as excluded rather than keeping them in review.
     "taormina-opera-festival-rolling": frozenset({
@@ -108,6 +114,7 @@ EXCLUDED_PATHS={
     # Exclusions require individually recognisable original programme slugs;
     # no global keyword or "family" exclusion is permitted.
     "trapani-luglio-musicale-2026": frozenset({
+        "io-e-te",
         "new-saxophone-orchestra",
         "duo-resonans",
         "duo-monica-leone-michele-campanella",
@@ -140,6 +147,7 @@ EXCLUDED_PATHS={
         "viva-vivaldi",
     }),
     "parma-opera-2027": frozenset({
+        "concerto-di-santa-lucia",
         # Explicitly classified non-opera events, never a generic genre guess.
         "concerto-di-capodanno-27",
         "prima-che-si-alzi-il-sipario-2",
@@ -181,6 +189,7 @@ EXCLUDED_PATHS={
         "lo-schiaccianoci",
     }),
     "bellini-catania-opera-2026-27": frozenset({
+        "concerto-di-capodanno-12",
         # Official Bellini season press release identifies La bella
         # addormentata (1–6 December 2026, Metropolitan) as a ballet in
         # three acts by Tchaikovsky. An Opera e Balletto calendar alone
@@ -269,6 +278,16 @@ def reviewed_source_urls()->set[str]:
     from scripts.build_verified_catalog import MANIFEST
     document=json.loads(MANIFEST.read_text(encoding="utf-8"))
     reviewed={row["source_url"] for row in document["productions"]}
+    # The official Carnival package includes the very same already published
+    # Puccini recital, followed by a cocktail; it is not a second recital.
+    # Close only while the exact canonical February 7 performance exists.
+    if any(p.get("key") == "fenice-madama-butterfly-2027"
+           and p.get("title") == "Madama Butterfly"
+           and p.get("composer") == "Giacomo Puccini"
+           and p.get("municipality") == "Venezia"
+           and ["2027-02-07", "17:00"] in p.get("dates", [])
+           for p in document["productions"]):
+        reviewed.add("https://www.teatrolafenice.it/event/madama-butterfly-carnival-cocktail/")
     from opera_atlas.itinerant import reviewed as reviewed_tours,validate_production
     tours=reviewed_tours()
     for row in document["productions"]:
