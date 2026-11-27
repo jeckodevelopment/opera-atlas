@@ -341,9 +341,16 @@ def main() -> None:
         _write_atomic(REGISTRY,next_registry)
     # No daily commit if no approved source: pending entries carry no new info.
     if any(item["access_status"]=="approved" for item in scheduled):
+        from opera_atlas.source_failure_history import with_history
+        previous=read(HEALTH) if HEALTH.exists() else {}
+        old={r["key"]:r for r in previous.get("sources",[])}
+        checked_at=datetime.now(timezone.utc).isoformat(timespec="seconds")
+        health=[with_history(r,old.get(r["key"],{}),checked_at=checked_at,
+                             previous_checked_at=previous.get("checked_at"),
+                             field="outcome") for r in health]
         _write_atomic(HEALTH,{
             "schema_version":1,
-            "checked_at":datetime.now(timezone.utc).isoformat(timespec="seconds"),
+            "checked_at":checked_at,
             "sources":health,
         })
     print(json.dumps({"approved":sum(x["access_status"]=="approved" for x in scheduled),
