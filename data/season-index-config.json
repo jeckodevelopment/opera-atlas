@@ -460,9 +460,9 @@
     {
       "key": "lecce-politeama-opera-2026",
       "official_url": "https://www.politeamagreco.it/",
-      "url": "https://www.politeamagreco.it/programmazione.asp",
+      "url": "https://www.politeamagreco.it/programmazione.asp?categoria=1",
       "access_status": "approved",
-      "min_links": 3
+      "min_links": 1
     },
     {
       "key": "lecce-provincia-season-2027",
