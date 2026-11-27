@@ -232,7 +232,7 @@
       "candidate_id": "oa-index-05dfa4b5d5270a7fc051",
       "source_key": "maggio-fiorentino-calendar-2027",
       "source_url": "https://www.maggiofiorentino.com/events/norma-2027",
-      "checked_at": "2026-11-26T17:57:35+00:00",
+      "checked_at": "2026-11-27T17:52:36+00:00",
       "status": "needs_editorial_review",
       "event_facts": [
         {
@@ -642,7 +642,7 @@
       "candidate_id": "oa-index-144db2827af86d96232c",
       "source_key": "maggio-fiorentino-calendar-2027",
       "source_url": "https://www.maggiofiorentino.com/events/les-contes-dhoffmann",
-      "checked_at": "2026-11-26T17:57:35+00:00",
+      "checked_at": "2026-11-27T17:52:36+00:00",
       "status": "needs_editorial_review",
       "event_facts": [
         {
@@ -942,6 +942,22 @@
         "alt": "Immagine della produzione di DOVE NASCE IL MELOGRANO",
         "kind": "official_production_image"
       }
+    },
+    {
+      "candidate_id": "oa-index-1ce3b2499d33a394d369",
+      "source_key": "bellini-catania-opera-2026-27",
+      "source_url": "https://www.teatromassimobellini.it/eventi/nabucco/",
+      "content_sha256": "f94b0be60a553e68e080a95def970bb0186c9095e1b2135bad25941589c3968d",
+      "checked_at": "2026-11-27T17:51:45+00:00",
+      "status": "needs_editorial_review",
+      "event_facts": [
+        {
+          "event_title": "Nabucco",
+          "date": "2027-03-06",
+          "starts_at": null,
+          "venue": "Teatro Massimo Bellini"
+        }
+      ]
     },
     {
       "candidate_id": "oa-index-1d35c5f06b99b17bd41f",
@@ -1341,7 +1357,7 @@
       "candidate_id": "oa-index-20f405e0ffdc62c59cf3",
       "source_key": "maggio-fiorentino-calendar-2027",
       "source_url": "https://www.maggiofiorentino.com/events/il-mondo-alla-roversa-o-sia-le-donne-che-comandano",
-      "checked_at": "2026-11-26T17:57:35+00:00",
+      "checked_at": "2026-11-27T17:52:36+00:00",
       "status": "needs_editorial_review",
       "event_facts": [
         {
@@ -1889,7 +1905,7 @@
       "candidate_id": "oa-index-3ad893acc9c9df1ad97f",
       "source_key": "maggio-fiorentino-calendar-2027",
       "source_url": "https://www.maggiofiorentino.com/events/macbeth-in-forma-di-concerto",
-      "checked_at": "2026-11-26T17:57:35+00:00",
+      "checked_at": "2026-11-27T17:52:36+00:00",
       "status": "needs_editorial_review",
       "event_facts": [
         {
@@ -3019,6 +3035,22 @@
           "venue": "Teatro Sociale",
           "date": "2027-01-29",
           "starts_at": "2027-01-29T20:00:00+01:00"
+        }
+      ]
+    },
+    {
+      "candidate_id": "oa-index-6270274da7ef189d5bec",
+      "source_key": "bellini-catania-opera-2026-27",
+      "source_url": "https://www.teatromassimobellini.it/eventi/das-rheingold-loro-del-reno-2/",
+      "content_sha256": "feeaab2034946b410c5d07a305e593b543f2e37990a965944af51a5136b0f6d8",
+      "checked_at": "2026-11-27T17:52:25+00:00",
+      "status": "needs_editorial_review",
+      "event_facts": [
+        {
+          "event_title": "Das Rheingold - L’oro del Reno",
+          "date": "2027-04-09",
+          "starts_at": null,
+          "venue": "Teatro Massimo Bellini"
         }
       ]
     },
@@ -5770,7 +5802,7 @@
       "candidate_id": "oa-index-9c8433ba74501efca6eb",
       "source_key": "maggio-fiorentino-calendar-2027",
       "source_url": "https://www.maggiofiorentino.com/events/adriana-lecouvreur-2027",
-      "checked_at": "2026-11-26T17:57:35+00:00",
+      "checked_at": "2026-11-27T17:52:36+00:00",
       "status": "needs_editorial_review",
       "event_facts": [
         {
@@ -7033,7 +7065,7 @@
       "candidate_id": "oa-index-b932c89149fad91c3518",
       "source_key": "maggio-fiorentino-calendar-2027",
       "source_url": "https://www.maggiofiorentino.com/events/la-traviata-2027",
-      "checked_at": "2026-11-26T17:57:35+00:00",
+      "checked_at": "2026-11-27T17:52:36+00:00",
       "status": "needs_editorial_review",
       "event_facts": [
         {
@@ -8374,7 +8406,7 @@
       "candidate_id": "oa-index-dd5d16aec544e6737e1e",
       "source_key": "maggio-fiorentino-calendar-2027",
       "source_url": "https://www.maggiofiorentino.com/events/tristan-und-isolde",
-      "checked_at": "2026-11-26T17:57:35+00:00",
+      "checked_at": "2026-11-27T17:52:36+00:00",
       "status": "needs_editorial_review",
       "event_facts": [
         {
@@ -9871,7 +9903,7 @@
       "candidate_id": "oa-index-feadef19a246de079ccb",
       "source_key": "maggio-fiorentino-calendar-2027",
       "source_url": "https://www.maggiofiorentino.com/events/il-trovatore-2027",
-      "checked_at": "2026-11-26T17:57:35+00:00",
+      "checked_at": "2026-11-27T17:52:36+00:00",
       "status": "needs_editorial_review",
       "event_facts": [
         {
@@ -9925,6 +9957,22 @@
           "venue": "Forte della Maddalena",
           "date": "2026-07-05",
           "starts_at": "2026-07-05T22:00:00+02:00"
+        }
+      ]
+    },
+    {
+      "candidate_id": "oa-index-ff095575c8c27102bd4c",
+      "source_key": "bellini-catania-opera-2026-27",
+      "source_url": "https://www.teatromassimobellini.it/eventi/concerto-di-capodanno-12/",
+      "content_sha256": "7cb7bbb28d074d6f772fe2e4f8cde9bcad91772df3d6b5c2b2fc59402b06717e",
+      "checked_at": "2026-11-27T17:52:35+00:00",
+      "status": "needs_editorial_review",
+      "event_facts": [
+        {
+          "event_title": "Concerto di Capodanno",
+          "date": "2027-01-01",
+          "starts_at": null,
+          "venue": "Teatro Metropolitan."
         }
       ]
     },
