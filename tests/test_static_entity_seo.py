@@ -32,6 +32,8 @@ class StaticEntitySEOTests(unittest.TestCase):
             for route,expect in (
                 ("opere/la-traviata/index.html","La traviata"),
                 ("torino/teatro-regio/index.html","Torino"),
+                ("roma/circo-massimo/index.html","Circo Massimo"),
+                ("trapani/teatro-m-tonino-pardo/index.html","Tonino Pardo"),
                 ("torino/teatro-regio/la-traviata/index.html","La traviata"),
                 ("produzioni/oa-g-lombardia-italiana-2026/index.html","OperaLombardia"),
             ):
@@ -50,6 +52,11 @@ class StaticEntitySEOTests(unittest.TestCase):
                     self.assertEqual(len([m for m in meta if m.get("property")=="og:image"]),1)
                     self.assertEqual(len([m for m in meta if m.get("name")=="description"]),1)
             self.assertIn("opere/la-traviata/index.html",routes)
+
+    def test_venue_directory_fallback_and_legacy_alias(self):
+        rules=(ROOT/"site"/".htaccess").read_text(encoding="utf-8")
+        self.assertIn("RewriteRule ^trapani/teatro-tonino-pardo/?$ /atlas/trapani/teatro-m-tonino-pardo/ [R=301,L,NE]",rules)
+        self.assertIn("RewriteCond %{REQUEST_FILENAME} -d\nRewriteCond %{REQUEST_FILENAME}/index.html !-f\nRewriteRule ^[a-z0-9-]+/[a-z0-9-]+/?$ detail.html [L]",rules)
 
     def test_live_client_replaces_initial_summary(self):
         code=(ROOT/"site"/"detail.js").read_text(encoding="utf-8")
