@@ -70,7 +70,10 @@ def parse_detail(html: str, *, url: str) -> tuple[str, str, str, list[tuple[str,
         "/eventi/das-rheingold-loro-del-reno-2/": (
             "Das Rheingold – L’oro del Reno", "Richard Wagner"),
     }.get(parsed.path)
-    known = reviewed if reviewed and title == reviewed[0] else None
+    # The WordPress title may use a hyphen or typographic dash/apostrophe.
+    def comparable(value):
+        return re.sub(r"\s+", " ", value.replace("–", "-").replace("’", "'")).strip()
+    known = reviewed if reviewed and comparable(title) == comparable(reviewed[0]) else None
     if composer_match:
         composer = composer_match.group(1)
         if known and composer != known[1]:
@@ -87,7 +90,8 @@ def parse_detail(html: str, *, url: str) -> tuple[str, str, str, list[tuple[str,
     # for individual daily recite. Parse only the signed programme below
     # the "Prima rappresentazione" heading and before global navigation.
     match = re.search(r"\bPrima rappresentazione\b(.*?)\bNaviga sul sito\b", body, re.I)
-    if not match and known:
+    new_layout = not match and known is not None
+    if new_layout:
         # New official layout: the exact H1 precedes individual dated turns.
         # The footer is still mandatory; metadata ranges are never parsed.
         match = re.search(
@@ -110,12 +114,14 @@ def parse_detail(html: str, *, url: str) -> tuple[str, str, str, list[tuple[str,
         if iso in found:
             raise ValueError("duplicate or conflicting official recital")
         found[iso] = clock
+    if new_layout and len(found) != 7:
+        raise ValueError("incomplete reviewed seven-turn Bellini schedule")
     if not found or len(found) > 20:
         raise ValueError("missing or implausible individual recital dates")
     # Each textual 'ore' in this section must correspond to one recital.
     # This deliberately fails if the theatre changes the per-turn schema.
     if len(re.findall(r"\bore\s+(?:[01]?\d|2[0-3])[.:][0-5]\d", section, re.I)) != len(found):
         raise ValueError("incomplete official Bellini showtime extraction")
-    if known and title == "Das Rheingold – L’oro del Reno":
+    if known and parsed.path == "/eventi/das-rheingold-loro-del-reno-2/":
         title = "Das Rheingold"
     return title, composer, VENUE, sorted(found.items())
