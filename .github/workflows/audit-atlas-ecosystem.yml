@@ -1,0 +1,36 @@
+name: Atlas ecosystem acceptance smoke
+on:
+  workflow_dispatch:
+  pull_request:
+    paths:
+      - 'scripts/audit_atlas_ecosystem.py'
+      - '.github/workflows/audit-atlas-ecosystem.yml'
+  schedule:
+    - cron: '17 7 * * *'
+permissions:
+  contents: read
+concurrency:
+  group: atlas-ecosystem-smoke-${{ github.ref }}
+  cancel-in-progress: true
+jobs:
+  browser:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@ece7cb06caefa5fff74198d8649806c4678c61a1
+        with:
+          python-version: '3.12'
+      - run: |
+          python -m pip install playwright==1.56.0
+          python -m playwright install --with-deps chromium
+      - name: Verify deployed Atlas, Observatory, Explore and diagnostics
+        run: python -m scripts.audit_atlas_ecosystem
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: always()
+        with:
+          name: atlas-ecosystem-smoke
+          path: ecosystem-smoke.json
+          retention-days: 30
