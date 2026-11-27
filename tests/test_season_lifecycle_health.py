@@ -83,11 +83,11 @@ class SeasonLifecycleHealthTests(unittest.TestCase):
     def test_evergreen_reusability_audit_is_exhaustive_and_not_live_proof(self):
         result=build(self.config,self.policy,{"sources":[]},{"outcomes":[]})
         self.assertEqual(result["evergreen_index_unverified"],43)
-        self.assertEqual(result["evergreen_dynamic_category"],30)
-        self.assertEqual(result["evergreen_fixed_production_set"],11)
+        self.assertEqual(result["evergreen_dynamic_category"],31)
+        self.assertEqual(result["evergreen_fixed_production_set"],10)
         self.assertEqual(result["evergreen_historical_notice"],2)
         self.assertEqual(result["evergreen_fixed_covered"],10)
-        self.assertEqual(result["evergreen_fixed_uncovered"],1)
+        self.assertEqual(result["evergreen_fixed_uncovered"],0)
         self.assertEqual(result["evergreen_fixed_covered"]+
                          result["evergreen_fixed_uncovered"],
                          result["evergreen_fixed_production_set"])
@@ -126,7 +126,7 @@ class SeasonLifecycleHealthTests(unittest.TestCase):
                 build(self.config,self.policy,{"sources":[]},{"outcomes":[]},
                       evergreen_audit=changed)
 
-    def test_fixed_title_successors_leave_only_lecce_uncovered(self):
+    def test_all_fixed_title_sources_have_dynamic_coverage(self):
         from scripts.season_lifecycle_health import EVERGREEN_AUDIT
         audit=json.loads(EVERGREEN_AUDIT.read_text(encoding="utf-8"))
         result=build(self.config,self.policy,{"sources":[]},{"outcomes":[]},
@@ -135,7 +135,9 @@ class SeasonLifecycleHealthTests(unittest.TestCase):
         missing=[x["source_key"] for x in result["sources"]
                  if x["evergreen_reusability"]=="fixed_production_set"
                  and not x["fixed_source_successor_key"]]
-        self.assertEqual(missing,["lecce-politeama-opera-2026"])
+        self.assertEqual(missing,[])
+        self.assertEqual(indexed["lecce-politeama-opera-2026"]["evergreen_reusability"],"dynamic_category")
+        self.assertFalse(indexed["lecce-politeama-opera-2026"]["future_season_verified"])
         self.assertEqual(indexed["goldoni-livorno-dido-2026-27"]["fixed_source_successor_key"],
                          "goldoni-livorno-rolling-lirica")
         self.assertEqual(indexed["sassari-de-carolis-opera-2026"]["fixed_source_successor_key"],
