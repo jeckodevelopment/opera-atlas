@@ -1,14 +1,9 @@
 {
   "schema_version": 1,
-  "checked_at": "2026-11-27T22:29:22+00:00",
+  "checked_at": "2026-11-27T22:34:26+00:00",
   "scope": "national",
-  "attempted": 3,
+  "attempted": 1,
   "outcomes": [
-    {
-      "candidate_id": "oa-index-1ce3b2499d33a394d369",
-      "outcome": "facts_found",
-      "rows": 7
-    },
     {
       "candidate_id": "oa-index-c54cdb529f9480bba2d4",
       "outcome": "unavailable_or_unstructured",
@@ -17,11 +12,6 @@
         "official_composer_credit:Trapani first-party composer missing"
       ],
       "rows": 0
-    },
-    {
-      "candidate_id": "oa-index-6270274da7ef189d5bec",
-      "outcome": "facts_found",
-      "rows": 7
     }
   ]
 }
