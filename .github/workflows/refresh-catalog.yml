@@ -167,6 +167,10 @@ jobs:
         if: steps.san_carlo_candidates.outcome == 'success'
         continue-on-error: true
         run: python -m scripts.corroborate_san_carlo_secondary --allow-network --sync-review
+      - name: Discover next San Carlo editions for independent review
+        continue-on-error: true
+        timeout-minutes: 4
+        run: python -m scripts.discover_san_carlo_future --allow-network
       - name: Acquire cross-source corroboration before national backlog
         run: python -m scripts.corroborate_performances
       # An exact, first-party Rovigo detail URL is available even when the
@@ -206,7 +210,7 @@ jobs:
           # Preserve the cross-source gate outcome even when no recita passed.
           git add data/corroborated-performance-health.json
           if [ -f data/san-carlo-canonical-review-health.json ]; then git add data/san-carlo-canonical-review-health.json; fi
-          for f in data/san-carlo-secondary-candidates.json data/san-carlo-secondary-health.json public/catalog/san-carlo-secondary-candidates.json data/san-carlo-secondary-corroboration.json public/catalog/san-carlo-secondary-corroboration.json; do
+          for f in data/san-carlo-secondary-candidates.json data/san-carlo-secondary-health.json public/catalog/san-carlo-secondary-candidates.json data/san-carlo-secondary-corroboration.json public/catalog/san-carlo-secondary-corroboration.json data/san-carlo-future-review.json public/catalog/san-carlo-future-review.json; do
             if [ -f "$f" ]; then git add "$f"; fi
           done
           git add data/season-index-candidates.json data/season-index-health.json public/catalog/season-index-candidates.json

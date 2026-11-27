@@ -54,17 +54,36 @@ jobs:
           review = json.loads(CORROBORATION.read_text())
           registry = json.loads(OUTPUT.read_text())
           details = json.loads(DETAILS.read_text())
-          _, _, outcomes = apply(candidate, review, registry, details,
-                                 checked_at="2026-11-22T22:00:00Z")
-          ready = [x for x in outcomes if x["status"]=="canonical_candidate_evidence_ready"]
-          blocked = [x for x in outcomes if x["status"] not in
-                     ("canonical_candidate_evidence_ready", "already_processed",
-                      "stronger_primary_preserved")]
-          overridden = sum(x.get("official_overrides", 0) for x in ready)
-          print("San Carlo canonical bridge:", len(ready), "productions ready;",
-                len(blocked), "held;", overridden, "secondary clocks overridden by official")
-          if blocked or (not ready and not outcomes) or overridden != 2:
-              raise SystemExit("San Carlo official authority has not resolved two source discrepancies")
+          # Exercise the full evidence gate independently of the live registry's
+          # idempotent already_processed outcomes. No file is written.
+          stamp = "2026-11-22T22:00:00Z"
+          _, fresh_details, fresh = apply(candidate, review,
+              {"schema_version": 1, "candidates": []},
+              {"schema_version": 1, "evidence": []}, checked_at=stamp)
+          if not fresh or any(x["status"] != "canonical_candidate_evidence_ready" for x in fresh):
+              raise SystemExit("San Carlo fresh evidence gate held one or more productions")
+          expected = {(p["title"], c["date"], c["candidate"], c["independent"])
+                      for p in review["productions"] for c in p["conflicting_clocks"]}
+          resolved = {(e["event_facts"][0]["event_title"], r["date"], r["time"],
+                       r["overridden_secondary_time"])
+                      for e in fresh_details["evidence"]
+                      for r in e["corroboration"]["overridden_secondary_showtimes"]}
+          if expected != resolved:
+              raise SystemExit("San Carlo official authority did not resolve every secondary conflict")
+          new_registry, new_details, outcomes = apply(candidate, review, registry, details,
+                                                        checked_at=stamp)
+          allowed = {"canonical_candidate_evidence_ready", "already_processed",
+                     "stronger_primary_preserved"}
+          if len(outcomes) != len(candidate["productions"]) or any(
+              x["status"] not in allowed for x in outcomes):
+              raise SystemExit("San Carlo live canonical bridge held one or more productions")
+          again, _, repeated = apply(candidate, review, new_registry, new_details,
+                                      checked_at=stamp)
+          if {r["id"] for r in again["candidates"]} != {r["id"] for r in new_registry["candidates"]}:
+              raise SystemExit("San Carlo repeat scan introduced duplicate candidate identities")
+          print("San Carlo canonical bridge:", len(fresh), "fresh productions verified;",
+                len(resolved), "official clock overrides verified;",
+                sum(x["status"]=="already_processed" for x in outcomes), "already processed")
           PY
       - name: Describe review-only result
         run: |
@@ -81,7 +100,7 @@ jobs:
               f"- Conflicting date/time observations: {result['conflicting_recite_count']}",
               f"- Unmatched candidate observations: {result['unmatched_recite_count']}",
               '- Published records: 0',
-              '- Official primary-page schedule takes precedence for the two conflicting clocks',
+              '- Official primary-page schedule takes precedence for corroborated conflicting clocks',
               '- Canonical review gate runs separately; published records: 0',
               '',
               '### Conflicts',

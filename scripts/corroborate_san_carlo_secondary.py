@@ -89,12 +89,16 @@ class Events(HTMLParser):
                 self.current["parts"].append("\n")
 
 
-def parse_independent(html: str, *, allowed_titles: set[str] | None = None) -> dict[str, dict]:
+def parse_independent(html: str, *, allowed_titles: set[str] | None = None,
+                      season: tuple[int, int] = (2026, 2027)) -> dict[str, dict]:
+    start, end = season
+    if end != start+1 or not 2000<=start<=2098:
+        raise ValueError("invalid independent season")
     page = Events()
     page.feed(html)
     meta = " ".join(page.meta_parts)
     if ("Napoli" not in meta or "San Carlo" not in meta
-        or not re.search(r"2026\s*/\s*2027", meta)):
+        or not re.search(rf"(?<!\d){start}\s*[/–-]\s*{end}(?!\d)", meta)):
         raise ValueError("independent calendar has no matching venue and season")
     found = {}
     for block in page.blocks:
@@ -112,6 +116,8 @@ def parse_independent(html: str, *, allowed_titles: set[str] | None = None) -> d
             # Do not assign a year when multiple years appear.
             continue
         year = years[0]
+        if not start<=year<=end:
+            continue
         rows = {}
         for match in MONTH_ROW.finditer(text):
             month = MONTHS[match.group(1).casefold()]

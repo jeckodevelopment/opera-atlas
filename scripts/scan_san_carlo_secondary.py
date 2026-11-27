@@ -36,7 +36,7 @@ SHOWTIME = re.compile(
     r"(" + "|".join(MONTHS) + r")\s+(20\d{2})\s+([01]?\d|2[0-3]):([0-5]\d)$",
     re.I,
 )
-SEASON = re.compile(r"^/it/rassegne/teatro-di-san-carlo/stagione-dopera-20\d{2}-20\d{2}/$")
+SEASON = re.compile(r"^/it/rassegne/teatro-di-san-carlo/stagione-dopera-(20\d{2})-(20\d{2})/$")
 NOISE = re.compile(r"\b(?:recite|prossima|direttore|regia|napoli|teatro|stagione|conclusa|biglietti)\b", re.I)
 RANGE = re.compile(r"^\d{1,2}\s+\w+\s*[–-]\s*\d{1,2}\s+\w+\s+20\d{2}$")
 
@@ -100,14 +100,21 @@ def _composer(items):
     return None
 
 
-def parse(html: str, *, url: str = URL, diagnostics: list | None = None) -> list[dict]:
+def season_years(url: str) -> tuple[int, int]:
     target = urlsplit(url)
-    if target.scheme != "https" or target.hostname != "www.classicalive.it" or (
-        not SEASON.fullmatch(target.path)
-        or target.query or target.fragment or target.port is not None
-        or target.username is not None or target.password is not None
-    ):
+    match = SEASON.fullmatch(target.path)
+    if (target.scheme != "https" or target.hostname != "www.classicalive.it"
+        or not match or target.query or target.fragment or target.port is not None
+        or target.username is not None or target.password is not None):
         raise ValueError("unapproved secondary season URL")
+    start, end = map(int, match.groups())
+    if end != start + 1:
+        raise ValueError("noncontiguous secondary season")
+    return start, end
+
+
+def parse(html: str, *, url: str = URL, diagnostics: list | None = None) -> list[dict]:
+    start_year, end_year = season_years(url)
     p = CalendarReader()
     p.feed(html)
     items = p.items
@@ -185,6 +192,8 @@ def parse(html: str, *, url: str = URL, diagnostics: list | None = None) -> list
                 continue
             weekday, day, month, year, hour, minute = m.groups()
             d = date(int(year), MONTHS[month.lower()], int(day))
+            if not start_year <= d.year <= end_year:
+                raise ValueError("secondary recita outside selected season")
             if d.weekday() != DAYS[weekday.lower()]:
                 raise ValueError("secondary weekday/date mismatch")
             clock = f"{int(hour):02d}:{minute}"
@@ -231,7 +240,7 @@ def parse(html: str, *, url: str = URL, diagnostics: list | None = None) -> list
 
 
 def build_secondary_checkpoint(productions: list[dict], *, checked_at: str,
-                               incomplete: list[dict]) -> tuple[dict, dict]:
+                               incomplete: list[dict], url: str = URL) -> tuple[dict, dict]:
     """Cross-source review input, never a first-party canonical observation.
 
     The routine deliberately does not write the official candidate/evidence
@@ -239,13 +248,14 @@ def build_secondary_checkpoint(productions: list[dict], *, checked_at: str,
     """
     if not productions:
         raise ValueError("refuse empty secondary candidate checkpoint")
+    start_year, end_year = season_years(url)
     records = []
     identities = set()
     for production in productions:
         if (production.get("review_status") != "needs_primary_corroboration"
             or production.get("venue") != VENUE
             or production.get("city") != CITY
-            or production.get("secondary_source") != URL
+            or production.get("secondary_source") != url
             or not eligible_detail(production.get("official_event_url") or "")
             or not production.get("title") or not production.get("composer")
             or not production.get("performances")):
@@ -261,6 +271,7 @@ def build_secondary_checkpoint(productions: list[dict], *, checked_at: str,
             day = date.fromisoformat(recita["date"])
             clock = recita["time"]
             if (not re.fullmatch(r"(?:[01]\d|2[0-3]):[0-5]\d", clock)
+                or not start_year <= day.year <= end_year
                 or day.isoformat() != recita["date"]
                 or (recita["date"], clock) in clocks):
                 raise ValueError("invalid or duplicate secondary clock")
@@ -271,7 +282,7 @@ def build_secondary_checkpoint(productions: list[dict], *, checked_at: str,
             "venue": VENUE, "city": CITY,
             "performances": sorted(production["performances"],
                                    key=lambda row: (row["date"], row["time"])),
-            "secondary_source": URL,
+            "secondary_source": url,
             "official_event_url": production["official_event_url"],
             "corroboration_status": "pending_independent_event_verification",
         })
@@ -280,7 +291,7 @@ def build_secondary_checkpoint(productions: list[dict], *, checked_at: str,
         "schema_version": 1,
         "source_key": "napoli-san-carlo-rolling-opera",
         "source_role": "secondary_unverified",
-        "source_url": URL,
+        "source_url": url,
         "productions": records,
     }
     health = {
