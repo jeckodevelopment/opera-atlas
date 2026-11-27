@@ -1,5 +1,5 @@
 {
-  "catalog_reviewed_on": "2026-11-26",
+  "catalog_reviewed_on": "2026-11-27",
   "diagnostics": {
     "composer_media_coverage": {
       "default_image": 58,
@@ -9903,6 +9903,34 @@
     },
     {
       "aliases": [],
+      "composer_ids": [
+        "oa-c-000041"
+      ],
+      "fallback_image": null,
+      "id": "oa-s-000371",
+      "image": null,
+      "production_kind": "staging",
+      "subtitle": "Teatro Massimo Bellini",
+      "title": "Nabucco",
+      "type": "production",
+      "url": "https://opera.plus/atlas/catania/teatro-massimo-bellini/nabucco/"
+    },
+    {
+      "aliases": [],
+      "composer_ids": [
+        "oa-c-000063"
+      ],
+      "fallback_image": null,
+      "id": "oa-s-000372",
+      "image": null,
+      "production_kind": "staging",
+      "subtitle": "Teatro Massimo Bellini",
+      "title": "Das Rheingold",
+      "type": "production",
+      "url": "https://opera.plus/atlas/catania/teatro-massimo-bellini/das-rheingold/"
+    },
+    {
+      "aliases": [],
       "composer_ids": [],
       "fallback_image": null,
       "id": "oa-v-000001",
@@ -10728,5 +10756,5 @@
     }
   ],
   "schema_version": 1,
-  "source_revision": "01968ddf99341af0757d3f4dc0f9e2551e3bc98b"
+  "source_revision": "fc25befbf44021b780660a7fe9a6df1a74f501b2"
 }
