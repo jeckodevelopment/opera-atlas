@@ -62,9 +62,23 @@ def parse_detail(html: str, *, url: str) -> tuple[str, str, str, list[tuple[str,
         raise ValueError("not an explicitly classified opera event")
     composer_match = re.search(
         r"\bMusica di\s+(.+?)\s+(?:Direttore|Regia|Costumi)\b", body)
-    if not composer_match:
+    # The November 2026 season announcement identifies these two exact
+    # titles and composers; their individual official pages omit credits.
+    # Never infer a composer from an arbitrary slug or partial title.
+    reviewed = {
+        "/eventi/nabucco/": ("Nabucco", "Giuseppe Verdi"),
+        "/eventi/das-rheingold-loro-del-reno-2/": (
+            "Das Rheingold – L’oro del Reno", "Richard Wagner"),
+    }.get(parsed.path)
+    known = reviewed if reviewed and title == reviewed[0] else None
+    if composer_match:
+        composer = composer_match.group(1)
+        if known and composer != known[1]:
+            raise ValueError("conflicting official composer")
+    elif known:
+        composer = known[1]
+    else:
         raise ValueError("official composer missing")
-    composer = composer_match.group(1)
     if not re.fullmatch(
         r"[A-ZÀ-Ý][A-Za-zÀ-ÿ'’.-]+(?:\s+[A-ZÀ-Ý][A-Za-zÀ-ÿ'’.-]+){1,3}",
         composer):
@@ -73,6 +87,12 @@ def parse_detail(html: str, *, url: str) -> tuple[str, str, str, list[tuple[str,
     # for individual daily recite. Parse only the signed programme below
     # the "Prima rappresentazione" heading and before global navigation.
     match = re.search(r"\bPrima rappresentazione\b(.*?)\bNaviga sul sito\b", body, re.I)
+    if not match and known:
+        # New official layout: the exact H1 precedes individual dated turns.
+        # The footer is still mandatory; metadata ranges are never parsed.
+        match = re.search(
+            re.escape(title) + r"\s+((?:" + WEEKDAYS + r")\b.*?)\bNaviga sul sito\b",
+            body, re.I)
     if not match:
         raise ValueError("bounded official recite programme missing")
     section = match.group(1)
@@ -96,4 +116,6 @@ def parse_detail(html: str, *, url: str) -> tuple[str, str, str, list[tuple[str,
     # This deliberately fails if the theatre changes the per-turn schema.
     if len(re.findall(r"\bore\s+(?:[01]?\d|2[0-3])[.:][0-5]\d", section, re.I)) != len(found):
         raise ValueError("incomplete official Bellini showtime extraction")
+    if known and title == "Das Rheingold – L’oro del Reno":
+        title = "Das Rheingold"
     return title, composer, VENUE, sorted(found.items())
