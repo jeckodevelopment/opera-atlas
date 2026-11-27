@@ -105,3 +105,26 @@ Se un altro job modifica `main`, il checkpoint viene differito senza
 sovrascrivere i cambiamenti; la prossima scansione autonoma lo ricalcola.
 `operational` richiede una scansione recente conclusa con successo,
 non equivale a copertura esaustiva o pubblicazione di recite.
+
+
+## Tolleranza operativa dei guasti temporanei
+
+Un tentativo fallito non equivale a un disservizio persistente. I registri
+dei connettori stagionali e giornalieri conservano `first_failure_at`,
+`consecutive_failures` e `last_attempt_at`. L'allarme tecnico scatta
+soltanto dopo almeno due esecuzioni distinte consecutive fallite, separate
+da almeno 24 ore tra il primo e l'ultimo errore osservati. Il semplice
+trascorrere del tempo senza una nuova esecuzione non genera un allarme.
+Una scansione riuscita azzera la sequenza. I programmi futuri esplicitamente
+non verificati e le revisioni editoriali non costituiscono guasti tecnici.
+
+Il feed conserva gli esiti effettivi (`status`, `scan_classification`)
+e aggiunge `failure_state`, `failure_hours`,
+`requires_technical_attention` e i contatori delle anomalie temporanee e
+persistenti. Una sede con una fonte alternativa riuscita rimane operativa;
+gli errori della singola fonte restano consultabili. La dashboard utilizza
+gli indicatori di persistenza per gli allarmi, mostrando gli errori recenti
+come osservazioni non bloccanti. Nessun filtro modifica le regole di
+verifica o di pubblicazione delle recite. Per i checkpoint precedenti
+privi di storico si parte dall'ultimo errore effettivamente registrato,
+non dall'ultima scansione riuscita.
