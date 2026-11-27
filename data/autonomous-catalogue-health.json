@@ -3,16 +3,7 @@
   "new_stagings": 0,
   "new_recite": 0,
   "consolidated_stagings": 0,
-  "auto_skipped": [
-    {
-      "candidate_id": "oa-index-1ce3b2499d33a394d369",
-      "reason": "incomplete_work_editorial"
-    },
-    {
-      "candidate_id": "oa-index-6270274da7ef189d5bec",
-      "reason": "incomplete_work_editorial"
-    }
-  ],
+  "auto_skipped": [],
   "new_works": 0,
   "enriched_recite_times": 0,
   "normalized_work_titles": 0
