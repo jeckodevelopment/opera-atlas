@@ -81,3 +81,11 @@ class PendingAuditTests(unittest.TestCase):
                                          BASE + "concerto-di-capodanno-12/"))
         self.assertFalse(excluded_nonopera("taormina-arte-rolling-opera",
                                          "https://festivaltaorminarte.it/evento/norma/"))
+
+    def test_trapani_peace_event_excluded_without_hiding_opera(self):
+        base = "https://www.lugliomusicale.it/it/luglio-musicale-stagioni/stagione-2026/"
+        key = "trapani-luglio-musicale-2026"
+        self.assertTrue(excluded_nonopera(key, base + "una-nota-per-la-pace/"))
+        self.assertFalse(excluded_nonopera(key, base + "nabucco/"))
+        self.assertFalse(excluded_nonopera("taormina-arte-rolling-opera",
+                                          base + "una-nota-per-la-pace/"))
