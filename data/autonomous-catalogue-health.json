@@ -14,7 +14,7 @@
     },
     {
       "candidate_id": "oa-index-ff095575c8c27102bd4c",
-      "reason": "incomplete_work_or_clock"
+      "reason": "unsupported_or_untrusted_source"
     },
     {
       "candidate_id": "oa-index-1ce3b2499d33a394d369",
@@ -26,7 +26,7 @@
     },
     {
       "candidate_id": "oa-index-ff095575c8c27102bd4c",
-      "reason": "incomplete_work_or_clock"
+      "reason": "unsupported_or_untrusted_source"
     }
   ],
   "new_works": 0,

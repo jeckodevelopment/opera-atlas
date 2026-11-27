@@ -3,23 +3,6 @@
   "groups": [
     {
       "candidate_ids": [
-        "oa-index-ff095575c8c27102bd4c"
-      ],
-      "category": "missing_composer",
-      "composer": null,
-      "exact_title_matches": [],
-      "possible_canonical_match": null,
-      "recite_observed": 1,
-      "sources": [
-        {
-          "source_key": "bellini-catania-opera-2026-27",
-          "url": "https://www.teatromassimobellini.it/eventi/concerto-di-capodanno-12/"
-        }
-      ],
-      "title": "Concerto di Capodanno"
-    },
-    {
-      "candidate_ids": [
         "oa-index-6270274da7ef189d5bec"
       ],
       "category": "missing_composer",
@@ -57,13 +40,13 @@
   "schema_version": 1,
   "source": "candidate-detail-evidence",
   "totals": {
-    "candidates_checked": 3,
+    "candidates_checked": 2,
     "candidates_without_facts": 0,
-    "facts_examined": 3,
+    "facts_examined": 2,
     "facts_resolved": 0,
     "translated_facts_resolved": 0,
-    "unmatched_facts": 3,
-    "unmatched_groups": 3
+    "unmatched_facts": 2,
+    "unmatched_groups": 2
   },
   "truncated": false
 }

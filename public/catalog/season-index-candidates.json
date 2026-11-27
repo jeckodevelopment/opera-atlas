@@ -157,7 +157,7 @@
       "id": "oa-index-07f902ab46b297c41013",
       "source_key": "taormina-arte-rolling-opera",
       "official_url": "https://festivaltaorminarte.it/evento/blu-planetaria/",
-      "status": "needs_review",
+      "status": "excluded_nonopera",
       "first_seen": "2026-11-26T16:47:43+00:00",
       "last_seen": "2026-11-27T21:08:59+00:00"
     },
@@ -821,7 +821,7 @@
       "id": "oa-index-38ec0e923196232fe754",
       "source_key": "taormina-arte-rolling-opera",
       "official_url": "https://festivaltaorminarte.it/evento/interference/",
-      "status": "needs_review",
+      "status": "excluded_nonopera",
       "first_seen": "2026-11-26T16:47:43+00:00",
       "last_seen": "2026-11-27T21:08:59+00:00"
     },
@@ -941,7 +941,7 @@
       "id": "oa-index-40e3ddb58749ceda98dd",
       "source_key": "taormina-arte-rolling-opera",
       "official_url": "https://festivaltaorminarte.it/evento/madame-tour-estate-2026/",
-      "status": "needs_review",
+      "status": "excluded_nonopera",
       "first_seen": "2026-11-26T16:47:43+00:00",
       "last_seen": "2026-11-27T21:08:59+00:00"
     },
@@ -997,7 +997,7 @@
       "id": "oa-index-476901a4f9f56161f30e",
       "source_key": "taormina-arte-rolling-opera",
       "official_url": "https://festivaltaorminarte.it/evento/la-cena/",
-      "status": "needs_review",
+      "status": "excluded_nonopera",
       "first_seen": "2026-11-26T16:47:43+00:00",
       "last_seen": "2026-11-27T21:08:59+00:00"
     },
@@ -1045,7 +1045,7 @@
       "id": "oa-index-4e733e128f3edf180b83",
       "source_key": "parma-opera-2027",
       "official_url": "https://teatroregioparma.it/spettacolo/concerto-di-santa-lucia/",
-      "status": "needs_review",
+      "status": "excluded_nonopera",
       "first_seen": "2026-11-25T08:33:31+00:00",
       "last_seen": "2026-11-27T21:08:59+00:00"
     },
@@ -1293,7 +1293,7 @@
       "id": "oa-index-5f6478510dcfb84e4cd1",
       "source_key": "taormina-arte-rolling-opera",
       "official_url": "https://festivaltaorminarte.it/evento/bellini-alla-norma/",
-      "status": "needs_review",
+      "status": "excluded_nonopera",
       "first_seen": "2026-11-26T16:47:43+00:00",
       "last_seen": "2026-11-27T21:08:59+00:00"
     },
@@ -1485,7 +1485,7 @@
       "id": "oa-index-6ae3cb7b4d77a89231d0",
       "source_key": "taormina-arte-rolling-opera",
       "official_url": "https://festivaltaorminarte.it/evento/roberta-torre-masterclass/",
-      "status": "needs_review",
+      "status": "excluded_nonopera",
       "first_seen": "2026-11-26T16:47:43+00:00",
       "last_seen": "2026-11-27T21:08:59+00:00"
     },
@@ -1677,7 +1677,7 @@
       "id": "oa-index-7b163fef91e17c83ad6f",
       "source_key": "trapani-luglio-musicale-2026",
       "official_url": "https://www.lugliomusicale.it/it/luglio-musicale-stagioni/stagione-2026/io-e-te/",
-      "status": "needs_review",
+      "status": "excluded_nonopera",
       "first_seen": "2026-11-27T12:06:03+00:00",
       "last_seen": "2026-11-27T21:08:59+00:00"
     },
@@ -2821,7 +2821,7 @@
       "id": "oa-index-cc2f627c0c7e4bcfab15",
       "source_key": "fenice-opera-2026-27",
       "official_url": "https://www.teatrolafenice.it/event/madama-butterfly-carnival-cocktail/",
-      "status": "needs_review",
+      "status": "already_catalogued",
       "first_seen": "2026-11-24T13:34:22+00:00",
       "last_seen": "2026-11-27T21:08:59+00:00"
     },
@@ -3717,7 +3717,7 @@
       "id": "oa-index-ff095575c8c27102bd4c",
       "source_key": "bellini-catania-opera-2026-27",
       "official_url": "https://www.teatromassimobellini.it/eventi/concerto-di-capodanno-12/",
-      "status": "needs_review",
+      "status": "excluded_nonopera",
       "first_seen": "2026-11-27T17:30:22+00:00",
       "last_seen": "2026-11-27T21:08:59+00:00"
     },
