@@ -947,14 +947,57 @@
       "candidate_id": "oa-index-1ce3b2499d33a394d369",
       "source_key": "bellini-catania-opera-2026-27",
       "source_url": "https://www.teatromassimobellini.it/eventi/nabucco/",
-      "content_sha256": "40f4839194f93974d85de14abad923aa0e2caad8459f2c345be73cf27afc1e0d",
-      "checked_at": "2026-11-27T21:16:23+00:00",
+      "content_sha256": "7f551a0e8de7422bbf78349c5e667cacfce0cbe1e85da6f8bd7fa0cf131ff59f",
+      "checked_at": "2026-11-27T22:29:16+00:00",
       "status": "needs_editorial_review",
       "event_facts": [
         {
           "event_title": "Nabucco",
+          "composer": "Giuseppe Verdi",
           "date": "2027-03-06",
-          "starts_at": null,
+          "starts_at": "2027-03-06T20:30:00+01:00",
+          "venue": "Teatro Massimo Bellini"
+        },
+        {
+          "event_title": "Nabucco",
+          "composer": "Giuseppe Verdi",
+          "date": "2027-03-07",
+          "starts_at": "2027-03-07T17:30:00+01:00",
+          "venue": "Teatro Massimo Bellini"
+        },
+        {
+          "event_title": "Nabucco",
+          "composer": "Giuseppe Verdi",
+          "date": "2027-03-09",
+          "starts_at": "2027-03-09T20:30:00+01:00",
+          "venue": "Teatro Massimo Bellini"
+        },
+        {
+          "event_title": "Nabucco",
+          "composer": "Giuseppe Verdi",
+          "date": "2027-03-10",
+          "starts_at": "2027-03-10T17:30:00+01:00",
+          "venue": "Teatro Massimo Bellini"
+        },
+        {
+          "event_title": "Nabucco",
+          "composer": "Giuseppe Verdi",
+          "date": "2027-03-12",
+          "starts_at": "2027-03-12T17:30:00+01:00",
+          "venue": "Teatro Massimo Bellini"
+        },
+        {
+          "event_title": "Nabucco",
+          "composer": "Giuseppe Verdi",
+          "date": "2027-03-13",
+          "starts_at": "2027-03-13T17:30:00+01:00",
+          "venue": "Teatro Massimo Bellini"
+        },
+        {
+          "event_title": "Nabucco",
+          "composer": "Giuseppe Verdi",
+          "date": "2027-03-14",
+          "starts_at": "2027-03-14T17:30:00+01:00",
           "venue": "Teatro Massimo Bellini"
         }
       ]
@@ -3042,14 +3085,57 @@
       "candidate_id": "oa-index-6270274da7ef189d5bec",
       "source_key": "bellini-catania-opera-2026-27",
       "source_url": "https://www.teatromassimobellini.it/eventi/das-rheingold-loro-del-reno-2/",
-      "content_sha256": "afb3fd40d22c27923fd6287a379db5f486dbb849b14000681d226159f406b667",
-      "checked_at": "2026-11-27T21:14:14+00:00",
+      "content_sha256": "83bcfa82ca879bb27b3bd69f14b5c5993cdd4f798da7e0894748098f65f92ac4",
+      "checked_at": "2026-11-27T22:29:22+00:00",
       "status": "needs_editorial_review",
       "event_facts": [
         {
-          "event_title": "Das Rheingold - L’oro del Reno",
+          "event_title": "Das Rheingold",
+          "composer": "Richard Wagner",
           "date": "2027-04-09",
-          "starts_at": null,
+          "starts_at": "2027-04-09T20:30:00+02:00",
+          "venue": "Teatro Massimo Bellini"
+        },
+        {
+          "event_title": "Das Rheingold",
+          "composer": "Richard Wagner",
+          "date": "2027-04-10",
+          "starts_at": "2027-04-10T17:30:00+02:00",
+          "venue": "Teatro Massimo Bellini"
+        },
+        {
+          "event_title": "Das Rheingold",
+          "composer": "Richard Wagner",
+          "date": "2027-04-11",
+          "starts_at": "2027-04-11T17:30:00+02:00",
+          "venue": "Teatro Massimo Bellini"
+        },
+        {
+          "event_title": "Das Rheingold",
+          "composer": "Richard Wagner",
+          "date": "2027-04-13",
+          "starts_at": "2027-04-13T17:30:00+02:00",
+          "venue": "Teatro Massimo Bellini"
+        },
+        {
+          "event_title": "Das Rheingold",
+          "composer": "Richard Wagner",
+          "date": "2027-04-14",
+          "starts_at": "2027-04-14T20:30:00+02:00",
+          "venue": "Teatro Massimo Bellini"
+        },
+        {
+          "event_title": "Das Rheingold",
+          "composer": "Richard Wagner",
+          "date": "2027-04-15",
+          "starts_at": "2027-04-15T17:30:00+02:00",
+          "venue": "Teatro Massimo Bellini"
+        },
+        {
+          "event_title": "Das Rheingold",
+          "composer": "Richard Wagner",
+          "date": "2027-04-16",
+          "starts_at": "2027-04-16T17:30:00+02:00",
           "venue": "Teatro Massimo Bellini"
         }
       ]
