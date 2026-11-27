@@ -114,6 +114,8 @@ EXCLUDED_PATHS={
     # Exclusions require individually recognisable original programme slugs;
     # no global keyword or "family" exclusion is permitted.
     "trapani-luglio-musicale-2026": frozenset({
+        # Editorial review: Una nota per la pace is not an opera performance.
+        "una-nota-per-la-pace",
         "io-e-te",
         "new-saxophone-orchestra",
         "duo-resonans",
