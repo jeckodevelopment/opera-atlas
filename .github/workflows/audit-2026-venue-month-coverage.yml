@@ -1,4 +1,4 @@
-name: Audit 2026 — 74 venues by 12 months
+name: Audit 2026 — national venues by 12 months
 
 on:
   pull_request:
@@ -49,7 +49,12 @@ jobs:
           from pathlib import Path
           p=Path('public/diagnostics/atlas-2026-venue-month-coverage.json')
           d=json.loads(p.read_text(encoding='utf-8'))
-          assert d['cell_count']==876 and d['venue_count']==73
+          venues=json.loads(Path('data/venue-directory.json').read_text(encoding='utf-8'))['venues']
+          assert d['venue_count']==len(venues)>0
+          assert d['cell_count']==len(venues)*12==len(d['rows'])
+          assert {(r['venue_id'],r['month']) for r in d['rows']} == {
+              (v['id'],f'2026-{m:02d}') for v in venues for m in range(1,13)
+          }
           assert d['read_only'] and not d['catalog_updated']
           assert d['complete_venue_months']==0
           assert all(not row['complete_month_verified'] for row in d['rows'])

@@ -120,7 +120,8 @@ INDEX_VENUES = {
     # Code: Unknown at Teatro Nazionale; La Cenerentola at Teatro Valle.
     "opera-roma-season-2026-27": ("Roma|Teatro dell'Opera di Roma",
                                    "Roma|Teatro Nazionale",
-                                   "Roma|Teatro Valle Franca Valeri"),
+                                   "Roma|Teatro Valle Franca Valeri",
+                                   "Roma|Circo Massimo"),
     "petruzzelli-opera-2026": ("Bari|Teatro Petruzzelli",),
     "petruzzelli-opera-2027": ("Bari|Teatro Petruzzelli",),
     "bologna-comunale-opera-2026": ("Bologna|Teatro Comunale di Bologna", "Bologna|Teatro Auditorium Manzoni"),

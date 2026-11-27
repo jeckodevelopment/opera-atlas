@@ -162,8 +162,11 @@ def build_matrix(venues, registry, manifest, programs, historical, h1, h2,
         venue_leads={"schema_version":1,"year":2026,"records":[]}
     verified_leads=validated_venue_leads(venue_leads,venue_rows)
 
-    if len(venue_rows) != 73 or len({v["id"] for v in venue_rows}) != len(venue_rows):
-        raise ValueError("expected 73 distinct reviewed venue IDs")
+    # The reviewed national directory grows as new physical venues receive
+    # editorial profiles. Keep the historical audit aligned with its current
+    # scope, without treating a new venue as proof of calendar completeness.
+    if not venue_rows or len({v["id"] for v in venue_rows}) != len(venue_rows):
+        raise ValueError("expected distinct reviewed venue IDs in a nonempty directory")
     by_id = {v["id"]: v for v in venue_rows}
     registry_venues = registry["venues"]
     registry_to_directory = {}
