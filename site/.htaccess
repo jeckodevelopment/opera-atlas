@@ -5,8 +5,16 @@ RewriteBase /atlas/
 # Retired temporary venue: canonical Bologna theatre page (permanent redirect).
 RewriteRule ^bologna/teatro-comunale-nouveau/?$ /atlas/bologna/teatro-comunale-di-bologna/ [R=301,L,NE]
 RewriteRule ^trento/teatro-sociale/la-clemenza-di-tito-la-clemenza-di-tito/?$ /atlas/trento/teatro-sociale/la-clemenza-di-tito/ [R=301,L,NE]
+# Preserve the earlier directory-only spelling as an alias.
+RewriteRule ^trapani/teatro-tonino-pardo/?$ /atlas/trapani/teatro-m-tonino-pardo/ [R=301,L,NE]
 RewriteRule ^in-scena/$ /atlas/in-scena [R=302,L,NE]
 RewriteRule ^in-scena$ in-scena.html [L]
+# A newly published production can create its parent venue directory before
+# that venue has a prerendered index. Route such canonical-shaped directories
+# to the live detail client; leave existing SEO index files untouched.
+RewriteCond %{REQUEST_FILENAME} -d
+RewriteCond %{REQUEST_FILENAME}/index.html !-f
+RewriteRule ^[a-z0-9-]+/[a-z0-9-]+/?$ detail.html [L]
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteRule ^(opere/[a-z0-9-]+|programmi/oa-p-[a-z0-9-]+|produzioni/oa-g-[a-z0-9-]+|[a-z0-9-]+/[a-z0-9-]+(/[a-z0-9-]+)?)/?$ detail.html [L]
