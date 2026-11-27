@@ -20,23 +20,44 @@ class VenueMonthMatrixTests(unittest.TestCase):
         cls.leads=json.loads(OFFICIAL_ZERO_VENUE_LEADS.read_text(encoding="utf-8"))
         cls.report=build_matrix(*cls.inputs,cls.leads)
 
-    def test_complete_73_x_12_grid_without_certifying_any_missing_month(self):
+    def test_complete_directory_x_12_grid_without_certifying_any_missing_month(self):
         r=self.report
-        self.assertEqual(73,r["venue_count"])
-        self.assertEqual(876,r["cell_count"])
-        self.assertEqual(876,len(r["rows"]))
-        self.assertEqual(876,len({(x["venue_id"],x["month"]) for x in r["rows"]}))
+        count=len(self.inputs[0]["venues"])
+        self.assertEqual(count,r["venue_count"])
+        self.assertEqual(count*12,r["cell_count"])
+        self.assertEqual(count*12,len(r["rows"]))
+        self.assertEqual(count*12,len({(x["venue_id"],x["month"]) for x in r["rows"]}))
         self.assertEqual(0,r["complete_venue_months"])
         self.assertEqual(0,r["complete_annual_venues"])
         self.assertTrue(all(x["complete_month_verified"] is False for x in r["rows"]))
         self.assertTrue(r["read_only"])
         self.assertFalse(r["catalog_updated"])
 
+    def test_circo_massimo_preserves_canonical_six_published_showtimes(self):
+        rows=[x for x in self.report["rows"] if x["venue_id"]=="oa-v-000074"]
+        self.assertEqual(12,len(rows))
+        self.assertEqual(6,sum(x["published_showtimes"] for x in rows))
+        self.assertTrue(all(not x["complete_month_verified"] for x in rows))
+
+    def test_directory_growth_and_duplicate_ids(self):
+        inputs=copy.deepcopy(self.inputs)
+        inputs[0]["venues"].append({
+            "id":"oa-vd-999999","name":"Test Venue","city":"Test City",
+            "region":"Test","calendar_status":"not_acquired",
+        })
+        report=build_matrix(*inputs,self.leads)
+        self.assertEqual(self.report["venue_count"]+1,report["venue_count"])
+        self.assertEqual(self.report["cell_count"]+12,report["cell_count"])
+        inputs[0]["venues"].append(copy.deepcopy(inputs[0]["venues"][-1]))
+        with self.assertRaisesRegex(ValueError,"distinct reviewed venue IDs"):
+            build_matrix(*inputs,self.leads)
+
     def test_zero_published_priorities_are_not_missing_recite_claims(self):
         r=self.report
         priorities=r["venue_audit_priorities"]
-        self.assertEqual(73,len(priorities))
-        self.assertEqual(73,len({x["venue_id"] for x in priorities}))
+        count=len(self.inputs[0]["venues"])
+        self.assertEqual(count,len(priorities))
+        self.assertEqual(count,len({x["venue_id"] for x in priorities}))
         zero=[x for x in priorities if x["published_2026_showtimes"]==0]
         self.assertEqual(len(zero),r["zero_published_venue_count"])
         self.assertEqual(len(zero),sum(r["zero_published_by_calendar_status"].values()))
