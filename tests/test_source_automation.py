@@ -259,7 +259,8 @@ class SourceAutomationTests(unittest.TestCase):
         self.assertFalse(by_key["chieti-marrucino-season-2027"]["requires_technical_attention"])
         modena=by_key["modena-opera-2026-27"]
         self.assertEqual(modena["scan_classification"],"fetch_unavailable")
-        self.assertTrue(modena["requires_technical_attention"])
+        self.assertFalse(modena["requires_technical_attention"])
+        self.assertEqual(modena["failure_state"],"transient")
         self.assertIn("modena-teatro-opera-2026-27",modena["other_successful_official_sources"])
         self.assertEqual(by_key["napoli-san-carlo-rolling-opera"]["scan_classification"],
                          "access_blocked")
@@ -376,9 +377,42 @@ class SourceAutomationTests(unittest.TestCase):
         future=next(x for x in result["sources"]
                     if x["source_key"]=="modena-municipal-opera-2027-28")
         self.assertEqual(future["scan_classification"],"fetch_unavailable")
-        self.assertTrue(future["requires_technical_attention"])
+        self.assertFalse(future["requires_technical_attention"])
+        self.assertEqual(future["failure_state"],"transient")
         self.assertFalse(future["has_healthy_alternative"])
         self.assertNotIn("not_published",str(future))
+
+    def test_24h_outage_alerts_preserve_raw_status_and_alternatives(self):
+        from scripts.source_automation import DIRECTORY, DAILY, INDEX
+        import json
+        from opera_atlas.source_failure_history import with_history
+        key="opera-roma-season-2026-27"
+        failure={"key":key,"status":"unavailable_or_invalid",
+                 "diagnostic":"official_html_unavailable_or_invalid"}
+        first=with_history(failure,{},checked_at="2026-11-27T10:00:00+00:00")
+        directory=json.loads(DIRECTORY.read_text())
+        daily=json.loads(DAILY.read_text())
+        index=json.loads(INDEX.read_text())
+        for stamp,expected in (("2026-11-28T09:59:59+00:00",False),
+                               ("2026-11-28T10:00:00+00:00",True)):
+            row=with_history(failure,first,checked_at=stamp)
+            report=build(directory,daily,{"sources":[]},index,{"sources":[row]})
+            venue=next(x for x in report["venues"] if x["city"]=="Roma"
+                       and x["venue"]=="Teatro dell'Opera di Roma")
+            self.assertEqual(venue["status"],"configured_not_operational")
+            self.assertEqual(venue["requires_technical_attention"],expected)
+            self.assertEqual(venue["outage_state"],"persistent" if expected else "transient")
+            source=next(x for x in report["index_scan_attention"]["sources"] if x["source_key"]==key)
+            self.assertEqual(source["requires_technical_attention"],expected)
+        # A successful alternative means the venue does not require escalation.
+        key="modena-opera-2026-27"
+        failed=dict(row,key=key)
+        success={"key":"modena-teatro-opera-2026-27","status":"success",
+                 "current_scan_verified":True}
+        report=build(directory,daily,{"sources":[]},index,{"sources":[failed,success]})
+        venue=next(x for x in report["venues"] if x["city"]=="Modena")
+        self.assertEqual(venue["status"],"operational")
+        self.assertFalse(venue["requires_technical_attention"])
 
     def test_index_link_does_not_equal_success(self):
         from scripts.source_automation import DIRECTORY, DAILY, INDEX

@@ -10,6 +10,7 @@ from collections import Counter
 from datetime import datetime, timezone
 from pathlib import Path
 from urllib.parse import urlsplit
+from opera_atlas.source_failure_history import GRACE_HOURS, outage
 
 ROOT = Path(__file__).resolve().parents[1]
 DIRECTORY = ROOT / "data/venue-directory.json"
@@ -200,7 +201,7 @@ def classify_index_scan(check: dict) -> str:
     """Distinguish technical failures from future programmes not yet verified."""
     if check.get("status") == "success" and check.get("current_scan_verified") is True:
         return "verified_success"
-    if check.get("status") not in ("unavailable_or_invalid", "success"):
+    if check.get("status") not in ("unavailable_or_invalid", "partial_pagination", "success"):
         return "not_checked"
     diagnostic = check.get("diagnostic")
     if diagnostic == "future_official_programme_unverified":
@@ -282,14 +283,14 @@ def scan_attention(index: dict, index_health: dict, *, candidates: dict | None =
                  "excluded_nonopera": candidate_counts.get(key, {}).get("excluded_nonopera", 0),
                  "not_in_official_season": candidate_counts.get(key, {}).get("not_in_official_season", 0)}
                 if candidates is not None else None),
-            "requires_technical_attention": category in (
-                "access_blocked", "fetch_unavailable", "parser_or_source_validation_failed",
-                "source_content_not_verified"),
+            **outage(record),
         })
     counts = Counter(r["scan_classification"] for r in items)
     return {
         "total": len(items), "classifications": dict(sorted(counts.items())),
         "technical_attention": sum(r["requires_technical_attention"] for r in items),
+        "transient_failures": sum(r["failure_state"]=="transient" for r in items),
+        "failure_grace_hours": GRACE_HOURS,
         "future_programmes_not_verified": counts["future_programme_not_verified"],
         "sources_with_unresolved_candidates": sum(
             (r["candidate_yield"] or {}).get("needs_review", 0) > 0 for r in items),
@@ -328,6 +329,7 @@ def build(directory: dict, daily: dict, daily_health: dict, index: dict,
                 "failure_reason": (check.get("diagnostic") or check.get("reason")
                                    if check.get("status") not in (None, "success") else None),
                 "last_attempt_at": check.get("last_attempt_at"),
+                **outage(check),
             })
     for entry in daily["sources"]:
         for key in DAILY_VENUES.get(entry["adapter"], ()):
@@ -339,7 +341,8 @@ def build(directory: dict, daily: dict, daily_health: dict, index: dict,
                 "recent_success": check.get("outcome") == "success",
                 "failure_reason": (check.get("reason") or check.get("error")
                                    if check.get("outcome") not in (None, "success") else None),
-                "last_attempt_at": check.get("last_attempt_at"),
+                "last_attempt_at": check.get("last_attempt_at") or daily_health.get("checked_at"),
+                **outage(check,field="outcome"),
             })
     if san_carlo_fallback:
         assignments["Napoli|Teatro di San Carlo"].append(san_carlo_fallback)
@@ -354,8 +357,17 @@ def build(directory: dict, daily: dict, daily_health: dict, index: dict,
             status = "configured_not_operational"
         else:
             status = "not_automated"
+        # An independently successful approved source keeps the venue
+        # operational. If no source succeeds, a still-transient alternative
+        # prevents a venue-wide outage alert.
+        transient=any(s.get("failure_state")=="transient" for s in approved)
+        persistent=any(s.get("failure_state")=="persistent" for s in approved)
+        alert=bool(not successful and persistent and not transient)
         rows.append({
             "venue_id": venue["id"],
+            "requires_technical_attention":alert,
+            "outage_state":("none" if successful else "transient" if transient else
+                            "persistent" if alert else "not_verified"),
             "venue": venue["name"],
             "city": venue["city"],
             "region": venue["region"],
@@ -380,6 +392,9 @@ def build(directory: dict, daily: dict, daily_health: dict, index: dict,
         "configured_not_operational": counts["configured_not_operational"],
         "not_automated": counts["not_automated"],
         "automation_remaining": counts["configured_not_operational"] + counts["not_automated"],
+        "failure_grace_hours": GRACE_HOURS,
+        "venues_with_persistent_failures": sum(r["requires_technical_attention"] for r in rows),
+        "venues_with_transient_failures": sum(r["outage_state"]=="transient" for r in rows),
         "index_scan_attention": scan_attention(index, index_health, candidates=candidates),
         "venues": rows,
     }

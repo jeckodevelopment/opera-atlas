@@ -1674,8 +1674,10 @@ def source_health_history(current:list[dict],previous:dict,*,checked_at:str):
         if last_links is None and old.get("status")=="success":
             last_links=old.get("links")
         fresh=row.get("status")=="success"
-        rows.append({**row,
-                     "last_attempt_at":checked_at,
+        from opera_atlas.source_failure_history import with_history
+        tracked=with_history(row,old,checked_at=checked_at,
+                             previous_checked_at=previous.get("checked_at"))
+        rows.append({**tracked,
                      "last_success_at":checked_at if fresh else previous_ok,
                      "last_successful_links":row["links"] if fresh else last_links,
                      "current_scan_verified":fresh})
