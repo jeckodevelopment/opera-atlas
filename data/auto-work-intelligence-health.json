@@ -1,7 +1,42 @@
 {
   "schema_version": 1,
-  "checked_at": "2026-11-26T17:57:44+00:00",
+  "checked_at": "2026-11-27T17:52:46+00:00",
   "outcomes": [
+    {
+      "candidate_id": "oa-index-7b163fef91e17c83ad6f",
+      "status": "awaiting_official_identity_evidence",
+      "source_key": "trapani-luglio-musicale-2026",
+      "official_url": "https://www.lugliomusicale.it/it/luglio-musicale-stagioni/stagione-2026/io-e-te/",
+      "title_hint": "io e te"
+    },
+    {
+      "candidate_id": "oa-index-c54cdb529f9480bba2d4",
+      "status": "awaiting_official_identity_evidence",
+      "source_key": "trapani-luglio-musicale-2026",
+      "official_url": "https://www.lugliomusicale.it/it/luglio-musicale-stagioni/stagione-2026/una-nota-per-la-pace/",
+      "title_hint": "una nota per la pace"
+    },
+    {
+      "candidate_id": "oa-index-cc2f627c0c7e4bcfab15",
+      "status": "awaiting_official_identity_evidence",
+      "source_key": "fenice-opera-2026-27",
+      "official_url": "https://www.teatrolafenice.it/event/madama-butterfly-carnival-cocktail/",
+      "title_hint": "madama butterfly carnival cocktail"
+    },
+    {
+      "candidate_id": "oa-index-07f902ab46b297c41013",
+      "status": "awaiting_official_identity_evidence",
+      "source_key": "taormina-arte-rolling-opera",
+      "official_url": "https://festivaltaorminarte.it/evento/blu-planetaria/",
+      "title_hint": "blu planetaria"
+    },
+    {
+      "candidate_id": "oa-index-38ec0e923196232fe754",
+      "status": "awaiting_official_identity_evidence",
+      "source_key": "taormina-arte-rolling-opera",
+      "official_url": "https://festivaltaorminarte.it/evento/interference/",
+      "title_hint": "interference"
+    },
     {
       "candidate_id": "oa-index-40e3ddb58749ceda98dd",
       "status": "awaiting_official_identity_evidence",
@@ -36,27 +71,6 @@
       "source_key": "taormina-arte-rolling-opera",
       "official_url": "https://festivaltaorminarte.it/evento/roberta-torre-masterclass/",
       "title_hint": "roberta torre masterclass"
-    },
-    {
-      "candidate_id": "oa-index-cc2f627c0c7e4bcfab15",
-      "status": "awaiting_official_identity_evidence",
-      "source_key": "fenice-opera-2026-27",
-      "official_url": "https://www.teatrolafenice.it/event/madama-butterfly-carnival-cocktail/",
-      "title_hint": "madama butterfly carnival cocktail"
-    },
-    {
-      "candidate_id": "oa-index-07f902ab46b297c41013",
-      "status": "awaiting_official_identity_evidence",
-      "source_key": "taormina-arte-rolling-opera",
-      "official_url": "https://festivaltaorminarte.it/evento/blu-planetaria/",
-      "title_hint": "blu planetaria"
-    },
-    {
-      "candidate_id": "oa-index-38ec0e923196232fe754",
-      "status": "awaiting_official_identity_evidence",
-      "source_key": "taormina-arte-rolling-opera",
-      "official_url": "https://festivaltaorminarte.it/evento/interference/",
-      "title_hint": "interference"
     },
     {
       "candidate_id": "oa-index-00247ee71c58d88ba91f",
