@@ -1,11 +1,12 @@
 {
   "schema_version": 1,
-  "checked_at": "2026-11-27T23:59:25+00:00",
-  "total": 467,
+  "checked_at": "2026-11-28T00:13:56+00:00",
+  "total": 469,
   "states": {
     "already_catalogued": 287,
     "not_in_official_season": 19,
-    "excluded_nonopera": 161
+    "excluded_nonopera": 162,
+    "needs_review": 1
   },
   "changes": [
     {
