@@ -1,13 +1,14 @@
 {
   "schema_version": 1,
-  "checked_at": "2026-11-27T22:34:54+00:00",
+  "checked_at": "2026-11-28T16:24:28+00:00",
   "outcomes": [
     {
-      "candidate_id": "oa-index-cc2f627c0c7e4bcfab15",
-      "status": "catalogued_source_link_unverified",
-      "source_key": "fenice-opera-2026-27",
-      "official_url": "https://www.teatrolafenice.it/event/madama-butterfly-carnival-cocktail/",
-      "title_hint": "madama butterfly carnival cocktail"
+      "candidate_id": "oa-index-adcaf50673c64d4d07c9",
+      "status": "automatic_retry",
+      "reason": "authority_not_unique",
+      "source_key": "haydn-rolling-opera",
+      "official_url": "https://www.haydn.it/eventi/anna-a",
+      "title_hint": "Anna A."
     },
     {
       "candidate_id": "oa-index-00247ee71c58d88ba91f",
@@ -78,12 +79,6 @@
       "work_id": "oa-w-000046",
       "source_key": "petruzzelli-opera-2027",
       "official_url": "https://www.fondazionepetruzzelli.it/eventi/zenobia-di-niccolo-piccinni-27-29-31-gennaio-2-febbraio/"
-    },
-    {
-      "candidate_id": "oa-index-07f902ab46b297c41013",
-      "status": "excluded_nonopera",
-      "source_key": "taormina-arte-rolling-opera",
-      "official_url": "https://festivaltaorminarte.it/evento/blu-planetaria/"
     },
     {
       "candidate_id": "oa-index-08102433798cc6aa1215",
@@ -373,12 +368,6 @@
       "official_url": "https://www.sferisterio.it/macerata-opera-festival/tosca"
     },
     {
-      "candidate_id": "oa-index-38ec0e923196232fe754",
-      "status": "excluded_nonopera",
-      "source_key": "taormina-arte-rolling-opera",
-      "official_url": "https://festivaltaorminarte.it/evento/interference/"
-    },
-    {
       "candidate_id": "oa-index-3ad893acc9c9df1ad97f",
       "status": "already_catalogued",
       "work_id": "oa-w-000018",
@@ -435,12 +424,6 @@
       "official_url": "https://www.inprimafila.net/index.php/eventi/stagione-lirica-2026-cosenza"
     },
     {
-      "candidate_id": "oa-index-40e3ddb58749ceda98dd",
-      "status": "excluded_nonopera",
-      "source_key": "taormina-arte-rolling-opera",
-      "official_url": "https://festivaltaorminarte.it/evento/madame-tour-estate-2026/"
-    },
-    {
       "candidate_id": "oa-index-4186e1c367aee6cd2028",
       "status": "already_catalogued",
       "work_id": "oa-w-000022",
@@ -453,12 +436,6 @@
       "work_id": "oa-w-000010",
       "source_key": "carlo-felice-season-2026-27",
       "official_url": "https://www.carlofelice.it/spettacolo/evgenij-onegin/"
-    },
-    {
-      "candidate_id": "oa-index-476901a4f9f56161f30e",
-      "status": "excluded_nonopera",
-      "source_key": "taormina-arte-rolling-opera",
-      "official_url": "https://festivaltaorminarte.it/evento/la-cena/"
     },
     {
       "candidate_id": "oa-index-47cec5ba524c35eb01c8",
@@ -480,12 +457,6 @@
       "work_id": "oa-w-000005",
       "source_key": "goldoni-livorno-rolling-lirica",
       "official_url": "https://www.goldoniteatro.it/spettacoli/cavalleria-rusticana-2/"
-    },
-    {
-      "candidate_id": "oa-index-4e733e128f3edf180b83",
-      "status": "excluded_nonopera",
-      "source_key": "parma-opera-2027",
-      "official_url": "https://teatroregioparma.it/spettacolo/concerto-di-santa-lucia/"
     },
     {
       "candidate_id": "oa-index-4e7a6ea5275e9fa4ad03",
@@ -593,12 +564,6 @@
       "official_url": "https://teatrodipisa.it/spettacolo/dido-and-aeneas/"
     },
     {
-      "candidate_id": "oa-index-5f6478510dcfb84e4cd1",
-      "status": "excluded_nonopera",
-      "source_key": "taormina-arte-rolling-opera",
-      "official_url": "https://festivaltaorminarte.it/evento/bellini-alla-norma/"
-    },
-    {
       "candidate_id": "oa-index-5f6cb3b3600f1ce5cb67",
       "status": "already_catalogued",
       "work_id": "oa-w-000122",
@@ -681,12 +646,6 @@
       "work_id": "oa-w-000009",
       "source_key": "bellini-catania-opera-2026-27",
       "official_url": "https://www.teatromassimobellini.it/eventi/carmen-2026/"
-    },
-    {
-      "candidate_id": "oa-index-6ae3cb7b4d77a89231d0",
-      "status": "excluded_nonopera",
-      "source_key": "taormina-arte-rolling-opera",
-      "official_url": "https://festivaltaorminarte.it/evento/roberta-torre-masterclass/"
     },
     {
       "candidate_id": "oa-index-6cd199691f7145a4d048",
@@ -792,12 +751,6 @@
       "work_id": "oa-w-000041",
       "source_key": "bologna-comunale-opera-2027",
       "official_url": "https://www.tcbo.it/evento/opera/vanessa-2027/"
-    },
-    {
-      "candidate_id": "oa-index-7b163fef91e17c83ad6f",
-      "status": "excluded_nonopera",
-      "source_key": "trapani-luglio-musicale-2026",
-      "official_url": "https://www.lugliomusicale.it/it/luglio-musicale-stagioni/stagione-2026/io-e-te/"
     },
     {
       "candidate_id": "oa-index-7d80a6e641ec59031bfa",
@@ -1330,12 +1283,6 @@
       "work_id": "oa-w-000074",
       "source_key": "opera-roma-season-2026-27",
       "official_url": "https://www.operaroma.it/spettacoli/code-unknown/"
-    },
-    {
-      "candidate_id": "oa-index-c54cdb529f9480bba2d4",
-      "status": "excluded_nonopera",
-      "source_key": "trapani-luglio-musicale-2026",
-      "official_url": "https://www.lugliomusicale.it/it/luglio-musicale-stagioni/stagione-2026/una-nota-per-la-pace/"
     },
     {
       "candidate_id": "oa-index-c7a26f1f7611da36ad2a",
