@@ -1,17 +1,35 @@
 {
-  "checked_at": "2026-11-27T23:58:54+00:00",
-  "groups": [],
+  "checked_at": "2026-11-28T00:13:12+00:00",
+  "groups": [
+    {
+      "candidate_ids": [
+        "oa-index-adcaf50673c64d4d07c9"
+      ],
+      "category": "new_work_candidate",
+      "composer": "Silvia Colasanti",
+      "exact_title_matches": [],
+      "possible_canonical_match": null,
+      "recite_observed": 1,
+      "sources": [
+        {
+          "source_key": "haydn-rolling-opera",
+          "url": "https://www.haydn.it/eventi/anna-a"
+        }
+      ],
+      "title": "Anna A."
+    }
+  ],
   "note": "Identità da verificare: nessuna associazione o pubblicazione automatica.",
   "schema_version": 1,
   "source": "candidate-detail-evidence",
   "totals": {
-    "candidates_checked": 0,
+    "candidates_checked": 4,
     "candidates_without_facts": 0,
-    "facts_examined": 0,
-    "facts_resolved": 0,
+    "facts_examined": 10,
+    "facts_resolved": 9,
     "translated_facts_resolved": 0,
-    "unmatched_facts": 0,
-    "unmatched_groups": 0
+    "unmatched_facts": 1,
+    "unmatched_groups": 1
   },
   "truncated": false
 }

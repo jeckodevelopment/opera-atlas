@@ -1498,7 +1498,7 @@
       "source_key": "pisa-future-calendar",
       "source_url": "https://teatrodipisa.it/calendario/otello/",
       "content_sha256": "4bb881c182019128fd8e849ba4456d849f783adada5b42f1f94914b473012571",
-      "checked_at": "2026-11-27T23:58:15+00:00",
+      "checked_at": "2026-11-28T00:13:10+00:00",
       "status": "needs_editorial_review",
       "event_facts": [
         {
@@ -2196,7 +2196,7 @@
       "source_key": "pisa-future-calendar",
       "source_url": "https://teatrodipisa.it/calendario/otello-3/",
       "content_sha256": "d108d64d282e0ca420cc53a68762c79d4487a25b99247f62046a13c5ee035840",
-      "checked_at": "2026-11-27T23:58:23+00:00",
+      "checked_at": "2026-11-28T00:12:47+00:00",
       "status": "needs_editorial_review",
       "event_facts": [
         {
@@ -2568,8 +2568,8 @@
       "candidate_id": "oa-index-535b054411d3b3c9ea01",
       "source_key": "pisa-future-calendar",
       "source_url": "https://teatrodipisa.it/calendario/loccasione-fa-il-ladro-ossia-il-cambio-della-valigia-2/",
-      "content_sha256": "1361fa2ea38bbba6ad650130bb916da2b445c6295e739eb654eab5aa2ed5c0a4",
-      "checked_at": "2026-11-27T23:58:25+00:00",
+      "content_sha256": "603597051a3359ac87f866b07d5a67a1df4faca3ddc40fcc3779b405980c4c77",
+      "checked_at": "2026-11-28T00:12:50+00:00",
       "status": "needs_editorial_review",
       "event_facts": [
         {
@@ -2785,8 +2785,8 @@
       "candidate_id": "oa-index-5957ac7d6a8b0d34cb4b",
       "source_key": "goldoni-livorno-rolling-lirica",
       "source_url": "https://www.goldoniteatro.it/spettacoli/dido-ed-enea-2/",
-      "content_sha256": "017e713eaf9cd9b6b210883ea1fcb734d940a270e55f7f4fbead824401766a14",
-      "checked_at": "2026-11-27T23:58:28+00:00",
+      "content_sha256": "6c89fa8069c3005bdacb77452ca868af5e9e5f9359b3621cb567b197bad358d1",
+      "checked_at": "2026-11-28T00:12:53+00:00",
       "status": "needs_editorial_review",
       "event_facts": [
         {
@@ -2809,8 +2809,8 @@
       "candidate_id": "oa-index-59710f07c60abb84e3ea",
       "source_key": "goldoni-livorno-dido-2026-27",
       "source_url": "https://www.goldoniteatro.it/notizie/la-stagione-lirica/",
-      "content_sha256": "20417985c033d07bcee07ed49548ae8277dcb49f8efe85f69171a382b0778d69",
-      "checked_at": "2026-11-27T23:58:06+00:00",
+      "content_sha256": "771e819c0d22672e81739f8fa64e6bdf78a8db6c19673966405531149d74d754",
+      "checked_at": "2026-11-28T00:12:21+00:00",
       "status": "needs_editorial_review",
       "event_facts": [
         {
@@ -3880,8 +3880,8 @@
       "candidate_id": "oa-index-70313ef8895b42a91a5b",
       "source_key": "pisa-future-calendar",
       "source_url": "https://teatrodipisa.it/calendario/la-clemenza-di-tito-2/",
-      "content_sha256": "1a7687dbae131ddb8d920fc585863f2f684f48351bd4c67f4d84c6732220bee0",
-      "checked_at": "2026-11-27T23:58:29+00:00",
+      "content_sha256": "182752e21f1cba4454406049ea2c86e3ddb270d6a340f0a0d2e11fc7566ddeab",
+      "checked_at": "2026-11-28T00:12:55+00:00",
       "status": "needs_editorial_review",
       "event_facts": [
         {
@@ -4254,7 +4254,7 @@
       "source_key": "teatro-grande-opera-2026",
       "source_url": "https://teatrogrande.it/it/stagioni/2026/l-italiana-in-algeri",
       "content_sha256": "30a29c16a67198a5d1d08ffcbcc69b3fbd25ed5a687332a27861c1a6041ca89e",
-      "checked_at": "2026-11-27T23:58:21+00:00",
+      "checked_at": "2026-11-28T00:12:38+00:00",
       "status": "needs_editorial_review",
       "event_facts": [
         {
@@ -4339,8 +4339,8 @@
       "candidate_id": "oa-index-7b6b273b4dfbfb8e9909",
       "source_key": "goldoni-livorno-rolling-lirica",
       "source_url": "https://www.goldoniteatro.it/spettacoli/otello-3/",
-      "content_sha256": "8cea7ff5520ed9ed45d95240adead367fd556e89bd32ec9f974532c65da84d91",
-      "checked_at": "2026-11-27T23:58:32+00:00",
+      "content_sha256": "b35aa111244eac055e28c6ee16f5a6beb8233c6e0c635c2767a4f078ec4eab01",
+      "checked_at": "2026-11-28T00:12:58+00:00",
       "status": "needs_editorial_review",
       "event_facts": [
         {
@@ -5728,7 +5728,7 @@
       "source_key": "pisa-future-calendar",
       "source_url": "https://teatrodipisa.it/calendario/loccasione-fa-il-ladro-ossia-il-cambio-della-valigia/",
       "content_sha256": "059e55a460d34472fe4e162f92239657a367f2418ad99e4cca5ddcfd52c6b2a4",
-      "checked_at": "2026-11-27T23:58:34+00:00",
+      "checked_at": "2026-11-28T00:13:00+00:00",
       "status": "needs_editorial_review",
       "event_facts": [
         {
@@ -5925,8 +5925,8 @@
       "candidate_id": "oa-index-9c8f948971aebfd24d5e",
       "source_key": "petruzzelli-opera-2027",
       "source_url": "https://www.fondazionepetruzzelli.it/eventi/la-notte-di-san-nicola-25-28-29-maggio/",
-      "content_sha256": "1e0336ca63136137423957851a2b32e611c9361f569b9912e15ad9e6572307b0",
-      "checked_at": "2026-11-27T23:58:14+00:00",
+      "content_sha256": "d33b3162b5f74349b3a43abab817447ff96bebb92905e5baa9b7e0867c12d7e4",
+      "checked_at": "2026-11-28T00:12:29+00:00",
       "status": "out_of_monitored_season",
       "official_season": "2022"
     },
@@ -6257,7 +6257,7 @@
       "source_key": "savona-giocosa-rolling-opera",
       "source_url": "https://operagiocosa.it/",
       "content_sha256": "f187964c5958ca0febe6ce8d863389f16e7ef2cf0aae33939049b8de96f0fd1f",
-      "checked_at": "2026-11-27T23:58:19+00:00",
+      "checked_at": "2026-11-28T00:12:36+00:00",
       "status": "needs_editorial_review",
       "event_facts": [
         {
@@ -6671,6 +6671,30 @@
       }
     },
     {
+      "candidate_id": "oa-index-adcaf50673c64d4d07c9",
+      "source_key": "haydn-rolling-opera",
+      "source_url": "https://www.haydn.it/eventi/anna-a",
+      "content_sha256": "7a48528cda14a2ccdfe361680eb40831fb7ed0cecdca02e484e75387719988c0",
+      "checked_at": "2026-11-28T00:12:27+00:00",
+      "status": "needs_editorial_review",
+      "event_facts": [
+        {
+          "event_title": "Anna A.",
+          "composer": "Silvia Colasanti",
+          "venue": "Teatro Comunale di Bolzano",
+          "date": "2027-03-06",
+          "starts_at": "2027-03-06T20:00:00+01:00"
+        }
+      ],
+      "poster_evidence": {
+        "image_url": "https://www.haydn.it/wp-content/uploads/2026/05/Anna-A_1200x1200_1.jpg",
+        "source_url": "https://www.haydn.it/eventi/anna-a",
+        "credit": "Immagine della produzione dal sito ufficiale del teatro",
+        "alt": "Immagine della produzione di Anna A.",
+        "kind": "official_production_image"
+      }
+    },
+    {
       "candidate_id": "oa-index-addcc48a211cf5aea678",
       "source_key": "jesi-don-pasquale-opera-2026",
       "source_url": "https://www.fondazionepergolesispontini.com/lirica/programma-stagione-lirica-2026/",
@@ -6902,8 +6926,8 @@
       "candidate_id": "oa-index-b4aaa5341d6c996550c0",
       "source_key": "haydn-rolling-opera",
       "source_url": "https://www.haydn.it/eventi/cronaca-di-un-amore-callas-e-pasolini-2",
-      "content_sha256": "96b235e30f5eec8b5171f45db77b47432ee33ccb90f95e1d0ec281806998aa39",
-      "checked_at": "2026-11-27T23:58:11+00:00",
+      "content_sha256": "7b4869f548677e18059afcff42114ea7f3d0be2265b42101a246b7cab4cf586f",
+      "checked_at": "2026-11-28T00:13:12+00:00",
       "status": "needs_editorial_review",
       "event_facts": [
         {
@@ -7425,8 +7449,8 @@
       "candidate_id": "oa-index-cab03dfcd8aeff155178",
       "source_key": "goldoni-livorno-rolling-lirica",
       "source_url": "https://www.goldoniteatro.it/spettacoli/lelisir-damore-2/",
-      "content_sha256": "a5d422e32500fd40a30ef2074cc3ba242158c9232f883d8e97cc42a8291667f5",
-      "checked_at": "2026-11-27T23:58:37+00:00",
+      "content_sha256": "56183e1b4fed0e96e10e94c6dc8ccca2964afccbc6a55105d01226923014987d",
+      "checked_at": "2026-11-28T00:13:02+00:00",
       "status": "needs_editorial_review",
       "event_facts": [
         {
@@ -7467,7 +7491,7 @@
       "source_key": "pisa-future-calendar",
       "source_url": "https://teatrodipisa.it/calendario/otello-2/",
       "content_sha256": "866fda6a43cf4af1c951d14909ac3c313f8166fd981d62ec7242c983c2f1fe4e",
-      "checked_at": "2026-11-27T23:58:38+00:00",
+      "checked_at": "2026-11-28T00:13:04+00:00",
       "status": "needs_editorial_review",
       "event_facts": [
         {
@@ -7792,8 +7816,8 @@
       "candidate_id": "oa-index-d1c1b3127d4e683424be",
       "source_key": "pisa-future-calendar",
       "source_url": "https://teatrodipisa.it/calendario/aida/",
-      "content_sha256": "283d6b784789b0a45d2d6a45363745a5394f8019d480e2389a8d8a697bc0c924",
-      "checked_at": "2026-11-27T23:58:47+00:00",
+      "content_sha256": "7174663e756f9b1e3b1d2c5392efe3a2bd09d637f0c5076a9fa6d2159f549863",
+      "checked_at": "2026-11-28T00:12:32+00:00",
       "status": "needs_editorial_review",
       "event_facts": [
         {
@@ -8604,7 +8628,7 @@
       "source_key": "pisa-future-calendar",
       "source_url": "https://teatrodipisa.it/calendario/la-clemenza-di-tito/",
       "content_sha256": "7456bdc226a670c9ac86d2a4782215a12663380f28ec8b41f207a3023d112d80",
-      "checked_at": "2026-11-27T23:58:49+00:00",
+      "checked_at": "2026-11-28T00:12:39+00:00",
       "status": "needs_editorial_review",
       "event_facts": [
         {
@@ -8809,8 +8833,8 @@
       "candidate_id": "oa-index-e0c88bff5883ca11cf6e",
       "source_key": "goldoni-livorno-rolling-lirica",
       "source_url": "https://www.goldoniteatro.it/spettacoli/lelisir-damore-3/",
-      "content_sha256": "237b49ef5296a43d9c99f88bcd8bc16ca323685adcc9e5cff2ffac0a1ce76d8f",
-      "checked_at": "2026-11-27T23:58:40+00:00",
+      "content_sha256": "4ed2fc3aabc1198492456f35694f09144a66c93d8d0935536413cd2a63a98708",
+      "checked_at": "2026-11-28T00:12:24+00:00",
       "status": "needs_editorial_review",
       "event_facts": [
         {
@@ -8885,8 +8909,8 @@
       "candidate_id": "oa-index-e44f89c2a6d468342e8a",
       "source_key": "goldoni-livorno-rolling-lirica",
       "source_url": "https://www.goldoniteatro.it/spettacoli/cavalleria-rusticana/",
-      "content_sha256": "a54474e97ec3bcee7ada050d1840799f9a46a6e450f4870d3a2fb83c2eb0d7a7",
-      "checked_at": "2026-11-27T23:58:51+00:00",
+      "content_sha256": "4a5e2d33ccc61e1c73efcbb217031a26c0028d6512a725452a04bb3218c14156",
+      "checked_at": "2026-11-28T00:13:06+00:00",
       "status": "needs_editorial_review",
       "event_facts": [
         {
@@ -8909,8 +8933,8 @@
       "candidate_id": "oa-index-e5301e900e7fefdfd2a5",
       "source_key": "petruzzelli-opera-2026",
       "source_url": "https://www.fondazionepetruzzelli.it/eventi/la-notte-di-san-nicola-25-28-29-maggio/",
-      "content_sha256": "1e0336ca63136137423957851a2b32e611c9361f569b9912e15ad9e6572307b0",
-      "checked_at": "2026-11-27T23:58:14+00:00",
+      "content_sha256": "d33b3162b5f74349b3a43abab817447ff96bebb92905e5baa9b7e0867c12d7e4",
+      "checked_at": "2026-11-28T00:12:29+00:00",
       "status": "out_of_monitored_season",
       "official_season": "2022"
     },
@@ -8993,8 +9017,8 @@
       "candidate_id": "oa-index-e831cbf742e2f848f44b",
       "source_key": "goldoni-livorno-rolling-lirica",
       "source_url": "https://www.goldoniteatro.it/spettacoli/dido-ed-enea/",
-      "content_sha256": "0e24a8e093784103c6af8627948a19b1f74d58fdbbd16dc62c8ad08974947021",
-      "checked_at": "2026-11-27T23:58:44+00:00",
+      "content_sha256": "c5204d4235d294222db9014e38c11aa6d32fb5d91e7fa0321e527b42d7dd9da9",
+      "checked_at": "2026-11-28T00:12:43+00:00",
       "status": "needs_editorial_review",
       "event_facts": [
         {
@@ -9583,8 +9607,8 @@
       "candidate_id": "oa-index-f3d0b1311d04c3e46c05",
       "source_key": "haydn-rolling-opera",
       "source_url": "https://www.haydn.it/eventi/la-clemenza-di-tito",
-      "content_sha256": "c95d94176536c5aaf04beca4a4dd9f6e97b3604826a3bd27882e0561bc501460",
-      "checked_at": "2026-11-27T23:58:54+00:00",
+      "content_sha256": "02f19af2044a6a8e91efec74b8c6d781dede8bd3fb8b0ed5230339dd9f37986c",
+      "checked_at": "2026-11-28T00:13:09+00:00",
       "status": "needs_editorial_review",
       "event_facts": [
         {
@@ -9607,8 +9631,8 @@
       "candidate_id": "oa-index-f4226333be6c3f44d995",
       "source_key": "goldoni-livorno-rolling-lirica",
       "source_url": "https://www.goldoniteatro.it/spettacoli/otello-4/",
-      "content_sha256": "5d83b177c18419edb1f3c49a86d9ea7d7750d4e5a763c8dfa93f81c3d7b786f9",
-      "checked_at": "2026-11-27T23:58:09+00:00",
+      "content_sha256": "a28db9124d685d176ff9b8d01895379618eff20d62b2747d511b4e97124487f9",
+      "checked_at": "2026-11-28T00:12:46+00:00",
       "status": "needs_editorial_review",
       "event_facts": [
         {
