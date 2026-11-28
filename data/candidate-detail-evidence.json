@@ -6674,8 +6674,8 @@
       "candidate_id": "oa-index-adcaf50673c64d4d07c9",
       "source_key": "haydn-rolling-opera",
       "source_url": "https://www.haydn.it/eventi/anna-a",
-      "content_sha256": "a0e9c549d552814082dd1c608c1baf1f07ea7ba483dc412f02e56f2298530aec",
-      "checked_at": "2026-11-28T03:24:07+00:00",
+      "content_sha256": "eed6456721efbc41a0ee86abbce0606d4f29086ae8f06b9696c199a901f24cbe",
+      "checked_at": "2026-11-28T08:24:02+00:00",
       "status": "needs_editorial_review",
       "event_facts": [
         {
