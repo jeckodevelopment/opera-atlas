@@ -10742,19 +10742,8 @@
       "title": "Circo Massimo",
       "type": "theatre",
       "url": "https://opera.plus/atlas/roma/circo-massimo/"
-    },
-    {
-      "aliases": [],
-      "composer_ids": [],
-      "fallback_image": null,
-      "id": "oa-vd-000070",
-      "image": null,
-      "subtitle": "Trapani",
-      "title": "Teatro M° Tonino Pardo",
-      "type": "theatre",
-      "url": "https://opera.plus/atlas/trapani/teatro-tonino-pardo/"
     }
   ],
   "schema_version": 1,
-  "source_revision": "e36cce996b46c10ec284bb89eb18192fd7909411"
+  "source_revision": "c55cf7e013fbe4f1ddf93867dded7768cd9f7d18"
 }
