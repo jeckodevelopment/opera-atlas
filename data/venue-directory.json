@@ -1326,7 +1326,7 @@
       "name": "Teatro M° Tonino Pardo",
       "city": "Trapani",
       "region": "Sicilia",
-      "slug": "teatro-tonino-pardo",
+      "slug": "teatro-m-tonino-pardo",
       "city_slug": "trapani",
       "website": "https://www.lugliomusicale.it/it/luglio-musicale-stagioni/stagione-2026/",
       "source_url": "https://www.constp.it/evento/concerto-di-inaugurazione-anno-accademico-2025-2026/",
@@ -1340,7 +1340,8 @@
       "photo_credit": "TP24 — fotografia pubblicata il 5 maggio 2023",
       "photo_license": "Tutti i diritti riservati",
       "photo_caption": "Veduta della platea e del palcoscenico del Teatro M° Tonino Pardo, Trapani",
-      "photo_url": "https://www.tp24.it/immagini_articoli/05-05-2023/1683241767-0-trapani-riaperto-il-teatro-pardo-a-che-punto-sono-i-lavori-al-tito-marrone.jpg"
+      "photo_url": "https://www.tp24.it/immagini_articoli/05-05-2023/1683241767-0-trapani-riaperto-il-teatro-pardo-a-che-punto-sono-i-lavori-al-tito-marrone.jpg",
+      "canonical_venue_id": "oa-v-000064"
     },
     {
       "id": "oa-v-000066",
